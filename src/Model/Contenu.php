@@ -1,7 +1,9 @@
 <?php
+
 namespace src\Model;
 
-class Contenu {
+class Contenu
+{
     private $Id;
     private $Titre;
     private $Description;
@@ -51,16 +53,55 @@ class Contenu {
         return $this->Description;
     }
 
-    /**
-     * @param mixed $Description
-     * @return Contenu
-     */
     public function setDescription($Description)
     {
         $this->Description = $Description;
         return $this;
     }
 
+    /**
+     * @param mixed $Username
+     * @return Contenu
+     */
 
+    public function getUsername()
+    {
+        return $this->username;
+    }
 
+    public function setUsername($Username)
+    {
+        $this->username = $Username;
+        return $this;
+    }
+
+    /**
+     * @param mixed $Mail
+     * @return Contenu
+     */
+    public function getMail()
+    {
+        return $this->mail;
+    }
+
+    public function setMail($Mail)
+    {
+        $this->mail = $Mail;
+        return $this;
+    }
+
+    /**
+     * @param mixed $Password
+     * @return Contenu
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    public function setPassword($Password)
+    {
+        $this->password = $Password;
+        return $this;
+    }
 }
