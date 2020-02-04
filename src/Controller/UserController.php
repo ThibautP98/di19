@@ -2,10 +2,8 @@
 
 namespace src\Controller;
 
-use src\Model\Article;
 use src\Model\User;
 use src\Model\Bdd;
-use DateTime;
 
 class UserController extends AbstractController
 {

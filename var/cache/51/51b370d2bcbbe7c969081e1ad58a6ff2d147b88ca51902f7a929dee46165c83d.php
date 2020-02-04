@@ -58,7 +58,7 @@ class __TwigTemplate_e8572ea1553aa785fcf8fa7c83bc31b3202e44d261938f1456439343321
         // line 4
         echo "
     <div class=\"container-fluid mt-2\">
-        ";
+        <!--";
         // line 6
         if (twig_get_attribute($this->env, $this->source, ($context["session"] ?? null), "errorlogin", [], "any", true, true, false, 6)) {
             // line 7
@@ -67,8 +67,9 @@ class __TwigTemplate_e8572ea1553aa785fcf8fa7c83bc31b3202e44d261938f1456439343321
             echo "</div>
         ";
         }
-        // line 9
-        echo "        <form method=\"post\" action=\"/Register\">
+        // line 8
+        echo "-->
+        <form method=\"post\" action=\"/Register\">
             <p>Nom d'utilisateur :</p>
             <input type=\"text\" name=\"username\">
             <p>Adresse e-mail :</p>
@@ -97,7 +98,7 @@ class __TwigTemplate_e8572ea1553aa785fcf8fa7c83bc31b3202e44d261938f1456439343321
 
     public function getDebugInfo()
     {
-        return array (  71 => 9,  65 => 7,  63 => 6,  59 => 4,  55 => 3,  47 => 2,  36 => 1,);
+        return array (  71 => 8,  65 => 7,  63 => 6,  59 => 4,  55 => 3,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -107,9 +108,9 @@ class __TwigTemplate_e8572ea1553aa785fcf8fa7c83bc31b3202e44d261938f1456439343321
 {% block body %}
 
     <div class=\"container-fluid mt-2\">
-        {% if session.errorlogin is defined %}
+        <!--{% if session.errorlogin is defined %}
             <div class=\"alert alert-danger\">{{ session.errorlogin }}</div>
-        {% endif %}
+        {% endif %}-->
         <form method=\"post\" action=\"/Register\">
             <p>Nom d'utilisateur :</p>
             <input type=\"text\" name=\"username\">
