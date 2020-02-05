@@ -4,6 +4,7 @@ namespace src\Controller;
 use src\Model\Article;
 use src\Model\Bdd;
 use DateTime;
+use function Couchbase\defaultDecoder;
 
 class ArticleController extends AbstractController {
 
@@ -34,7 +35,7 @@ class ArticleController extends AbstractController {
     }
 
     public function add(){
-        UserController::roleNeed('redacteur');
+        //UserController::roleNeed('redacteur');
         if($_POST AND $_SESSION['token'] == $_POST['token']){
             $sqlRepository = null;
             $nomImage = null;
@@ -78,7 +79,7 @@ class ArticleController extends AbstractController {
     public function update($articleID){
         $articleSQL = new Article();
         $article = $articleSQL->SqlGet(BDD::getInstance(),$articleID);
-        if($_POST){
+        if($_POST) {
             $sqlRepository = null;
             $nomImage = null;
             if(!empty($_FILES['image']['name']) )
