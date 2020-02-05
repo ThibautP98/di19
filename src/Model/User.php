@@ -24,8 +24,27 @@ class User extends Contenu implements \JsonSerializable
         $user->setId($datas['id']);
         $user->setUsername($datas['username']);
         $user->setMail($datas['mail']);
+        $user->setRole($datas['role']);
 
         return $user;
+    }
+
+    public function SqlGetAll(\PDO $bdd){
+        $requete = $bdd->prepare('SELECT * FROM utilisateurs');
+        $requete->execute();
+        $arrayUser = $requete->fetchAll();
+
+        $listUser = [];
+        foreach ($arrayUser as $userSQL){
+            $user = new User();
+            $user->setId($userSQL['id']);
+            $user->setUsername($userSQL['username']);
+            $user->setMail($userSQL['mail']);
+            $user->setRole($userSQL['role']);
+
+            $listUser[] = $user;
+        }
+        return $listUser;
     }
 
     public function SqlGetMail(\PDO $bdd, $mailUser)

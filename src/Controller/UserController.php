@@ -1,6 +1,6 @@
 <?php
-//todo -> Afficher le role de l'utilisateur
 //todo -> Utiliser le token au log et $_session
+//todo -> Afficher tous les utilisateurs (admin only)
 namespace src\Controller;
 
 use src\Model\User;
@@ -10,12 +10,30 @@ class UserController extends AbstractController
 {
     public function affUser($idUser)
     {
-        $userSQL = new User();
-        $user = $userSQL->SqlGet(BDD::getInstance(), $idUser);
+//        if () {
+//            header('Location:/Login/');
+//        } else {
+            //todo -> bloquer page mon espace tant qu'on est pas log
+            $userSQL = new User();
+            $user = $userSQL->SqlGet(BDD::getInstance(), $idUser);
+
+            //Lancer la vue TWIG
+            return $this->twig->render('User/list.html.twig', [
+                'user' => $user]);
+//        }
+    }
+
+    public function affAllUser()
+    {
+        $user = new User();
+        $listUser = $user->SqlGetAll(BDD::getInstance());
 
         //Lancer la vue TWIG
-        return $this->twig->render('User/list.html.twig', [
-            'user' => $user]);
+        return $this->twig->render(
+            'User/listAll.html.twig', [
+                'userList' => $listUser
+            ]
+        );
     }
 
     public function loginForm()
@@ -57,7 +75,7 @@ class UserController extends AbstractController
                     ->setRole($role);
                 $utilisateur->SqlAdd(BDD::getInstance());
                 header('Location:/Login/');
-            }else{
+            } else {
                 $_SESSION['errorlogin'] = "Les mots de passe saisis doivent être identiques.";
                 header('Location:/Register');
                 return;
@@ -81,7 +99,7 @@ class UserController extends AbstractController
                 , 'mail' => $userInfo['mail']
                 , 'role' => json_decode($userInfo['role'])
                 );
-                header('Location:/RecapUser/' . $userInfo['id']);
+                header('Location:/MonEspace/' . $userInfo['id']);
             } else {
                 $_SESSION['errorlogin'] = "Adresse mail ou mot de passe saisi incorrect.";
                 header('Location:/Login');

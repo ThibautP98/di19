@@ -47,7 +47,7 @@ class __TwigTemplate_bc48e3cda9b66d8c03fa7441ff88239e3755b3c254814488adc5e548c50
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
-        echo " Récapitulatif du compte utilisateur - ";
+        echo " Mon espace - ";
         $this->displayParentBlock("title", $context, $blocks);
     }
 
@@ -57,27 +57,32 @@ class __TwigTemplate_bc48e3cda9b66d8c03fa7441ff88239e3755b3c254814488adc5e548c50
         $macros = $this->macros;
         // line 5
         echo "
+    <h1>Mon espace :</h1>
     <table>
         <thead>
         <tr>
-            <th>Username : </th>
-            <th>E-mail :</th>
+            <th>Username</th>
+            <th>E-mail</th>
+            <th>Rôle</th>
         </tr>
         </thead>
         <tbody>
         <tr>
             <td>";
-        // line 15
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "username", [], "any", false, false, false, 15), "html", null, true);
+        // line 17
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "username", [], "any", false, false, false, 17), "html", null, true);
         echo "</td>
             <td>";
-        // line 16
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "mail", [], "any", false, false, false, 16), "html", null, true);
+        // line 18
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "mail", [], "any", false, false, false, 18), "html", null, true);
+        echo "</td>
+            <td>";
+        // line 19
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "role", [], "any", false, false, false, 19), "html", null, true);
         echo "</td>
         </tr>
         </tbody>
     </table>
-
 
 ";
     }
@@ -94,31 +99,33 @@ class __TwigTemplate_bc48e3cda9b66d8c03fa7441ff88239e3755b3c254814488adc5e548c50
 
     public function getDebugInfo()
     {
-        return array (  75 => 16,  71 => 15,  59 => 5,  55 => 4,  47 => 2,  36 => 1,);
+        return array (  81 => 19,  77 => 18,  73 => 17,  59 => 5,  55 => 4,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends \"index.html.twig\" %}
-{% block title %} Récapitulatif du compte utilisateur - {{ parent() }}{% endblock %}
+{% block title %} Mon espace - {{ parent() }}{% endblock %}
 
 {% block body %}
 
+    <h1>Mon espace :</h1>
     <table>
         <thead>
         <tr>
-            <th>Username : </th>
-            <th>E-mail :</th>
+            <th>Username</th>
+            <th>E-mail</th>
+            <th>Rôle</th>
         </tr>
         </thead>
         <tbody>
         <tr>
             <td>{{ user.username }}</td>
             <td>{{ user.mail }}</td>
+            <td>{{ user.role }}</td>
         </tr>
         </tbody>
     </table>
-
 
 {% endblock %}", "User/list.html.twig", "D:\\CESI\\PHP\\tp\\templates\\User\\list.html.twig");
     }
