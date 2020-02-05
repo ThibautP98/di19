@@ -37,8 +37,10 @@ $router->post('/Contact/sendMail', 'Contact#sendMail');
 $router->get('/Login', 'User#loginForm');
 $router->post('/Login', 'User#loginCheck');
 $router->get('/Logout', 'User#logout');
+$router->get('/Article/Search','Article#Search');
 $router->get('/Register', 'User#registerForm');
 $router->post('/Register', 'User#registerCheck');
+$router->get('/RecapUser/:id', "User#affUser#id");
 
 
 echo $router->run();

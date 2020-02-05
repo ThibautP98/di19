@@ -1,0 +1,22 @@
+{% extends "index.html.twig" %}
+{% block title %} Récapitulatif du compte utilisateur - {{ parent() }}{% endblock %}
+
+{% block body %}
+
+    <table>
+        <thead>
+        <tr>
+            <th>Username : </th>
+            <th>E-mail :</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{ user.username }}</td>
+            <td>{{ user.mail }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+{% endblock %}

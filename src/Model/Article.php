@@ -14,6 +14,34 @@ class Article extends Contenu implements \JsonSerializable {
         return implode(" ",array_slice($arrayWord,0,$nb));
     }
 
+    public function SqlSearch(\PDO $bdd) {
+        try{
+            $searchA = $_GET['search'];
+            $requete = $bdd->prepare('SELECT * FROM articles WHERE Titre LIKE :search');
+            $requete->execute([
+                'search' => '%'.$searchA.'%'
+            ]);
+            $arrayArticle = $requete->fetchAll();
+
+            $listArticle = [];
+            foreach ($arrayArticle as $articleSQL){
+                $article = new Article();
+                $article->setId($articleSQL['Id']);
+                $article->setTitre($articleSQL['Titre']);
+                $article->setAuteur($articleSQL['Auteur']);
+                $article->setDescription($articleSQL['Description']);
+                $article->setDateAjout($articleSQL['DateAjout']);
+                $article->setImageRepository($articleSQL['ImageRepository']);
+                $article->setImageFileName($articleSQL['ImageFileName']);
+
+                $listArticle[] = $article;
+            }
+            return $listArticle;
+
+        }catch (\Exception $e){
+            return array("result"=>false,"message"=>$e->getMessage());
+        }
+    }
 
     public function SqlAdd(\PDO $bdd) {
         try{
@@ -71,8 +99,6 @@ class Article extends Contenu implements \JsonSerializable {
         $article->setImageFileName($datas['ImageFileName']);
 
         return $article;
-
-
     }
 
     public function SqlUpdate(\PDO $bdd){
@@ -200,6 +226,4 @@ class Article extends Contenu implements \JsonSerializable {
         $this->ImageFileName = $ImageFileName;
         return $this;
     }
-
-
 }
