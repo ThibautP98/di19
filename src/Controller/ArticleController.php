@@ -23,6 +23,16 @@ class ArticleController extends AbstractController {
         );
     }
 
+    public function Search(){
+        $Search = new Article();
+        $listSearch = $Search->SqlSearch(Bdd::GetInstance());
+        return $this->twig->render(
+            'Article/list.html.twig',[
+                'articleList' => $listSearch
+            ]
+        );
+    }
+
     public function add(){
         UserController::roleNeed('redacteur');
         if($_POST AND $_SESSION['token'] == $_POST['token']){
