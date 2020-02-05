@@ -47,20 +47,22 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
     <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
-    <link rel=\"stylesheet\" href=\"https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/pepper-grinder/jquery-ui.css\">
+    <link rel=\"stylesheet\"
+          href=\"https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/pepper-grinder/jquery-ui.css\">
     <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.1/css/all.css\">
     <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css\">
     ";
-        // line 10
-        $this->displayBlock('css', $context, $blocks);
         // line 11
+        $this->displayBlock('css', $context, $blocks);
+        // line 12
         echo "
 <body>
 
 <nav class=\"navbar sticky-top nav-pills navbar-expand-lg navbar-dark bg-dark\">
 
     <a class=\"navbar-brand\" href=\"/Article/ListAll\">Blog du CESI</a>
-    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarTogglerDemo02\" aria-controls=\"navbarTogglerDemo02\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarTogglerDemo02\"
+            aria-controls=\"navbarTogglerDemo02\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
         <span class=\"navbar-toggler-icon\"></span>
     </button>
     <div class=\"collapse navbar-collapse\" id=\"navbarTogglerDemo02\">
@@ -73,14 +75,21 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Article/Add\">Ajout d'un article</a>
             </li>
-
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"/Register\">Inscription</a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"/Login\">Connexion</a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"/Logout\">Déconnexion</a>
+            </li>
         </ul>
 
 
-
         <form class=\"form-inline\" method=\"post\" action=\"/Article/Show/";
-        // line 35
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "search", [], "any", false, false, false, 35), "html", null, true);
+        // line 44
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "search", [], "any", false, false, false, 44), "html", null, true);
         echo "\">
             <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Rechercher un article\" name=\"search\">
             <input type=\"submit\" class=\"btn btn-outline-success my-2 my-sm-0\" value=\"Rechercher\" name=\"searchSubmit\">
@@ -112,13 +121,11 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
 </nav>-->
 
 
-
-    ";
-        // line 67
+";
+        // line 75
         $this->displayBlock('body', $context, $blocks);
-        // line 68
+        // line 76
         echo "
-
 
 <script src=\"https://code.jquery.com/jquery-3.4.0.min.js\"></script>
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"></script>
@@ -127,9 +134,9 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
 <script src=\"https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/i18n/jquery-ui-i18n.min.js\"></script>
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js\"></script>
 ";
-        // line 77
+        // line 84
         $this->displayBlock('javascript', $context, $blocks);
-        // line 78
+        // line 85
         echo "</body>
 </html>
 ";
@@ -142,19 +149,19 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
         echo "CESI BLOG";
     }
 
-    // line 10
+    // line 11
     public function block_css($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 67
+    // line 75
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 77
+    // line 84
     public function block_javascript($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -172,7 +179,7 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
 
     public function getDebugInfo()
     {
-        return array (  158 => 77,  152 => 67,  146 => 10,  139 => 5,  133 => 78,  131 => 77,  120 => 68,  118 => 67,  83 => 35,  57 => 11,  55 => 10,  47 => 5,  41 => 1,);
+        return array (  165 => 84,  159 => 75,  153 => 11,  146 => 5,  140 => 85,  138 => 84,  128 => 76,  126 => 75,  92 => 44,  58 => 12,  56 => 11,  47 => 5,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -183,7 +190,8 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
     <meta charset=\"utf-8\">
     <title>{% block title %}CESI BLOG{% endblock %}</title>
     <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
-    <link rel=\"stylesheet\" href=\"https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/pepper-grinder/jquery-ui.css\">
+    <link rel=\"stylesheet\"
+          href=\"https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/pepper-grinder/jquery-ui.css\">
     <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.1/css/all.css\">
     <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css\">
     {% block css %}{% endblock %}
@@ -193,7 +201,8 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
 <nav class=\"navbar sticky-top nav-pills navbar-expand-lg navbar-dark bg-dark\">
 
     <a class=\"navbar-brand\" href=\"/Article/ListAll\">Blog du CESI</a>
-    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarTogglerDemo02\" aria-controls=\"navbarTogglerDemo02\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarTogglerDemo02\"
+            aria-controls=\"navbarTogglerDemo02\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
         <span class=\"navbar-toggler-icon\"></span>
     </button>
     <div class=\"collapse navbar-collapse\" id=\"navbarTogglerDemo02\">
@@ -206,9 +215,16 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Article/Add\">Ajout d'un article</a>
             </li>
-
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"/Register\">Inscription</a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"/Login\">Connexion</a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"/Logout\">Déconnexion</a>
+            </li>
         </ul>
-
 
 
         <form class=\"form-inline\" method=\"post\" action=\"/Article/Show/{{ post.search }}\">
@@ -242,9 +258,7 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
 </nav>-->
 
 
-
-    {% block body %}{% endblock %}
-
+{% block body %}{% endblock %}
 
 
 <script src=\"https://code.jquery.com/jquery-3.4.0.min.js\"></script>
