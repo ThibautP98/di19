@@ -71,8 +71,6 @@ class Article extends Contenu implements \JsonSerializable {
         $article->setImageFileName($datas['ImageFileName']);
 
         return $article;
-
-
     }
 
     public function SqlUpdate(\PDO $bdd){
@@ -200,6 +198,4 @@ class Article extends Contenu implements \JsonSerializable {
         $this->ImageFileName = $ImageFileName;
         return $this;
     }
-
-
 }
