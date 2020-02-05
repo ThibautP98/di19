@@ -41,8 +41,8 @@ class UserController extends AbstractController
                     header('Location:/Register');
                     return;
                 }
-                $username = $_POST['username'];
-                $mail = $_POST['email'];
+                $username = htmlentities(strip_tags($_POST['username']));
+                $mail = htmlentities(strip_tags($_POST['email']));
                 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
                 $utilisateur = new User();
@@ -51,40 +51,13 @@ class UserController extends AbstractController
                     ->setPassword($password);
                 $utilisateur->SqlAdd(BDD::getInstance());
                 header('Location:/Login/');
+            }else{
+                $_SESSION['errorlogin'] = "Les mots de passe saisis doivent être identiques.";
+                header('Location:/Register');
+                return;
             }
         }
     }
-
-    /*public function loginCheck()
-    {
-        $_POST['username'] = "toto";
-        if (!filter_var(
-            $_POST['password'],
-            FILTER_VALIDATE_REGEXP,
-            array("options" => array("regexp" => "/[a-zA-Z]{3,}/")))) {
-            $_SESSION['errorlogin'] = "Mpd mini 3 caractères";
-            header('Location:/Login');
-            return;
-        }
-        if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-            $_SESSION['errorlogin'] = "Mail invalide";
-            header('Location:/Login');
-            return;
-        }
-        if ($_POST["email"] == "admin@admin.com"
-            AND $_POST["password"] == "password"
-        ) {
-            $_SESSION['login'] = array(
-                'Nom' => 'Administrateur'
-            , 'Prénom' => 'Sylvain'
-            , 'roles' => array('admin', 'redacteur')
-            );
-            header('Location:/RecapUser');
-        } else {
-            $_SESSION['errorlogin'] = "Erreur Authent.";
-            header('Location:/Login');
-        }
-    }*/
 
     public function loginCheck()
     {
