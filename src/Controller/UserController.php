@@ -1,5 +1,6 @@
 <?php
-
+//todo -> Afficher le role de l'utilisateur
+//todo -> Utiliser le token au log et $_session
 namespace src\Controller;
 
 use src\Model\User;
@@ -41,14 +42,19 @@ class UserController extends AbstractController
                     header('Location:/Register');
                     return;
                 }
+
+                $token = bin2hex(random_bytes(25));
                 $username = htmlentities(strip_tags($_POST['username']));
                 $mail = htmlentities(strip_tags($_POST['email']));
                 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+                $role = json_encode(array($_POST['roleAdmin'], $_POST['roleRedac']));
 
                 $utilisateur = new User();
-                $utilisateur->setUsername($username)
+                $utilisateur->setToken($token)
+                    ->setUsername($username)
                     ->setMail($mail)
-                    ->setPassword($password);
+                    ->setPassword($password)
+                    ->setRole($role);
                 $utilisateur->SqlAdd(BDD::getInstance());
                 header('Location:/Login/');
             }else{
@@ -69,6 +75,7 @@ class UserController extends AbstractController
             $userInfo = $user->SqlGetMail(Bdd::GetInstance(), $mail);
 
             if (password_verify($password, $userInfo['password'])) {
+
                 $_SESSION['login'] = array(
                     'username' => $userInfo['username']
                 , 'mail' => $userInfo['mail']
@@ -76,7 +83,7 @@ class UserController extends AbstractController
                 );
                 header('Location:/RecapUser/' . $userInfo['id']);
             } else {
-                $_SESSION['errorlogin'] = "Erreur Authent.";
+                $_SESSION['errorlogin'] = "Adresse mail ou mot de passe saisi incorrect.";
                 header('Location:/Login');
             }
 
