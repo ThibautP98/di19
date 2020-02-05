@@ -1,0 +1,36 @@
+{% extends "index.html.twig" %}
+{% block title %} Utilisateurs - {{ parent() }}{% endblock %}
+
+{% block css %}
+    <style>
+        h1, table {
+            margin-left: 35%;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+
+    <h1>Utilisateurs</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>E-mail</th>
+            <th>Rôle</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in userList %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.mail }}</td>
+                <td>{{ user.role }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
