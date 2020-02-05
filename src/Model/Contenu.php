@@ -7,6 +7,23 @@ class Contenu
     private $Id;
     private $Titre;
     private $Description;
+    private $statusArticle;
+
+    /**
+     * @return mixed
+     */
+    public function getStatusArticle()
+    {
+        return $this->statusArticle;
+    }
+
+    /**
+     * @param mixed $statusArticle
+     */
+    public function setStatusArticle($statusArticle)
+    {
+        $this->statusArticle = $statusArticle;
+    }
 
 
     /**

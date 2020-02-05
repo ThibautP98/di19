@@ -6,6 +6,9 @@ class Article extends Contenu implements \JsonSerializable {
     private $DateAjout;
     private $ImageRepository;
     private $ImageFileName;
+    private $statusArticle;
+
+
 
     public function firstXwords($nb){
         $phrase = $this->getDescription();
@@ -76,6 +79,7 @@ class Article extends Contenu implements \JsonSerializable {
                 $article->setDateAjout($articleSQL['DateAjout']);
                 $article->setImageRepository($articleSQL['ImageRepository']);
                 $article->setImageFileName($articleSQL['ImageFileName']);
+                $article->setStatusArticle($articleSQL['statut']);
 
                 $listArticle[] = $article;
             }
@@ -97,6 +101,7 @@ class Article extends Contenu implements \JsonSerializable {
         $article->setDateAjout($datas['DateAjout']);
         $article->setImageRepository($datas['ImageRepository']);
         $article->setImageFileName($datas['ImageFileName']);
+        $article->setStatusArticle(($datas['statut']));
 
         return $article;
     }
@@ -225,5 +230,20 @@ class Article extends Contenu implements \JsonSerializable {
     {
         $this->ImageFileName = $ImageFileName;
         return $this;
+    }
+    /**
+     * @return mixed
+     */
+    public function getStatusArticle()
+    {
+        return $this->statusArticle;
+    }
+
+    /**
+     * @param mixed $statusArticle
+     */
+    public function setStatusArticle($statusArticle)
+    {
+        $this->statusArticle = $statusArticle;
     }
 }
