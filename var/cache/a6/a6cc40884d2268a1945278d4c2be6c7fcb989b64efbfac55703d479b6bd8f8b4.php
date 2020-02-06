@@ -95,7 +95,7 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
                 <a class=\"nav-link\" href=\"/Logout\">Déconnexion</a>
             </li>
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"/Article/ListAll\">Catégorie</a>
+                <a class=\"nav-link\" href=\"/Categorie/\">Catégorie</a>
             </li>
         </ul>
 
@@ -241,7 +241,7 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
                 <a class=\"nav-link\" href=\"/Logout\">Déconnexion</a>
             </li>
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"/Article/ListAll\">Catégorie</a>
+                <a class=\"nav-link\" href=\"/Categorie/\">Catégorie</a>
             </li>
         </ul>
 
