@@ -28,6 +28,7 @@ class Contenu
 
     /**
      * @return mixed
+     *
      */
     public function getId()
     {
