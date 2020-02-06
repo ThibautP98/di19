@@ -44,6 +44,8 @@ $router->post('/User/Register', 'User#registerCheck');
 $router->get('/User/MonEspace/:id', "User#affUser#id");
 $router->get('/User/ListAll',"User#affAllUser");
 
+$router->get('/User/Admin/Panel', 'User#affPanelAdmin');
+
 $router->post('/Contact/sendMail/:id', 'Contact#sendMail#id');
 
 echo $router->run();

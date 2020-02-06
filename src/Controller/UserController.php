@@ -12,13 +12,13 @@ class UserController extends AbstractController
 //        if () {
 //            header('Location:/Login/');
 //        } else {
-            //todo -> bloquer page mon espace tant qu'on est pas log
-            $userSQL = new User();
-            $user = $userSQL->SqlGet(BDD::getInstance(), $idUser);
+        //todo -> bloquer page mon espace tant qu'on est pas log
+        $userSQL = new User();
+        $user = $userSQL->SqlGet(BDD::getInstance(), $idUser);
 
-            //Lancer la vue TWIG
-            return $this->twig->render('User/list.html.twig', [
-                'user' => $user]);
+        //Lancer la vue TWIG
+        return $this->twig->render('User/list.html.twig', [
+            'user' => $user]);
 //        }
     }
 
@@ -32,6 +32,15 @@ class UserController extends AbstractController
             'User/listAll.html.twig', [
                 'userList' => $listUser
             ]
+        );
+    }
+
+    public function affPanelAdmin()
+    {
+        //Lancer la vue TWIG
+        //Uniquement si role == admin
+        return $this->twig->render(
+            'User/panelAdmin.html.twig'
         );
     }
 
