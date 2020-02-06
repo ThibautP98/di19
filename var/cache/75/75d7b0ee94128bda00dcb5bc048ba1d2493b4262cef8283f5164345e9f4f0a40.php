@@ -95,42 +95,43 @@ class __TwigTemplate_5ada77e67cdacc4672a9f98bfb15634e0ccac89cb5717a54e2679d71700
             // line 27
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "Titre", [], "any", false, false, false, 27), "html", null, true);
             echo "</td>
+                <td><select name=\"Categorie\" id=\"pet-select\">
+                        <option value=\"\">Choisir</option>
+                        <option value=\"Médical\">Médical</option>
+                        <option value=\"Logique\">Logique</option>
+                        <option value=\"Logique\">Divertissemment</option>
+                    </select></td>
                 <td>";
-            // line 28
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id_categorie", [], "any", false, false, false, 28), "html", null, true);
+            // line 34
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "Auteur", [], "any", false, false, false, 34), "html", null, true);
             echo "</td>
                 <td>";
-            // line 29
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "Auteur", [], "any", false, false, false, 29), "html", null, true);
+            // line 35
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "DateAjout", [], "any", false, false, false, 35), "d/m/Y"), "html", null, true);
             echo "</td>
                 <td>";
-            // line 30
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "DateAjout", [], "any", false, false, false, 30), "d/m/Y"), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 31
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "Statut", [], "any", false, false, false, 31), "html", null, true);
+            // line 36
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "Statut", [], "any", false, false, false, 36), "html", null, true);
             echo "</td>
                 <td>
                     <div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">
                         <a class=\"btn btn-success\" href=\"/Article/Show/";
-            // line 34
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 34), "html", null, true);
+            // line 39
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 39), "html", null, true);
             echo "\"><i class=\"far fa-eye\"></i></a>
                         <a class=\"btn btn-warning\" href=\"/Article/Update/";
-            // line 35
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 35), "html", null, true);
+            // line 40
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 40), "html", null, true);
             echo "\"><i class=\"fas fa-edit\"></i></a>
                         <a class=\"btn btn-danger\" href=\"/Article/Delete/";
-            // line 36
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 36), "html", null, true);
+            // line 41
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 41), "html", null, true);
             echo "\"><i class=\"far fa-trash-alt\"></i></a>
                     </div>
                     <a class=\"btn btn-secondary\" href=\"/Article/WriteOne/";
-            // line 38
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 38), "html", null, true);
+            // line 43
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 43), "html", null, true);
             echo "\"><i class=\"fas fa-file-download\"></i></a>
-
                 </td>
             </tr>
         ";
@@ -138,7 +139,7 @@ class __TwigTemplate_5ada77e67cdacc4672a9f98bfb15634e0ccac89cb5717a54e2679d71700
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 43
+        // line 47
         echo "
         </tbody>
     </table>
@@ -160,7 +161,7 @@ class __TwigTemplate_5ada77e67cdacc4672a9f98bfb15634e0ccac89cb5717a54e2679d71700
 
     public function getDebugInfo()
     {
-        return array (  142 => 43,  131 => 38,  126 => 36,  122 => 35,  118 => 34,  112 => 31,  108 => 30,  104 => 29,  100 => 28,  96 => 27,  90 => 26,  87 => 25,  83 => 24,  64 => 8,  59 => 5,  55 => 4,  47 => 2,  36 => 1,);
+        return array (  143 => 47,  133 => 43,  128 => 41,  124 => 40,  120 => 39,  114 => 36,  110 => 35,  106 => 34,  96 => 27,  90 => 26,  87 => 25,  83 => 24,  64 => 8,  59 => 5,  55 => 4,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -192,7 +193,12 @@ class __TwigTemplate_5ada77e67cdacc4672a9f98bfb15634e0ccac89cb5717a54e2679d71700
             <tr>
                 <th scope=\"row\"><a href=\"/Article/Show/{{ article.id }}\">#{{ article.id }}</a></th>
                 <td>{{ article.Titre }}</td>
-                <td>{{ article.id_categorie }}</td>
+                <td><select name=\"Categorie\" id=\"pet-select\">
+                        <option value=\"\">Choisir</option>
+                        <option value=\"Médical\">Médical</option>
+                        <option value=\"Logique\">Logique</option>
+                        <option value=\"Logique\">Divertissemment</option>
+                    </select></td>
                 <td>{{ article.Auteur }}</td>
                 <td>{{ article.DateAjout | date(\"d/m/Y\") }}</td>
                 <td>{{ article.Statut }}</td>
@@ -203,7 +209,6 @@ class __TwigTemplate_5ada77e67cdacc4672a9f98bfb15634e0ccac89cb5717a54e2679d71700
                         <a class=\"btn btn-danger\" href=\"/Article/Delete/{{ article.id }}\"><i class=\"far fa-trash-alt\"></i></a>
                     </div>
                     <a class=\"btn btn-secondary\" href=\"/Article/WriteOne/{{ article.id }}\"><i class=\"fas fa-file-download\"></i></a>
-
                 </td>
             </tr>
         {% endfor %}

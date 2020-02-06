@@ -37,10 +37,10 @@
             <div class="form-group row">
                 <label for="Categorie" class="col-sm-2 col-form-label">Catégorie</label>
                 <div class="col-sm-10">
-                    <select name="Catégorie" class="form-control">
-                        {% set Libelles = ['Science','Histoire','Divertissement'] %}
-                        {% for Libelle in Libelles %}
-                            <option value="{{ Titre }}" {% if Libelle == Categorie.Libelle %}selected{% endif %}>{{ Libelle }}</option>
+                    <select name="Categorie" class="form-control">
+                        {% set Categorie = ['Médical','Logique','Divertissement'] %}
+                        {% for Categorie in Statuts %}
+                            <option value="{{ Statue }}" {% if Statut == article.id_categorie %}selected{% endif %}>{{ Statut }}</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -56,13 +56,14 @@
                     </div>
                 </div>
             </div>
+
             <div class="form-group row">
                 <label for="Statut" class="col-sm-2 col-form-label">Statut</label>
                 <div class="col-sm-10">
                     <select name="Statut" class="form-control">
                         {% set Statuts = ['à Mettre à jour','à Vérifié','Vérifié'] %}
                         {% for Statut in Statuts %}
-                            <option value="{{ Statue }}" {% if Statue == Article.Statut %}selected{% endif %}>{{ Statut }}</option>
+                            <option value="{{ Statut }}" {% if Statut == article.Statut %}selected{% endif %}>{{ Statut }}</option>
                         {% endfor %}
                     </select>
                 </div>

@@ -96,8 +96,10 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
                     Catégorie
                 </a>
                 <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
-                    <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">Science</a>
-                    <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">Histoire</a>
+                    <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">toutes les catégorie</a>
+                    <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">Médical</a>
+                    <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">Logique</a>
+                    <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">Divertissement</a>
                     <div class=\"dropdown-divider\"></div>
                 </div>
             </li>
@@ -114,9 +116,9 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
 </nav>
 
 ";
-        // line 70
+        // line 72
         $this->displayBlock('body', $context, $blocks);
-        // line 71
+        // line 73
         echo "
 <script src=\"https://code.jquery.com/jquery-3.4.0.min.js\"></script>
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"></script>
@@ -126,9 +128,9 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js\"></script>
 
 ";
-        // line 79
+        // line 81
         $this->displayBlock('javascript', $context, $blocks);
-        // line 80
+        // line 82
         echo "
 </body>
 </html>
@@ -148,13 +150,13 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
         $macros = $this->macros;
     }
 
-    // line 70
+    // line 72
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 79
+    // line 81
     public function block_javascript($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -167,7 +169,7 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
 
     public function getDebugInfo()
     {
-        return array (  158 => 79,  152 => 70,  146 => 12,  139 => 5,  132 => 80,  130 => 79,  120 => 71,  118 => 70,  59 => 13,  57 => 12,  47 => 5,  41 => 1,);
+        return array (  160 => 81,  154 => 72,  148 => 12,  141 => 5,  134 => 82,  132 => 81,  122 => 73,  120 => 72,  59 => 13,  57 => 12,  47 => 5,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -224,8 +226,10 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
                     Catégorie
                 </a>
                 <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
-                    <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">Science</a>
-                    <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">Histoire</a>
+                    <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">toutes les catégorie</a>
+                    <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">Médical</a>
+                    <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">Logique</a>
+                    <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">Divertissement</a>
                     <div class=\"dropdown-divider\"></div>
                 </div>
             </li>
