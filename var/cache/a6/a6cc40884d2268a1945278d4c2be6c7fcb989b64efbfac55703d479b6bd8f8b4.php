@@ -94,8 +94,15 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Logout\">Déconnexion</a>
             </li>
-            <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"/Categorie/\">Catégorie</a>
+            <li class=\"nav-item dropdown\">
+                <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                    Catégorie
+                </a>
+                <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+                    <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">Science</a>
+                    <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">Histoire</a>
+                    <div class=\"dropdown-divider\"></div>
+                </div>
             </li>
         </ul>
 
@@ -108,7 +115,6 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
     </div>
 
 </nav>
-<!--
 <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
     <a class=\"navbar-brand\" href=\"#\">Menu</a>
     <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
@@ -129,13 +135,13 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
             </li>
         </ul>
     </div>
-</nav>-->
+</nav>
 
 
 ";
-        // line 89
+        // line 95
         $this->displayBlock('body', $context, $blocks);
-        // line 90
+        // line 96
         echo "
 
 <script src=\"https://code.jquery.com/jquery-3.4.0.min.js\"></script>
@@ -145,9 +151,9 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
 <script src=\"https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/i18n/jquery-ui-i18n.min.js\"></script>
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js\"></script>
 ";
-        // line 98
+        // line 104
         $this->displayBlock('javascript', $context, $blocks);
-        // line 99
+        // line 105
         echo "</body>
 </html>
 ";
@@ -166,13 +172,13 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
         $macros = $this->macros;
     }
 
-    // line 89
+    // line 95
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 98
+    // line 104
     public function block_javascript($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -185,7 +191,7 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
 
     public function getDebugInfo()
     {
-        return array (  176 => 98,  170 => 89,  164 => 12,  157 => 5,  151 => 99,  149 => 98,  139 => 90,  137 => 89,  59 => 13,  57 => 12,  47 => 5,  41 => 1,);
+        return array (  182 => 104,  176 => 95,  170 => 12,  163 => 5,  157 => 105,  155 => 104,  145 => 96,  143 => 95,  59 => 13,  57 => 12,  47 => 5,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -240,8 +246,15 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Logout\">Déconnexion</a>
             </li>
-            <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"/Categorie/\">Catégorie</a>
+            <li class=\"nav-item dropdown\">
+                <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                    Catégorie
+                </a>
+                <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+                    <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">Science</a>
+                    <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">Histoire</a>
+                    <div class=\"dropdown-divider\"></div>
+                </div>
             </li>
         </ul>
 
@@ -254,7 +267,6 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
     </div>
 
 </nav>
-<!--
 <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
     <a class=\"navbar-brand\" href=\"#\">Menu</a>
     <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
@@ -275,7 +287,7 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
             </li>
         </ul>
     </div>
-</nav>-->
+</nav>
 
 
 {% block body %}{% endblock %}

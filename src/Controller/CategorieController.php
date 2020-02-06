@@ -39,8 +39,8 @@ class CategorieController extends AbstractController {
         if($_POST AND $_SESSION['token'] == $_POST['token']){
             $sqlRepository = null;
             $Categorie = new Categorie();
-            $Categorie->setLibelle($_POST['libelle'])
-                ->setDescription($_POST['description'])
+            $Categorie->setLibelle($_POST['Titre'])
+                ->setDescription($_POST['Description'])
             ;
             $Categorie->SqlAddCat(BDD::getInstance());
             header('Location:/Categorie');
@@ -59,14 +59,15 @@ class CategorieController extends AbstractController {
         $CategorieSQL = new Categorie();
         $Categorie = $CategorieSQL->SqlGetcat(BDD::getInstance(),$CategorieID);
         if($_POST) {
-            $Categorie->setLibelle($_POST['libelle'])
-                    ->setDescription($_POST['description'])
+            $Categorie->setLibelle($_POST['Titre'])
+                    ->setDescription($_POST['Description'])
             ;
             $Categorie->SqlUpdateCat(BDD::getInstance());
         }
 
         return $this->twig->render('Categorie/Catupdate.html.twig',[
             'Categorie' => $Categorie
+
         ]);
     }
 
@@ -74,7 +75,7 @@ class CategorieController extends AbstractController {
         $CategorieSQL = new Categorie();
         $Categorie = $CategorieSQL->SqlGetcat(BDD::getInstance(),$CategorieID);
         $Categorie->SqlDeleteCat(BDD::getInstance(),$CategorieID);
-        header('Location:/');
+        header('Location:/Categorie/');
     }
 
 }

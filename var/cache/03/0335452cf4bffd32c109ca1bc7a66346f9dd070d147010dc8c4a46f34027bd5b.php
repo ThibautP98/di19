@@ -63,11 +63,11 @@ class __TwigTemplate_98e456019fd24294a4ca700f80b5457232f90bb22a20602e9b72596aad2
             <div class=\"card-body\">
                 <h5 class=\"card-title\">";
         // line 11
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["categorie"] ?? null), "libelle", [], "any", false, false, false, 11), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Categorie"] ?? null), "libelle", [], "any", false, false, false, 11), "html", null, true);
         echo "</h5>
                 <p class=\"card-text\">";
         // line 12
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["categorie"] ?? null), "description", [], "any", false, false, false, 12), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Categorie"] ?? null), "description", [], "any", false, false, false, 12), "html", null, true);
         echo "</p>
             </div>
 
@@ -78,7 +78,7 @@ class __TwigTemplate_98e456019fd24294a4ca700f80b5457232f90bb22a20602e9b72596aad2
                 <div class=\"col-sm-10\">
                     <input type=\"text\" name=\"Titre\" class=\"form-control form-control-lg\" value=\"";
         // line 20
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["categorie"] ?? null), "libelle", [], "any", false, false, false, 20), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Categorie"] ?? null), "libelle", [], "any", false, false, false, 20), "html", null, true);
         echo "\" >
                 </div>
             </div>
@@ -88,7 +88,7 @@ class __TwigTemplate_98e456019fd24294a4ca700f80b5457232f90bb22a20602e9b72596aad2
                 <div class=\"col-sm-10\">
                     <textarea name=\"Description\" class=\"form-control\" rows=\"7\">";
         // line 27
-        echo nl2br(twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["categorie"] ?? null), "description", [], "any", false, false, false, 27), "html", null, true));
+        echo nl2br(twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Categorie"] ?? null), "description", [], "any", false, false, false, 27), "html", null, true));
         echo "</textarea>
                 </div>
             </div>
@@ -130,8 +130,8 @@ class __TwigTemplate_98e456019fd24294a4ca700f80b5457232f90bb22a20602e9b72596aad2
     <hr class=\"my-4\">
     <div class=\"row\">
             <div class=\"card-body\">
-                <h5 class=\"card-title\">{{ categorie.libelle }}</h5>
-                <p class=\"card-text\">{{ categorie.description }}</p>
+                <h5 class=\"card-title\">{{ Categorie.libelle }}</h5>
+                <p class=\"card-text\">{{ Categorie.description }}</p>
             </div>
 
         <form name=\"updateCategorie\" method=\"post\" class=\"col-lg-8\" enctype=\"multipart/form-data\">
@@ -139,14 +139,14 @@ class __TwigTemplate_98e456019fd24294a4ca700f80b5457232f90bb22a20602e9b72596aad2
             <div class=\"form-group row\">
                 <label for=\"Titre\" class=\"col-sm-2 col-form-label\">Titre</label>
                 <div class=\"col-sm-10\">
-                    <input type=\"text\" name=\"Titre\" class=\"form-control form-control-lg\" value=\"{{ categorie.libelle }}\" >
+                    <input type=\"text\" name=\"Titre\" class=\"form-control form-control-lg\" value=\"{{ Categorie.libelle }}\" >
                 </div>
             </div>
 
             <div class=\"form-group row\">
                 <label for=\"Description\" class=\"col-sm-2 col-form-label\">Description</label>
                 <div class=\"col-sm-10\">
-                    <textarea name=\"Description\" class=\"form-control\" rows=\"7\">{{ categorie.description | nl2br }}</textarea>
+                    <textarea name=\"Description\" class=\"form-control\" rows=\"7\">{{ Categorie.description | nl2br }}</textarea>
                 </div>
             </div>
 

@@ -99,7 +99,7 @@ class __TwigTemplate_ce05a70e6a350a51e491532eb3dc6d94373c22ee090758a73d611527b20
             // line 28
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["Categorie"], "id", [], "any", false, false, false, 28), "html", null, true);
             echo "\"><i class=\"fas fa-edit\"></i></a>
-                        <a class=\"btn btn-danger\" href=\"/Cateogorie/DeleteCat/";
+                        <a class=\"btn btn-danger\" href=\"/Categorie/DeleteCat/";
             // line 29
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["Categorie"], "id", [], "any", false, false, false, 29), "html", null, true);
             echo "\"><i class=\"far fa-trash-alt\"></i></a>
@@ -166,7 +166,7 @@ class __TwigTemplate_ce05a70e6a350a51e491532eb3dc6d94373c22ee090758a73d611527b20
                 <td>
                     <div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">
                         <a class=\"btn btn-warning\" href=\"/Categorie/UpdateCat/{{ Categorie.id }}\"><i class=\"fas fa-edit\"></i></a>
-                        <a class=\"btn btn-danger\" href=\"/Cateogorie/DeleteCat/{{ Categorie.id }}\"><i class=\"far fa-trash-alt\"></i></a>
+                        <a class=\"btn btn-danger\" href=\"/Categorie/DeleteCat/{{ Categorie.id }}\"><i class=\"far fa-trash-alt\"></i></a>
                     </div>
                 </td>
             </tr>

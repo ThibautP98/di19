@@ -50,9 +50,8 @@ class Article extends Contenu implements \JsonSerializable
     public function SqlAdd(\PDO $bdd)
     {
         try {
-            $requete = $bdd->prepare('INSERT INTO articles (Titre, Description, DateAjout, Auteur, ImageRepository, ImageFileName) 
-            INNER JOIN categorie on categorie.ID=ID_categorie
-            VALUES(:Titre, :Description, :DateAjout, :Auteur, :ImageRepository, :ImageFileName)');
+            $requete = $bdd->prepare('INSERT INTO articles (Titre, Description, DateAjout, Auteur, ImageRepository, ImageFileName, id_categorie) 
+            VALUES(:Titre, :Description, :DateAjout, :Auteur, :ImageRepository, :ImageFileName,:id_categorie)');
             $requete->execute([
                 "Titre" => $this->getTitre(),
                 "Description" => $this->getDescription(),
@@ -60,6 +59,8 @@ class Article extends Contenu implements \JsonSerializable
                 "Auteur" => $this->getAuteur(),
                 "ImageRepository" => $this->getImageRepository(),
                 "ImageFileName" => $this->getImageFileName(),
+                "id_categorie" => $this->getid_categorie(),
+
             ]);
             return array("result" => true, "message" => $bdd->lastInsertId());
         } catch (\Exception $e) {
