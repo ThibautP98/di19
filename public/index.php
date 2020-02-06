@@ -41,6 +41,8 @@ $router->get('/Article/Search','Article#Search');
 $router->get('/Register', 'User#registerForm');
 $router->post('/Register', 'User#registerCheck');
 $router->get('/RecapUser/:id', "User#affUser#id");
+$router->get('/Admin', "Admin#ListAlladmin");
+
 
 
 echo $router->run();

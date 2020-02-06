@@ -84,6 +84,9 @@ class __TwigTemplate_9ac833d0735a65f507769ebe1e6a882d8150fb55fd642ac833879f53f03
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Logout\">Déconnexion</a>
             </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"/Admin\">Admin</a>
+            </li>
         </ul>
 
         <form class=\"form-inline\" method=\"get\" action=\"/Article/Search/\">
@@ -118,9 +121,9 @@ class __TwigTemplate_9ac833d0735a65f507769ebe1e6a882d8150fb55fd642ac833879f53f03
 
 
 ";
-        // line 74
+        // line 77
         $this->displayBlock('body', $context, $blocks);
-        // line 75
+        // line 78
         echo "
 
 <script src=\"https://code.jquery.com/jquery-3.4.0.min.js\"></script>
@@ -130,9 +133,9 @@ class __TwigTemplate_9ac833d0735a65f507769ebe1e6a882d8150fb55fd642ac833879f53f03
 <script src=\"https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/i18n/jquery-ui-i18n.min.js\"></script>
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js\"></script>
 ";
-        // line 83
+        // line 86
         $this->displayBlock('javascript', $context, $blocks);
-        // line 84
+        // line 87
         echo "</body>
 </html>
 ";
@@ -151,13 +154,13 @@ class __TwigTemplate_9ac833d0735a65f507769ebe1e6a882d8150fb55fd642ac833879f53f03
         $macros = $this->macros;
     }
 
-    // line 74
+    // line 77
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 83
+    // line 86
     public function block_javascript($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -170,7 +173,7 @@ class __TwigTemplate_9ac833d0735a65f507769ebe1e6a882d8150fb55fd642ac833879f53f03
 
     public function getDebugInfo()
     {
-        return array (  161 => 83,  155 => 74,  149 => 11,  142 => 5,  136 => 84,  134 => 83,  124 => 75,  122 => 74,  58 => 12,  56 => 11,  47 => 5,  41 => 1,);
+        return array (  164 => 86,  158 => 77,  152 => 11,  145 => 5,  139 => 87,  137 => 86,  127 => 78,  125 => 77,  58 => 12,  56 => 11,  47 => 5,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -214,6 +217,9 @@ class __TwigTemplate_9ac833d0735a65f507769ebe1e6a882d8150fb55fd642ac833879f53f03
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Logout\">Déconnexion</a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"/Admin\">Admin</a>
             </li>
         </ul>
 

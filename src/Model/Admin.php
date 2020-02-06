@@ -1,7 +1,7 @@
 <?php
 namespace src\Model;
 
-class Article extends Contenu implements \JsonSerializable {
+class Admin extends Contenu implements \JsonSerializable {
     private $Auteur;
     private $DateAjout;
     private $ImageRepository;
@@ -20,7 +20,7 @@ class Article extends Contenu implements \JsonSerializable {
     public function SqlSearch(\PDO $bdd) {
         try{
             $searchA = $_GET['search'];
-            $requete = $bdd->prepare('SELECT * FROM articles WHERE Titre LIKE :search AND statut !="VERIF"');
+            $requete = $bdd->prepare('SELECT * FROM articles WHERE Titre LIKE :search');
             $requete->execute([
                 'search' => '%'.$searchA.'%'
             ]);
@@ -66,25 +66,25 @@ class Article extends Contenu implements \JsonSerializable {
     }
 
     public function SqlGetAll(\PDO $bdd){
-            $requete = $bdd->prepare('SELECT * FROM articles WHERE statut !="VERIF"');
-            $requete->execute();
-            $arrayArticle = $requete->fetchAll();
+        $requete = $bdd->prepare('SELECT * FROM articles');
+        $requete->execute();
+        $arrayArticle = $requete->fetchAll();
 
-            $listArticle = [];
-            foreach ($arrayArticle as $articleSQL){
-                $article = new Article();
-                $article->setId($articleSQL['Id']);
-                $article->setTitre($articleSQL['Titre']);
-                $article->setAuteur($articleSQL['Auteur']);
-                $article->setDescription($articleSQL['Description']);
-                $article->setDateAjout($articleSQL['DateAjout']);
-                $article->setImageRepository($articleSQL['ImageRepository']);
-                $article->setImageFileName($articleSQL['ImageFileName']);
-                $article->setStatusArticle($articleSQL['statut']);
+        $listArticle = [];
+        foreach ($arrayArticle as $articleSQL){
+            $article = new Article();
+            $article->setId($articleSQL['Id']);
+            $article->setTitre($articleSQL['Titre']);
+            $article->setAuteur($articleSQL['Auteur']);
+            $article->setDescription($articleSQL['Description']);
+            $article->setDateAjout($articleSQL['DateAjout']);
+            $article->setImageRepository($articleSQL['ImageRepository']);
+            $article->setImageFileName($articleSQL['ImageFileName']);
+            $article->setStatusArticle($articleSQL['statut']);
 
-                $listArticle[] = $article;
-            }
-            return $listArticle;
+            $listArticle[] = $article;
+        }
+        return $listArticle;
     }
     public function SqlGet(\PDO $bdd,$idArticle){
         $requete = $bdd->prepare('SELECT * FROM articles where Id = :idArticle');
@@ -158,6 +158,20 @@ class Article extends Contenu implements \JsonSerializable {
             ,'ImageFileName' => $this->getImageFileName()
             ,'Auteur' => $this->getAuteur()
         ];
+    }
+
+    public function sqlArticleVerifier(\PDO $bdd){
+        try{
+            $requete = $bdd->prepare('UPDATE article set statut =:Value ');
+            $requete->execute([
+                'Value' => $_POST['statut{{ article.id }}']
+
+            ]);
+            return array("0", "[OK] Update");
+        }catch (\Exception $e){
+            return array("1", "[ERREUR] ".$e->getMessage());
+        }
+
     }
 
 
