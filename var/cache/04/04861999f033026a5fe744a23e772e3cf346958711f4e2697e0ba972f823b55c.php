@@ -72,40 +72,39 @@ class __TwigTemplate_ce05a70e6a350a51e491532eb3dc6d94373c22ee090758a73d611527b20
             <th scope=\"col\">Titre</th>
             <th scope=\"col\">Description</th>
             <th scope=\"col\">Action</th>
-
         </tr>
         </thead>
         <tbody>
         ";
-        // line 22
+        // line 21
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["CategorieList"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["Categorie"]) {
-            // line 23
+            // line 22
             echo "            <tr>
                 <th scope=\"row\"><a href=\"/Categorie/Show/";
-            // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["Categorie"], "id", [], "any", false, false, false, 24), "html", null, true);
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["Categorie"], "id", [], "any", false, false, false, 23), "html", null, true);
             echo "\">#";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["Categorie"], "id", [], "any", false, false, false, 24), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["Categorie"], "id", [], "any", false, false, false, 23), "html", null, true);
             echo "</a></th>
                 <td>";
-            // line 25
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["Categorie"], "Libelle", [], "any", false, false, false, 25), "html", null, true);
+            // line 24
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["Categorie"], "Libelle", [], "any", false, false, false, 24), "html", null, true);
             echo "</td>
                 <td>";
-            // line 26
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["Categorie"], "Description", [], "any", false, false, false, 26), "html", null, true);
+            // line 25
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["Categorie"], "Description", [], "any", false, false, false, 25), "html", null, true);
             echo "</td>
                 <td>
                     <div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">
                         <a class=\"btn btn-warning\" href=\"/Categorie/UpdateCat/";
-            // line 29
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["Categorie"], "id", [], "any", false, false, false, 29), "html", null, true);
+            // line 28
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["Categorie"], "id", [], "any", false, false, false, 28), "html", null, true);
             echo "\"><i class=\"fas fa-edit\"></i></a>
                         <a class=\"btn btn-danger\" href=\"/Categorie/DeleteCat/";
-            // line 30
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["Categorie"], "id", [], "any", false, false, false, 30), "html", null, true);
+            // line 29
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["Categorie"], "id", [], "any", false, false, false, 29), "html", null, true);
             echo "\"><i class=\"far fa-trash-alt\"></i></a>
                     </div>
                 </td>
@@ -115,7 +114,7 @@ class __TwigTemplate_ce05a70e6a350a51e491532eb3dc6d94373c22ee090758a73d611527b20
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['Categorie'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 35
+        // line 34
         echo "
         </tbody>
     </table>
@@ -137,7 +136,7 @@ class __TwigTemplate_ce05a70e6a350a51e491532eb3dc6d94373c22ee090758a73d611527b20
 
     public function getDebugInfo()
     {
-        return array (  119 => 35,  108 => 30,  104 => 29,  98 => 26,  94 => 25,  88 => 24,  85 => 23,  81 => 22,  64 => 8,  59 => 5,  55 => 4,  47 => 2,  36 => 1,);
+        return array (  118 => 34,  107 => 29,  103 => 28,  97 => 25,  93 => 24,  87 => 23,  84 => 22,  80 => 21,  64 => 8,  59 => 5,  55 => 4,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -159,7 +158,6 @@ class __TwigTemplate_ce05a70e6a350a51e491532eb3dc6d94373c22ee090758a73d611527b20
             <th scope=\"col\">Titre</th>
             <th scope=\"col\">Description</th>
             <th scope=\"col\">Action</th>
-
         </tr>
         </thead>
         <tbody>
