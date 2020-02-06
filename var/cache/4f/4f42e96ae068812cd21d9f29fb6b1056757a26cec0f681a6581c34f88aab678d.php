@@ -76,19 +76,19 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
                 <a class=\"nav-link\" href=\"/Article/Add\">Ajout d'un article</a>
             </li>
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"/MonEspace\">Mon espace</a>
+                <a class=\"nav-link\" href=\"/User/MonEspace\">Mon espace</a>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/User/listAll\">Liste des utilisateurs</a>
             </li>
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"/Register\">Inscription</a>
+                <a class=\"nav-link\" href=\"/User/Register\">Inscription</a>
             </li>
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"/Login\">Connexion</a>
+                <a class=\"nav-link\" href=\"/User/Login\">Connexion</a>
             </li>
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"/Logout\">Déconnexion</a>
+                <a class=\"nav-link\" href=\"/User/Logout\">Déconnexion</a>
             </li>
         </ul>
 
@@ -192,19 +192,19 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
                 <a class=\"nav-link\" href=\"/Article/Add\">Ajout d'un article</a>
             </li>
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"/MonEspace\">Mon espace</a>
+                <a class=\"nav-link\" href=\"/User/MonEspace\">Mon espace</a>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/User/listAll\">Liste des utilisateurs</a>
             </li>
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"/Register\">Inscription</a>
+                <a class=\"nav-link\" href=\"/User/Register\">Inscription</a>
             </li>
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"/Login\">Connexion</a>
+                <a class=\"nav-link\" href=\"/User/Login\">Connexion</a>
             </li>
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"/Logout\">Déconnexion</a>
+                <a class=\"nav-link\" href=\"/User/Logout\">Déconnexion</a>
             </li>
         </ul>
 

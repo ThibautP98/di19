@@ -68,7 +68,7 @@ class __TwigTemplate_ac72272b9064d2c3caca8aaf69ed8f0c03f6ed03e051407ccbb1c59515b
         ";
         }
         // line 9
-        echo "        <form method=\"post\" action=\"/Login\">
+        echo "        <form method=\"post\" action=\"/User/Login\">
             <input type=\"email\" name=\"email\">
             <input type=\"password\" name=\"password\">
             <input type=\"submit\">
@@ -103,7 +103,7 @@ class __TwigTemplate_ac72272b9064d2c3caca8aaf69ed8f0c03f6ed03e051407ccbb1c59515b
         {% if session.errorlogin is defined %}
             <div class=\"alert alert-danger\">{{ session.errorlogin }}</div>
         {% endif %}
-        <form method=\"post\" action=\"/Login\">
+        <form method=\"post\" action=\"/User/Login\">
             <input type=\"email\" name=\"email\">
             <input type=\"password\" name=\"password\">
             <input type=\"submit\">
