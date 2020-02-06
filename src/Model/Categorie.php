@@ -6,13 +6,6 @@ class Categorie extends Contenu implements \JsonSerializable {
     private $Description;
 
 
-    public function firstXwords($nb){
-        $phrase = $this->getDescription();
-        $arrayWord = str_word_count($phrase,1);
-
-        return implode(" ",array_slice($arrayWord,0,$nb));
-    }
-
     public function SqlSearchCat(\PDO $bdd) {
         try{
             $searchA = $_GET['search'];
@@ -28,7 +21,6 @@ class Categorie extends Contenu implements \JsonSerializable {
                 $Categorie->setId($CategorieSQL['Id']);
                 $Categorie->setLibelle($CategorieSQL['Libelle']);
                 $Categorie->setDescription($CategorieSQL['Description']);
-
 
                 $listCategorie[] = $Categorie;
             }

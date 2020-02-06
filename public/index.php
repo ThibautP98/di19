@@ -43,7 +43,12 @@ $router->get('/Register', 'User#registerForm');
 $router->post('/Register', 'User#registerCheck');
 $router->get('/MonEspace/:id', "User#affUser#id");
 $router->get('/User/ListAll',"User#affAllUser");
-
+$router->get('/Categorie', "Categorie#ListAll");
+$router->get('/Categorie/Update/:id', "Categorie#Update#id");
+$router->post('/Categorie/Update/:id', "Categorie#Update#id");
+$router->get('/Categorie/Add', "Categorie#Add");
+$router->post('/Categorie/Add', "Categoriee#Add");
+$router->get('/Categorie/Delete/:id', "Categorie#Delete#id");
 
 echo $router->run();
 

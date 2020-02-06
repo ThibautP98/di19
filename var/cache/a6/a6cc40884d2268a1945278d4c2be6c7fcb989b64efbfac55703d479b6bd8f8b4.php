@@ -71,7 +71,9 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
         <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Article/ListAll\">Liste des articles</a>
-                <a class=\"nav-link\" href=\"/Api/Article/Last\">Les 5 dernières articles</a>
+                <ul>
+                    <li><a href=\"/Api/Article/Last\">Les 5 dernieres articles</a></li>
+                </ul>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Article/Add\">Ajout d'un article</a>
@@ -94,6 +96,7 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
         </ul>
 
         <form class=\"form-inline\" method=\"get\" action=\"/Article/Search/\">
+
             <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Rechercher un article\" name=\"search\">
             <input type=\"submit\" onclick=\"Search()\" class=\"btn btn-outline-success my-2 my-sm-0\" value=\"Rechercher\"
                    name=\"searchSubmit\">
@@ -126,9 +129,9 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
 
 
 ";
-        // line 82
+        // line 85
         $this->displayBlock('body', $context, $blocks);
-        // line 83
+        // line 86
         echo "
 
 <script src=\"https://code.jquery.com/jquery-3.4.0.min.js\"></script>
@@ -138,9 +141,9 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
 <script src=\"https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/i18n/jquery-ui-i18n.min.js\"></script>
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js\"></script>
 ";
-        // line 91
+        // line 94
         $this->displayBlock('javascript', $context, $blocks);
-        // line 92
+        // line 95
         echo "</body>
 </html>
 ";
@@ -159,13 +162,13 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
         $macros = $this->macros;
     }
 
-    // line 82
+    // line 85
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 91
+    // line 94
     public function block_javascript($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -178,7 +181,7 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
 
     public function getDebugInfo()
     {
-        return array (  169 => 91,  163 => 82,  157 => 11,  150 => 5,  144 => 92,  142 => 91,  132 => 83,  130 => 82,  58 => 12,  56 => 11,  47 => 5,  41 => 1,);
+        return array (  172 => 94,  166 => 85,  160 => 11,  153 => 5,  147 => 95,  145 => 94,  135 => 86,  133 => 85,  58 => 12,  56 => 11,  47 => 5,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -210,7 +213,9 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
         <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Article/ListAll\">Liste des articles</a>
-                <a class=\"nav-link\" href=\"/Api/Article/Last\">Les 5 dernières articles</a>
+                <ul>
+                    <li><a href=\"/Api/Article/Last\">Les 5 dernieres articles</a></li>
+                </ul>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Article/Add\">Ajout d'un article</a>
@@ -233,6 +238,7 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
         </ul>
 
         <form class=\"form-inline\" method=\"get\" action=\"/Article/Search/\">
+
             <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Rechercher un article\" name=\"search\">
             <input type=\"submit\" onclick=\"Search()\" class=\"btn btn-outline-success my-2 my-sm-0\" value=\"Rechercher\"
                    name=\"searchSubmit\">

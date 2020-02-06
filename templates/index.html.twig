@@ -25,7 +25,9 @@
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
                 <a class="nav-link" href="/Article/ListAll">Liste des articles</a>
-                <a class="nav-link" href="/Api/Article/Last">Les 5 dernières articles</a>
+                <ul>
+                    <li><a href="/Api/Article/Last">Les 5 dernieres articles</a></li>
+                </ul>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/Article/Add">Ajout d'un article</a>
@@ -48,6 +50,7 @@
         </ul>
 
         <form class="form-inline" method="get" action="/Article/Search/">
+
             <input class="form-control mr-sm-2" type="search" placeholder="Rechercher un article" name="search">
             <input type="submit" onclick="Search()" class="btn btn-outline-success my-2 my-sm-0" value="Rechercher"
                    name="searchSubmit">

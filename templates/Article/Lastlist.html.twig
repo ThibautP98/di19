@@ -1,10 +1,10 @@
 {% extends "index.html.twig" %}
-{% block title %} Liste des articles - {{ parent() }}{% endblock %}
+{% block title %} 5 Dernieres articles - {{ parent() }}{% endblock %}
 
 {% block body %}
 
     <div class="jumbotron">
-        <h1 class="display-4">Liste des articles</h1>
+        <h1 class="display-4"> 5 Dernieres articles</h1>
     </div>
     <div class="container">
         <table class="table table-striped">
@@ -13,8 +13,8 @@
                 <th scope="col">#</th>
                 <th scope="col">Titre</th>
                 <th scope="col">Auteur</th>
+                <th scope="col">Description</th>
                 <th scope="col">Date</th>
-
 
             </tr>
             </thead>
@@ -24,6 +24,7 @@
                     <th scope="row"><a href="/Article/Show/{{ article.id }}">#{{ article.id }}</a></th>
                     <td>{{ article.Titre }}</td>
                     <td>{{ article.Auteur }}</td>
+                    <td>{{ article.Description}}</td>
                     <td>{{ article.DateAjout | date("d/m/Y") }}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic example">
