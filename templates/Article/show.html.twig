@@ -1,0 +1,49 @@
+{% extends "index.html.twig" %}
+{% block title %} Détail de l'article - {{ parent() }}{% endblock %}
+
+{% block body %}
+
+    <h1>Détail de l'article :</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Description</th>
+            <th>Date d'ajout</th>
+            <th>Auteur</th>
+            <th>Image Repository</th>
+            <th>Image File name</th>
+            <th>ID Catégorie</th>
+            <th>Statut</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{ article.Titre }}</td>
+            <td>{{ article.Description }}</td>
+            <td>{{ article.DateAjout }}</td>
+            <td>{{ article.Auteur }}</td>
+            <td>{{ article.ImageRepository }}</td>
+            <td>{{ article.ImageFileName }}</td>
+            <td>{{ article.id_categorie }}</td>
+            <td>{{ article.statut }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h1>Contact</h1>
+    <div class="container-fluid mt-2">
+        <form method="post" action="/Contact/sendMail/{{ article.id }}">
+            <p>Nom d'utilisateur :</p>
+            <input type="text" name="username">
+            <p>Adresse mail</p>
+            <input type="email" name="email">
+            <p>Sujet :</p>
+            <input type="text" name="sujet" value="{{ article.titre }}">
+            <p>Description :</p>
+            <textarea name="description"></textarea>
+            <br>
+            <input type="submit">
+        </form>
+    </div>
+{% endblock %}

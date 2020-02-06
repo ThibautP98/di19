@@ -6,7 +6,7 @@
         {% if session.errorlogin is defined %}
             <div class="alert alert-danger">{{ session.errorlogin }}</div>
         {% endif %}
-        <form method="post" action="/Register">
+        <form method="post" action="/User/Register">
             <input type="hidden" name="token">
             <p>Nom d'utilisateur :</p>
             <input type="text" name="username">

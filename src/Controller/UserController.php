@@ -1,6 +1,5 @@
 <?php
 //todo -> Utiliser le token au log et $_session
-//todo -> Afficher tous les utilisateurs (admin only)
 namespace src\Controller;
 
 use src\Model\User;
@@ -13,13 +12,13 @@ class UserController extends AbstractController
 //        if () {
 //            header('Location:/Login/');
 //        } else {
-            //todo -> bloquer page mon espace tant qu'on est pas log
-            $userSQL = new User();
-            $user = $userSQL->SqlGet(BDD::getInstance(), $idUser);
+        //todo -> bloquer page mon espace tant qu'on est pas log
+        $userSQL = new User();
+        $user = $userSQL->SqlGet(BDD::getInstance(), $idUser);
 
-            //Lancer la vue TWIG
-            return $this->twig->render('User/list.html.twig', [
-                'user' => $user]);
+        //Lancer la vue TWIG
+        return $this->twig->render('User/list.html.twig', [
+            'user' => $user]);
 //        }
     }
 
@@ -33,6 +32,15 @@ class UserController extends AbstractController
             'User/listAll.html.twig', [
                 'userList' => $listUser
             ]
+        );
+    }
+
+    public function affPanelAdmin()
+    {
+        //Lancer la vue TWIG
+        //Uniquement si role == admin
+        return $this->twig->render(
+            'User/panelAdmin.html.twig'
         );
     }
 
@@ -52,12 +60,12 @@ class UserController extends AbstractController
             if ($_POST['password'] == $_POST['checkPwd']) {
                 if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
                     $_SESSION['errorlogin'] = "Veuillez saisir une adresse mail valide.";
-                    header('Location:/Register');
+                    header('Location:/User/Register');
                     return;
                 }
                 if (!filter_var($_POST['password'], FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => "/[a-zA-Z]{4,}/")))) {
                     $_SESSION['errorlogin'] = "Le mot de passe doit contenir au moins 4 caractères.";
-                    header('Location:/Register');
+                    header('Location:/User/Register');
                     return;
                 }
 
@@ -74,10 +82,10 @@ class UserController extends AbstractController
                     ->setPassword($password)
                     ->setRole($role);
                 $utilisateur->SqlAdd(BDD::getInstance());
-                header('Location:/Login/');
+                header('Location:/User/Login/');
             } else {
                 $_SESSION['errorlogin'] = "Les mots de passe saisis doivent être identiques.";
-                header('Location:/Register');
+                header('Location:/User/Register');
                 return;
             }
         }
@@ -99,15 +107,15 @@ class UserController extends AbstractController
                 , 'mail' => $userInfo['mail']
                 , 'role' => json_decode($userInfo['role'])
                 );
-                header('Location:/MonEspace/' . $userInfo['id']);
+                header('Location:/User/MonEspace/' . $userInfo['id']);
             } else {
                 $_SESSION['errorlogin'] = "Adresse mail ou mot de passe saisi incorrect.";
-                header('Location:/Login');
+                header('Location:/User/Login');
             }
 
         } else {
             $_SESSION['errorlogin'] = "Veuillez renseigner tous les champs.";
-            header('Location:/Login');
+            header('Location:/User/Login');
         }
     }
 
@@ -120,7 +128,7 @@ class UserController extends AbstractController
             }
         } else {
             $_SESSION['errorlogin'] = "Veuillez vous identifier";
-            header('Location:/Login');
+            header('Location:/User/Login');
         }
     }
 
@@ -129,7 +137,7 @@ class UserController extends AbstractController
         unset($_SESSION['login']);
         unset($_SESSION['errorlogin']);
 
-        header('Location:/Login');
+        header('Location:/User/Login');
     }
 
 }
