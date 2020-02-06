@@ -71,8 +71,9 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
 
         <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">
             <li class=\"nav-item dropdown\">
-                <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                     Liste des articles
+                <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\"
+                   aria-haspopup=\"true\" aria-expanded=\"false\">
+                    Liste des articles
                 </a>
                 <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
                     <a class=\"dropdown-item\" href=\"/Api/Article/Last\">Les 5 dernieres articles</a>
@@ -81,9 +82,6 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Article/Add\">Ajout d'un article</a>
-            </li>
-            <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"/User/MonEspace\">Mon espace</a>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/User/listAll\">Liste des utilisateurs</a>
@@ -98,7 +96,8 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
                 <a class=\"nav-link\" href=\"/User/Logout\">Déconnexion</a>
             </li>
             <li class=\"nav-item dropdown\">
-                <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\"
+                   aria-haspopup=\"true\" aria-expanded=\"false\">
                     Catégorie
                 </a>
                 <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
@@ -120,9 +119,9 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
 </nav>
 
 ";
-        // line 76
+        // line 75
         $this->displayBlock('body', $context, $blocks);
-        // line 77
+        // line 76
         echo "
 <script src=\"https://code.jquery.com/jquery-3.4.0.min.js\"></script>
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"></script>
@@ -132,9 +131,9 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js\"></script>
 
 ";
-        // line 85
+        // line 84
         $this->displayBlock('javascript', $context, $blocks);
-        // line 86
+        // line 85
         echo "
 </body>
 </html>
@@ -154,13 +153,13 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
         $macros = $this->macros;
     }
 
-    // line 76
+    // line 75
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 85
+    // line 84
     public function block_javascript($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -173,7 +172,7 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
 
     public function getDebugInfo()
     {
-        return array (  164 => 85,  158 => 76,  152 => 12,  145 => 5,  138 => 86,  136 => 85,  126 => 77,  124 => 76,  59 => 13,  57 => 12,  47 => 5,  41 => 1,);
+        return array (  163 => 84,  157 => 75,  151 => 12,  144 => 5,  137 => 85,  135 => 84,  125 => 76,  123 => 75,  59 => 13,  57 => 12,  47 => 5,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -205,8 +204,9 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
 
         <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">
             <li class=\"nav-item dropdown\">
-                <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                     Liste des articles
+                <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\"
+                   aria-haspopup=\"true\" aria-expanded=\"false\">
+                    Liste des articles
                 </a>
                 <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
                     <a class=\"dropdown-item\" href=\"/Api/Article/Last\">Les 5 dernieres articles</a>
@@ -215,9 +215,6 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Article/Add\">Ajout d'un article</a>
-            </li>
-            <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"/User/MonEspace\">Mon espace</a>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/User/listAll\">Liste des utilisateurs</a>
@@ -232,7 +229,8 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
                 <a class=\"nav-link\" href=\"/User/Logout\">Déconnexion</a>
             </li>
             <li class=\"nav-item dropdown\">
-                <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\"
+                   aria-haspopup=\"true\" aria-expanded=\"false\">
                     Catégorie
                 </a>
                 <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">

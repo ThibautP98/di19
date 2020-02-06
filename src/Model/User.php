@@ -39,7 +39,9 @@ class User extends Contenu implements \JsonSerializable
             $user = new User();
             $user->setId($userSQL['id']);
             $user->setUsername($userSQL['username']);
-            $user->setMail($userSQL['email']);
+            $user->setMail($userSQL['mail']);
+            $user->setRole($userSQL['role']);
+
 
             $listUser[] = $user;
         }
