@@ -59,6 +59,7 @@ class Categorie extends Contenu implements \JsonSerializable {
             $Categorie->setDescription($CategorieSQL['Description']);
 
 
+
             $listCategorie[] = $Categorie;
         }
         return $listCategorie;
