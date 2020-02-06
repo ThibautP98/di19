@@ -96,12 +96,6 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Article/ListAll\">Catégorie</a>
-                <ul>
-                    <li><a href=\"#\">lien sous menu 1</a></li>
-                    <li><a href=\"#\">lien sous menu 1</a></li>
-                    <li><a href=\"#\">lien sous menu 1</a></li>
-                    <li><a href=\"#\">lien sous menu 1</a></li>
-                </ul>
             </li>
         </ul>
 
@@ -139,9 +133,9 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
 
 
 ";
-        // line 95
+        // line 89
         $this->displayBlock('body', $context, $blocks);
-        // line 96
+        // line 90
         echo "
 
 <script src=\"https://code.jquery.com/jquery-3.4.0.min.js\"></script>
@@ -151,9 +145,9 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
 <script src=\"https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/i18n/jquery-ui-i18n.min.js\"></script>
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js\"></script>
 ";
-        // line 104
+        // line 98
         $this->displayBlock('javascript', $context, $blocks);
-        // line 105
+        // line 99
         echo "</body>
 </html>
 ";
@@ -172,13 +166,13 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
         $macros = $this->macros;
     }
 
-    // line 95
+    // line 89
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 104
+    // line 98
     public function block_javascript($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -191,7 +185,7 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
 
     public function getDebugInfo()
     {
-        return array (  182 => 104,  176 => 95,  170 => 12,  163 => 5,  157 => 105,  155 => 104,  145 => 96,  143 => 95,  59 => 13,  57 => 12,  47 => 5,  41 => 1,);
+        return array (  176 => 98,  170 => 89,  164 => 12,  157 => 5,  151 => 99,  149 => 98,  139 => 90,  137 => 89,  59 => 13,  57 => 12,  47 => 5,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -248,12 +242,6 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Article/ListAll\">Catégorie</a>
-                <ul>
-                    <li><a href=\"#\">lien sous menu 1</a></li>
-                    <li><a href=\"#\">lien sous menu 1</a></li>
-                    <li><a href=\"#\">lien sous menu 1</a></li>
-                    <li><a href=\"#\">lien sous menu 1</a></li>
-                </ul>
             </li>
         </ul>
 

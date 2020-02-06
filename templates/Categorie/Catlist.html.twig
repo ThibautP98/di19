@@ -18,18 +18,16 @@
         </tr>
         </thead>
         <tbody>
-        {% for article in articleList %}
+        {% for Categorie in CategorieList %}
             <tr>
-                <th scope="row"><a href="/Categorie/Show/{{ Categorie.id }}">#{{ Catégorie.id }}</a></th>
-                <td>{{ Categorie.Libelle }}</td>
-                <td>{{ Categorie.Description }}</td>
+                <th scope="row"><a href="/Categorie/Show/{{ Categorie.id }}">#{{ Categorie.id }}</a></th>
+                <td>{{ Categorie.libelle }}</td>
+                <td>{{ Categorie.description }}</td>
                 <td>
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <a class="btn btn-warning" href="/Article/Update/{{ Categorie.id }}"><i class="fas fa-edit"></i></a>
-                        <a class="btn btn-danger" href="/Article/Delete/{{ Categorie.id }}"><i class="far fa-trash-alt"></i></a>
+                        <a class="btn btn-warning" href="/Categorie/UpdateCat/{{ Categorie.id }}"><i class="fas fa-edit"></i></a>
+                        <a class="btn btn-danger" href="/Cateogorie/DeleteCat/{{ Categorie.id }}"><i class="far fa-trash-alt"></i></a>
                     </div>
-                    <a class="btn btn-secondary" href="/Article/WriteOne/{{ Categorie.id }}"><i class="fas fa-file-download"></i></a>
-
                 </td>
             </tr>
         {% endfor %}

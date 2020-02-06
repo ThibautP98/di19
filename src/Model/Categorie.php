@@ -18,9 +18,9 @@ class Categorie extends Contenu implements \JsonSerializable {
             $listCategorie = [];
             foreach ($arrayCategorie as $CategorieSQL){
                 $Categorie = new Categorie();
-                $Categorie->setId($CategorieSQL['Id']);
-                $Categorie->setLibelle($CategorieSQL['Libelle']);
-                $Categorie->setDescription($CategorieSQL['Description']);
+                $Categorie->setId($CategorieSQL['id']);
+                $Categorie->setLibelle($CategorieSQL['libelle']);
+                $Categorie->setDescription($CategorieSQL['description']);
 
                 $listCategorie[] = $Categorie;
             }
@@ -54,9 +54,9 @@ class Categorie extends Contenu implements \JsonSerializable {
         $listCategorie = [];
         foreach ($arrayCategorie as $CategorieSQL){
             $Categorie = new Categorie();
-            $Categorie->setId($CategorieSQL['Id']);
-            $Categorie->setLibelle($CategorieSQL['Libelle']);
-            $Categorie->setDescription($CategorieSQL['Description']);
+            $Categorie->setId($CategorieSQL['id']);
+            $Categorie->setLibelle($CategorieSQL['libelle']);
+            $Categorie->setDescription($CategorieSQL['description']);
 
 
 
@@ -73,9 +73,9 @@ class Categorie extends Contenu implements \JsonSerializable {
         $datas =  $requete->fetch();
 
         $Categorie = new Categorie();
-        $Categorie->setId($datas['Id']);
-        $Categorie->setLibelle($datas['Libelle']);
-        $Categorie->setDescription($datas['Description']);
+        $Categorie->setId($datas['id']);
+        $Categorie->setLibelle($datas['libelle']);
+        $Categorie->setDescription($datas['description']);
 
 
         return $Categorie;

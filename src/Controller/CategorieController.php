@@ -38,11 +38,11 @@ class CategorieController extends AbstractController {
         //UserController::roleNeed('redacteur');
         if($_POST AND $_SESSION['token'] == $_POST['token']){
             $sqlRepository = null;
-            $categorie = new Categorie();
-            $categorie->setLibelle($_POST['Libelle'])
-                ->setDescription($_POST['Description'])
+            $Categorie = new Categorie();
+            $Categorie->setLibelle($_POST['libelle'])
+                ->setDescription($_POST['description'])
             ;
-            $categorie->SqlAddCat(BDD::getInstance());
+            $Categorie->SqlAddCat(BDD::getInstance());
             header('Location:/Categorie');
         }else{
             // Génération d'un TOKEN
@@ -60,11 +60,9 @@ class CategorieController extends AbstractController {
         $Categorie = $CategorieSQL->SqlGetcat(BDD::getInstance(),$CategorieID);
         if($_POST) {
             $sqlRepository = null;
-            $nomImage = null;
-            $Categorie->setLibelle($_POST['Libelle'])
-                ->setDescription($_POST['Description'])
+            $Categorie->setLibelle($_POST['libelle'])
+                    ->setDescription($_POST['description'])
             ;
-
             $Categorie->SqlUpdateCat(BDD::getInstance());
         }
 

@@ -75,48 +75,43 @@ class __TwigTemplate_ce05a70e6a350a51e491532eb3dc6d94373c22ee090758a73d611527b20
         ";
         // line 21
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(($context["articleList"] ?? null));
-        foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
+        $context['_seq'] = twig_ensure_traversable(($context["CategorieList"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["Categorie"]) {
             // line 22
             echo "            <tr>
                 <th scope=\"row\"><a href=\"/Categorie/Show/";
             // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Categorie"] ?? null), "id", [], "any", false, false, false, 23), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["Categorie"], "id", [], "any", false, false, false, 23), "html", null, true);
             echo "\">#";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Catégorie"] ?? null), "id", [], "any", false, false, false, 23), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["Categorie"], "id", [], "any", false, false, false, 23), "html", null, true);
             echo "</a></th>
                 <td>";
             // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Categorie"] ?? null), "Libelle", [], "any", false, false, false, 24), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["Categorie"], "libelle", [], "any", false, false, false, 24), "html", null, true);
             echo "</td>
                 <td>";
             // line 25
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Categorie"] ?? null), "Description", [], "any", false, false, false, 25), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["Categorie"], "description", [], "any", false, false, false, 25), "html", null, true);
             echo "</td>
                 <td>
                     <div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">
-                        <a class=\"btn btn-warning\" href=\"/Article/Update/";
+                        <a class=\"btn btn-warning\" href=\"/Categorie/UpdateCat/";
             // line 28
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Categorie"] ?? null), "id", [], "any", false, false, false, 28), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["Categorie"], "id", [], "any", false, false, false, 28), "html", null, true);
             echo "\"><i class=\"fas fa-edit\"></i></a>
-                        <a class=\"btn btn-danger\" href=\"/Article/Delete/";
+                        <a class=\"btn btn-danger\" href=\"/Cateogorie/DeleteCat/";
             // line 29
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Categorie"] ?? null), "id", [], "any", false, false, false, 29), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["Categorie"], "id", [], "any", false, false, false, 29), "html", null, true);
             echo "\"><i class=\"far fa-trash-alt\"></i></a>
                     </div>
-                    <a class=\"btn btn-secondary\" href=\"/Article/WriteOne/";
-            // line 31
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Categorie"] ?? null), "id", [], "any", false, false, false, 31), "html", null, true);
-            echo "\"><i class=\"fas fa-file-download\"></i></a>
-
                 </td>
             </tr>
         ";
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['Categorie'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 36
+        // line 34
         echo "
         </tbody>
     </table>
@@ -138,7 +133,7 @@ class __TwigTemplate_ce05a70e6a350a51e491532eb3dc6d94373c22ee090758a73d611527b20
 
     public function getDebugInfo()
     {
-        return array (  120 => 36,  109 => 31,  104 => 29,  100 => 28,  94 => 25,  90 => 24,  84 => 23,  81 => 22,  77 => 21,  59 => 5,  55 => 4,  47 => 2,  36 => 1,);
+        return array (  115 => 34,  104 => 29,  100 => 28,  94 => 25,  90 => 24,  84 => 23,  81 => 22,  77 => 21,  59 => 5,  55 => 4,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -163,18 +158,16 @@ class __TwigTemplate_ce05a70e6a350a51e491532eb3dc6d94373c22ee090758a73d611527b20
         </tr>
         </thead>
         <tbody>
-        {% for article in articleList %}
+        {% for Categorie in CategorieList %}
             <tr>
-                <th scope=\"row\"><a href=\"/Categorie/Show/{{ Categorie.id }}\">#{{ Catégorie.id }}</a></th>
-                <td>{{ Categorie.Libelle }}</td>
-                <td>{{ Categorie.Description }}</td>
+                <th scope=\"row\"><a href=\"/Categorie/Show/{{ Categorie.id }}\">#{{ Categorie.id }}</a></th>
+                <td>{{ Categorie.libelle }}</td>
+                <td>{{ Categorie.description }}</td>
                 <td>
                     <div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">
-                        <a class=\"btn btn-warning\" href=\"/Article/Update/{{ Categorie.id }}\"><i class=\"fas fa-edit\"></i></a>
-                        <a class=\"btn btn-danger\" href=\"/Article/Delete/{{ Categorie.id }}\"><i class=\"far fa-trash-alt\"></i></a>
+                        <a class=\"btn btn-warning\" href=\"/Categorie/UpdateCat/{{ Categorie.id }}\"><i class=\"fas fa-edit\"></i></a>
+                        <a class=\"btn btn-danger\" href=\"/Cateogorie/DeleteCat/{{ Categorie.id }}\"><i class=\"far fa-trash-alt\"></i></a>
                     </div>
-                    <a class=\"btn btn-secondary\" href=\"/Article/WriteOne/{{ Categorie.id }}\"><i class=\"fas fa-file-download\"></i></a>
-
                 </td>
             </tr>
         {% endfor %}
