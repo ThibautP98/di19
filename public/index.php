@@ -35,6 +35,7 @@ $router->get('/Article/Show/:id', "Article#AffArticle#id");
 $router->get('/Api/Article', "Api#ArticleGet");
 $router->post('/Api/Article', "Api#ArticlePost");
 $router->put('/Api/Article/:id/:json', "Api#ArticlePut#id#json");
+$router->get('/Api/Article/Last','Api#ArticleGetLast');
 
 $router->get('/Categorie', "Categorie#AllCat");
 $router->get('/Categorie/UpdateCat/:id', "Categorie#updateCat#id");
