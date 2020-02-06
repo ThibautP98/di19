@@ -97,7 +97,7 @@ class __TwigTemplate_5ada77e67cdacc4672a9f98bfb15634e0ccac89cb5717a54e2679d71700
             echo "</td>
                 <td>";
             // line 28
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Categorie"] ?? null), "Libelle", [], "any", false, false, false, 28), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id_categorie", [], "any", false, false, false, 28), "html", null, true);
             echo "</td>
                 <td>";
             // line 29
@@ -192,7 +192,7 @@ class __TwigTemplate_5ada77e67cdacc4672a9f98bfb15634e0ccac89cb5717a54e2679d71700
             <tr>
                 <th scope=\"row\"><a href=\"/Article/Show/{{ article.id }}\">#{{ article.id }}</a></th>
                 <td>{{ article.Titre }}</td>
-                <td>{{ Categorie.Libelle }}</td>
+                <td>{{ article.id_categorie }}</td>
                 <td>{{ article.Auteur }}</td>
                 <td>{{ article.DateAjout | date(\"d/m/Y\") }}</td>
                 <td>{{ article.Statut }}</td>

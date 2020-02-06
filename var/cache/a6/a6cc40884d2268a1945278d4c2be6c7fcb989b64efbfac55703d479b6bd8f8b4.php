@@ -71,13 +71,10 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
 
         <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">
             <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"/Api/Article/Last\">Les 5 dernieres articles</a>
+                <a class=\"nav-link\" href=\"/Api/Article/Last\">Les 5 derniers articles</a>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Article/ListAll\">Liste des articles</a>
-            </li>
-            <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"/Article/Add\">Ajout d'un article</a>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/User/MonEspace\">Mon espace</a>
@@ -117,9 +114,9 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
 </nav>
 
 ";
-        // line 73
+        // line 70
         $this->displayBlock('body', $context, $blocks);
-        // line 74
+        // line 71
         echo "
 <script src=\"https://code.jquery.com/jquery-3.4.0.min.js\"></script>
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"></script>
@@ -129,9 +126,9 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js\"></script>
 
 ";
-        // line 82
+        // line 79
         $this->displayBlock('javascript', $context, $blocks);
-        // line 83
+        // line 80
         echo "
 </body>
 </html>
@@ -151,13 +148,13 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
         $macros = $this->macros;
     }
 
-    // line 73
+    // line 70
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 82
+    // line 79
     public function block_javascript($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -170,7 +167,7 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
 
     public function getDebugInfo()
     {
-        return array (  161 => 82,  155 => 73,  149 => 12,  142 => 5,  135 => 83,  133 => 82,  123 => 74,  121 => 73,  59 => 13,  57 => 12,  47 => 5,  41 => 1,);
+        return array (  158 => 79,  152 => 70,  146 => 12,  139 => 5,  132 => 80,  130 => 79,  120 => 71,  118 => 70,  59 => 13,  57 => 12,  47 => 5,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -202,13 +199,10 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
 
         <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">
             <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"/Api/Article/Last\">Les 5 dernieres articles</a>
+                <a class=\"nav-link\" href=\"/Api/Article/Last\">Les 5 derniers articles</a>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Article/ListAll\">Liste des articles</a>
-            </li>
-            <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"/Article/Add\">Ajout d'un article</a>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/User/MonEspace\">Mon espace</a>
