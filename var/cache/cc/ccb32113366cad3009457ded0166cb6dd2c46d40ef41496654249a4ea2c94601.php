@@ -109,6 +109,27 @@ class __TwigTemplate_75800704cd1261bb7ea74d6bf433340f9c12aa278990a26cea4858e8f2f
         </tbody>
     </table>
 
+    <h1>Contact</h1>
+    <div class=\"container-fluid mt-2\">
+        <form method=\"post\" action=\"/Contact/sendMail/";
+        // line 36
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["article"] ?? null), "id", [], "any", false, false, false, 36), "html", null, true);
+        echo "\">
+            <p>Nom d'utilisateur :</p>
+            <input type=\"text\" name=\"username\">
+            <p>Adresse mail</p>
+            <input type=\"email\" name=\"email\">
+            <p>Sujet :</p>
+            <input type=\"text\" name=\"sujet\" value=\"";
+        // line 42
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["article"] ?? null), "titre", [], "any", false, false, false, 42), "html", null, true);
+        echo "\">
+            <p>Description :</p>
+            <textarea name=\"description\"></textarea>
+            <br>
+            <input type=\"submit\">
+        </form>
+    </div>
 ";
     }
 
@@ -124,7 +145,7 @@ class __TwigTemplate_75800704cd1261bb7ea74d6bf433340f9c12aa278990a26cea4858e8f2f
 
     public function getDebugInfo()
     {
-        return array (  106 => 29,  102 => 28,  98 => 27,  94 => 26,  90 => 25,  86 => 24,  82 => 23,  78 => 22,  59 => 5,  55 => 4,  47 => 2,  36 => 1,);
+        return array (  125 => 42,  116 => 36,  106 => 29,  102 => 28,  98 => 27,  94 => 26,  90 => 25,  86 => 24,  82 => 23,  78 => 22,  59 => 5,  55 => 4,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -162,6 +183,21 @@ class __TwigTemplate_75800704cd1261bb7ea74d6bf433340f9c12aa278990a26cea4858e8f2f
         </tbody>
     </table>
 
+    <h1>Contact</h1>
+    <div class=\"container-fluid mt-2\">
+        <form method=\"post\" action=\"/Contact/sendMail/{{ article.id }}\">
+            <p>Nom d'utilisateur :</p>
+            <input type=\"text\" name=\"username\">
+            <p>Adresse mail</p>
+            <input type=\"email\" name=\"email\">
+            <p>Sujet :</p>
+            <input type=\"text\" name=\"sujet\" value=\"{{ article.titre }}\">
+            <p>Description :</p>
+            <textarea name=\"description\"></textarea>
+            <br>
+            <input type=\"submit\">
+        </form>
+    </div>
 {% endblock %}", "Article/Show.html.twig", "D:\\CESI\\PHP\\tp\\templates\\Article\\show.html.twig");
     }
 }

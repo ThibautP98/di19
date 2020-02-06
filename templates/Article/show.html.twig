@@ -31,4 +31,19 @@
         </tbody>
     </table>
 
+    <h1>Contact</h1>
+    <div class="container-fluid mt-2">
+        <form method="post" action="/Contact/sendMail/{{ article.id }}">
+            <p>Nom d'utilisateur :</p>
+            <input type="text" name="username">
+            <p>Adresse mail</p>
+            <input type="email" name="email">
+            <p>Sujet :</p>
+            <input type="text" name="sujet" value="{{ article.titre }}">
+            <p>Description :</p>
+            <textarea name="description"></textarea>
+            <br>
+            <input type="submit">
+        </form>
+    </div>
 {% endblock %}

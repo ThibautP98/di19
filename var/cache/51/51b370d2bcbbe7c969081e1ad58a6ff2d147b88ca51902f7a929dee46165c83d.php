@@ -68,7 +68,7 @@ class __TwigTemplate_e8572ea1553aa785fcf8fa7c83bc31b3202e44d261938f1456439343321
         ";
         }
         // line 9
-        echo "        <form method=\"post\" action=\"/Register\">
+        echo "        <form method=\"post\" action=\"/User/Register\">
             <input type=\"hidden\" name=\"token\">
             <p>Nom d'utilisateur :</p>
             <input type=\"text\" name=\"username\">
@@ -114,7 +114,7 @@ class __TwigTemplate_e8572ea1553aa785fcf8fa7c83bc31b3202e44d261938f1456439343321
         {% if session.errorlogin is defined %}
             <div class=\"alert alert-danger\">{{ session.errorlogin }}</div>
         {% endif %}
-        <form method=\"post\" action=\"/Register\">
+        <form method=\"post\" action=\"/User/Register\">
             <input type=\"hidden\" name=\"token\">
             <p>Nom d'utilisateur :</p>
             <input type=\"text\" name=\"username\">
