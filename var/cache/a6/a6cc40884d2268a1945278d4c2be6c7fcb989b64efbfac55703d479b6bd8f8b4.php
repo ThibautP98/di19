@@ -51,10 +51,11 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
           href=\"https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/pepper-grinder/jquery-ui.css\">
     <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.1/css/all.css\">
     <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css\">
+
     ";
-        // line 11
-        $this->displayBlock('css', $context, $blocks);
         // line 12
+        $this->displayBlock('css', $context, $blocks);
+        // line 13
         echo "
 <body>
 
@@ -69,11 +70,26 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
         <!--<div class=\"row\">-->
 
         <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">
+            <li class=\"nav-item dropdown\">
+                <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                     Liste des articles
+                </a>
+                <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+                    <a class=\"dropdown-item\" href=\"/Api/Article/Last\">Les 5 dernieres articles</a>
+                    <div class=\"dropdown-divider\"></div>
+                </div>
+            </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Article/ListAll\">Liste des articles</a>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Article/Add\">Ajout d'un article</a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"/MonEspace\">Mon espace</a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"/User/listAll\">Liste des utilisateurs</a>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Register\">Inscription</a>
@@ -84,43 +100,33 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Logout\">Déconnexion</a>
             </li>
-        </ul>
-
-        <form class=\"form-inline\" method=\"get\" action=\"/Article/Search/\">
-            <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Rechercher un article\" name=\"search\">
-            <input type=\"submit\" onclick=\"Search()\"  class=\"btn btn-outline-success my-2 my-sm-0\" value=\"Rechercher\" name=\"searchSubmit\">
-        </form>
-    </div>
-
-</nav>
-<!--
-<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
-    <a class=\"navbar-brand\" href=\"#\">Menu</a>
-    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-        <span class=\"navbar-toggler-icon\"></span>
-    </button>
-
-    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
-        <ul class=\"navbar-nav mr-auto\">
             <li class=\"nav-item dropdown\">
                 <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                    Admin
+                    Catégorie
                 </a>
                 <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
-                    <a class=\"dropdown-item\" href=\"/?controller=Article&action=ListAll\">Liste</a>
-                    <a class=\"dropdown-item\" href=\"/?controller=Article&action=Add\">Ajout</a>
+                    <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">Science</a>
+                    <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">Histoire</a>
                     <div class=\"dropdown-divider\"></div>
                 </div>
             </li>
         </ul>
+
+        <form class=\"form-inline\" method=\"get\" action=\"/Article/Search/\">
+
+            <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Rechercher un article\" name=\"search\">
+            <input type=\"submit\" onclick=\"Search()\" class=\"btn btn-outline-success my-2 my-sm-0\" value=\"Rechercher\"
+                   name=\"searchSubmit\">
+        </form>
     </div>
-</nav>-->
+
+</nav>
 
 
 ";
-        // line 74
+        // line 80
         $this->displayBlock('body', $context, $blocks);
-        // line 75
+        // line 81
         echo "
 
 <script src=\"https://code.jquery.com/jquery-3.4.0.min.js\"></script>
@@ -130,9 +136,9 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
 <script src=\"https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/i18n/jquery-ui-i18n.min.js\"></script>
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js\"></script>
 ";
-        // line 83
+        // line 89
         $this->displayBlock('javascript', $context, $blocks);
-        // line 84
+        // line 90
         echo "</body>
 </html>
 ";
@@ -145,19 +151,19 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
         echo "CESI BLOG";
     }
 
-    // line 11
+    // line 12
     public function block_css($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 74
+    // line 80
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 83
+    // line 89
     public function block_javascript($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -170,7 +176,7 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
 
     public function getDebugInfo()
     {
-        return array (  161 => 83,  155 => 74,  149 => 11,  142 => 5,  136 => 84,  134 => 83,  124 => 75,  122 => 74,  58 => 12,  56 => 11,  47 => 5,  41 => 1,);
+        return array (  167 => 89,  161 => 80,  155 => 12,  148 => 5,  142 => 90,  140 => 89,  130 => 81,  128 => 80,  59 => 13,  57 => 12,  47 => 5,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -185,6 +191,7 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
           href=\"https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/pepper-grinder/jquery-ui.css\">
     <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.1/css/all.css\">
     <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css\">
+
     {% block css %}{% endblock %}
 
 <body>
@@ -200,11 +207,26 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
         <!--<div class=\"row\">-->
 
         <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">
+            <li class=\"nav-item dropdown\">
+                <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                     Liste des articles
+                </a>
+                <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+                    <a class=\"dropdown-item\" href=\"/Api/Article/Last\">Les 5 dernieres articles</a>
+                    <div class=\"dropdown-divider\"></div>
+                </div>
+            </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Article/ListAll\">Liste des articles</a>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Article/Add\">Ajout d'un article</a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"/MonEspace\">Mon espace</a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"/User/listAll\">Liste des utilisateurs</a>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Register\">Inscription</a>
@@ -215,37 +237,27 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Logout\">Déconnexion</a>
             </li>
-        </ul>
-
-        <form class=\"form-inline\" method=\"get\" action=\"/Article/Search/\">
-            <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Rechercher un article\" name=\"search\">
-            <input type=\"submit\" onclick=\"Search()\"  class=\"btn btn-outline-success my-2 my-sm-0\" value=\"Rechercher\" name=\"searchSubmit\">
-        </form>
-    </div>
-
-</nav>
-<!--
-<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
-    <a class=\"navbar-brand\" href=\"#\">Menu</a>
-    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-        <span class=\"navbar-toggler-icon\"></span>
-    </button>
-
-    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
-        <ul class=\"navbar-nav mr-auto\">
             <li class=\"nav-item dropdown\">
                 <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                    Admin
+                    Catégorie
                 </a>
                 <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
-                    <a class=\"dropdown-item\" href=\"/?controller=Article&action=ListAll\">Liste</a>
-                    <a class=\"dropdown-item\" href=\"/?controller=Article&action=Add\">Ajout</a>
+                    <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">Science</a>
+                    <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">Histoire</a>
                     <div class=\"dropdown-divider\"></div>
                 </div>
             </li>
         </ul>
+
+        <form class=\"form-inline\" method=\"get\" action=\"/Article/Search/\">
+
+            <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Rechercher un article\" name=\"search\">
+            <input type=\"submit\" onclick=\"Search()\" class=\"btn btn-outline-success my-2 my-sm-0\" value=\"Rechercher\"
+                   name=\"searchSubmit\">
+        </form>
     </div>
-</nav>-->
+
+</nav>
 
 
 {% block body %}{% endblock %}

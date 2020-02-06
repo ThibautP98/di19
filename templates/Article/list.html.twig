@@ -12,6 +12,7 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">Titre</th>
+            <th scope="col">Catégorie</th>
             <th scope="col">Auteur</th>
             <th scope="col">Date</th>
             <th scope="col">Actions</th>
@@ -22,6 +23,7 @@
             <tr>
                 <th scope="row"><a href="/Article/Show/{{ article.id }}">#{{ article.id }}</a></th>
                 <td>{{ article.Titre }}</td>
+                <td>{{ categorie.libelle }}</td>
                 <td>{{ article.Auteur }}</td>
                 <td>{{ article.DateAjout | date("d/m/Y") }}</td>
                 <td>

@@ -1,0 +1,30 @@
+{% extends "index.html.twig" %}
+{% block title %}{{ parent() }} - Ajout d'une Catégorie {% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid mt-2">
+
+        <h2 class="display-3">Ajout d'une Catégorie</h2>
+        <hr class="my-4">
+        <form name="addCatégorie" method="post" enctype="multipart/form-data">
+            <div class="form-group row">
+                <label for="Titre" class="col-sm-2 col-form-label">Nom</label>
+                <div class="col-sm-10">
+                    <input type="text" name="Titre" class="form-control form-control-lg">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="Description" class="col-sm-2 col-form-label">Description</label>
+                <div class="col-sm-10">
+                    <textarea name="Description" class="form-control" rows="9"></textarea>
+                </div>
+            </div>
+
+            <input type="hidden" name="token" value="{{ token }}">
+            <input type="submit" class="btn btn-primary my-1">
+        </form>
+    </div>
+
+{% endblock %}
