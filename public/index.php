@@ -36,6 +36,13 @@ $router->get('/Api/Article', "Api#ArticleGet");
 $router->post('/Api/Article', "Api#ArticlePost");
 $router->put('/Api/Article/:id/:json', "Api#ArticlePut#id#json");
 
+$router->get('/Categorie', "Categorie#AllCat");
+$router->get('/Categorie/UpdateCat/:id', "Categorie#updateCat#id");
+$router->post('/Categorie/UpdateCat/:id', "Categorie#updateCat#id");
+$router->get('/Categorie/AddCat', "Categorie#addCat");
+$router->post('/Categorie/AddCat', "Categorie#addCat");
+$router->get('/Categorie/DeleteCat/:id', "Categorie#deleteCat#id");
+
 $router->get('/User/Login', 'User#loginForm');
 $router->post('/User/Login', 'User#loginCheck');
 $router->get('/User/Logout', 'User#logout');

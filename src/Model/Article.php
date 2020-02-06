@@ -52,7 +52,8 @@ class Article extends Contenu implements \JsonSerializable
     public function SqlAdd(\PDO $bdd)
     {
         try {
-            $requete = $bdd->prepare('INSERT INTO articles (Titre, Description, DateAjout, Auteur, ImageRepository, ImageFileName) VALUES(:Titre, :Description, :DateAjout, :Auteur, :ImageRepository, :ImageFileName)');
+            $requete = $bdd->prepare('INSERT INTO articles (Titre, Description, DateAjout, Auteur, ImageRepository, ImageFileName, id_categorie) 
+            VALUES(:Titre, :Description, :DateAjout, :Auteur, :ImageRepository, :ImageFileName,:id_categorie)');
             $requete->execute([
                 "Titre" => $this->getTitre(),
                 "Description" => $this->getDescription(),
@@ -115,6 +116,27 @@ class Article extends Contenu implements \JsonSerializable
         $article->setStatut($datas['statut']);
 
         return $article;
+    }
+
+    public function SqlGetLast(\PDO $bdd){
+        $requete = $bdd->prepare('SELECT * FROM articles ORDER BY DateAjout DESC LIMIT 5');
+        $requete->execute();
+        $arrayArticle = $requete->fetchAll();
+
+        $listArticle = [];
+        foreach ($arrayArticle as $articleSQL){
+            $article = new Article();
+            $article->setId($articleSQL['Id']);
+            $article->setTitre($articleSQL['Titre']);
+            $article->setAuteur($articleSQL['Auteur']);
+            $article->setDescription($articleSQL['Description']);
+            $article->setDateAjout($articleSQL['DateAjout']);
+            $article->setImageRepository($articleSQL['ImageRepository']);
+            $article->setImageFileName($articleSQL['ImageFileName']);
+
+            $listArticle[] = $article;
+        }
+        return $listArticle;
     }
 
     public function SqlUpdate(\PDO $bdd)

@@ -13,6 +13,13 @@ class ApiController {
         return json_encode($listArticle);
     }
 
+    public function ArticleGetLast()
+    {
+        $article = new Article();
+        $listArticle = $article->SqlGetLast(Bdd::GetInstance());
+        return json_encode($listArticle);
+    }
+
     public function ArticlePost()
     {
         $article = new Article();

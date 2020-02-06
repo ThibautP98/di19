@@ -8,6 +8,7 @@
           href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/pepper-grinder/jquery-ui.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css">
+
     {% block css %}{% endblock %}
 
 <body>
@@ -23,6 +24,15 @@
         <!--<div class="row">-->
 
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Liste des articles
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/Api/Article/Last">Les 5 dernieres articles</a>
+                    <div class="dropdown-divider"></div>
+                </div>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="/Article/ListAll">Liste des articles</a>
             </li>
@@ -44,9 +54,20 @@
             <li class="nav-item">
                 <a class="nav-link" href="/User/Logout">Déconnexion</a>
             </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Catégorie
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/?controller=Article&action=Search">Science</a>
+                    <a class="dropdown-item" href="/?controller=Article&action=Search">Histoire</a>
+                    <div class="dropdown-divider"></div>
+                </div>
+            </li>
         </ul>
 
         <form class="form-inline" method="get" action="/Article/Search/">
+
             <input class="form-control mr-sm-2" type="search" placeholder="Rechercher un article" name="search">
             <input type="submit" onclick="Search()" class="btn btn-outline-success my-2 my-sm-0" value="Rechercher"
                    name="searchSubmit">
