@@ -5,27 +5,11 @@ namespace src\Model;
 class User extends Contenu implements \JsonSerializable
 {
     private $Id;
+    private $Token;
     private $Username;
     private $Mail;
     private $Password;
-
-    /*public function SqlGetAll(\PDO $bdd){
-        $requete = $bdd->prepare('SELECT * FROM utilisateurs');
-        $requete->execute();
-        $arrayUser = $requete->fetchAll();
-
-        $listUser = [];
-        foreach ($arrayUser as $userSQL){
-            $user = new User();
-            $user->setId($userSQL['id']);
-            $user->setUsername($userSQL['username']);
-            $user->setMail($userSQL['mail']);
-            $user->setPassword($userSQL['password']);
-
-            $listUser[] = $user;
-        }
-        return $listUser;
-    }*/
+    private $Role;
 
     public function SqlGet(\PDO $bdd, $idUser)
     {
@@ -40,11 +24,30 @@ class User extends Contenu implements \JsonSerializable
         $user->setId($datas['id']);
         $user->setUsername($datas['username']);
         $user->setMail($datas['mail']);
+        $user->setRole($datas['role']);
 
         return $user;
     }
 
-    public function SqlGetMail(\PDO $bdd,$mailUser)
+    public function SqlGetAll(\PDO $bdd){
+        $requete = $bdd->prepare('SELECT * FROM utilisateurs');
+        $requete->execute();
+        $arrayUser = $requete->fetchAll();
+
+        $listUser = [];
+        foreach ($arrayUser as $userSQL){
+            $user = new User();
+            $user->setId($userSQL['id']);
+            $user->setUsername($userSQL['username']);
+            $user->setMail($userSQL['mail']);
+            $user->setRole($userSQL['role']);
+
+            $listUser[] = $user;
+        }
+        return $listUser;
+    }
+
+    public function SqlGetMail(\PDO $bdd, $mailUser)
     {
         $requete = $bdd->prepare('SELECT * FROM utilisateurs where mail = :mail');
         $requete->execute([
@@ -59,11 +62,13 @@ class User extends Contenu implements \JsonSerializable
     public function SqlAdd(\PDO $bdd)
     {
         try {
-            $requete = $bdd->prepare('INSERT INTO utilisateurs (username, mail, password) VALUES(:username, :mail, :password)');
+            $requete = $bdd->prepare('INSERT INTO utilisateurs (token, username, mail, password, role) VALUES(:token, :username, :mail, :password, :role)');
             $requete->execute([
+                "token" => $this->getToken(),
                 "username" => $this->getUsername(),
                 "mail" => $this->getMail(),
-                "password" => $this->getPassword()
+                "password" => $this->getPassword(),
+                "role" => $this->getRole()
             ]);
             return array("result" => true, "message" => $bdd->lastInsertId());
         } catch (\Exception $e) {
@@ -75,9 +80,11 @@ class User extends Contenu implements \JsonSerializable
     {
         return [
             'Id' => $this->getId()
+            , 'token' => $this->getToken()
             , 'username' => $this->getUsername()
             , 'mail' => $this->getMail()
             , 'password' => $this->getPassword()
+            , 'role' => $this->getRole()
         ];
     }
 
@@ -132,6 +139,60 @@ class User extends Contenu implements \JsonSerializable
     public function setMail($Mail)
     {
         $this->Mail = $Mail;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPassword()
+    {
+        return $this->Password;
+    }
+
+    /**
+     * @param mixed $Password
+     * @return User
+     */
+    public function setPassword($Password)
+    {
+        $this->Password = $Password;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRole()
+    {
+        return $this->Role;
+    }
+
+    /**
+     * @param mixed $Role
+     * @return User
+     */
+    public function setRole($Role)
+    {
+        $this->Role = $Role;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getToken()
+    {
+        return $this->Token;
+    }
+
+    /**
+     * @param mixed $Token
+     * @return User
+     */
+    public function setToken($Token)
+    {
+        $this->Token = $Token;
         return $this;
     }
 }

@@ -1,30 +1,34 @@
 <?php
+
 namespace src\Model;
 
-class Article extends Contenu implements \JsonSerializable {
+class Article extends Contenu implements \JsonSerializable
+{
     private $Auteur;
     private $DateAjout;
     private $ImageRepository;
     private $ImageFileName;
 
-    public function firstXwords($nb){
+    public function firstXwords($nb)
+    {
         $phrase = $this->getDescription();
-        $arrayWord = str_word_count($phrase,1);
+        $arrayWord = str_word_count($phrase, 1);
 
-        return implode(" ",array_slice($arrayWord,0,$nb));
+        return implode(" ", array_slice($arrayWord, 0, $nb));
     }
 
-    public function SqlSearch(\PDO $bdd) {
-        try{
+    public function SqlSearch(\PDO $bdd)
+    {
+        try {
             $searchA = $_GET['search'];
-            $requete = $bdd->prepare('SELECT * FROM articles WHERE Titre OR Auteur LIKE  :search');
+            $requete = $bdd->prepare('SELECT * FROM articles WHERE Titre OR Auteur LIKE :search');
             $requete->execute([
-                'search' => '%'.$searchA.'%'
+                'search' => '%' . $searchA . '%'
             ]);
             $arrayArticle = $requete->fetchAll();
 
             $listArticle = [];
-            foreach ($arrayArticle as $articleSQL){
+            foreach ($arrayArticle as $articleSQL) {
                 $article = new Article();
                 $article->setId($articleSQL['Id']);
                 $article->setTitre($articleSQL['Titre']);
@@ -38,13 +42,14 @@ class Article extends Contenu implements \JsonSerializable {
             }
             return $listArticle;
 
-        }catch (\Exception $e){
-            return array("result"=>false,"message"=>$e->getMessage());
+        } catch (\Exception $e) {
+            return array("result" => false, "message" => $e->getMessage());
         }
     }
 
-    public function SqlAdd(\PDO $bdd) {
-        try{
+    public function SqlAdd(\PDO $bdd)
+    {
+        try {
             $requete = $bdd->prepare('INSERT INTO articles (Titre, Description, DateAjout, Auteur, ImageRepository, ImageFileName) VALUES(:Titre, :Description, :DateAjout, :Auteur, :ImageRepository, :ImageFileName)');
             $requete->execute([
                 "Titre" => $this->getTitre(),
@@ -54,40 +59,43 @@ class Article extends Contenu implements \JsonSerializable {
                 "ImageRepository" => $this->getImageRepository(),
                 "ImageFileName" => $this->getImageFileName(),
             ]);
-            return array("result"=>true,"message"=>$bdd->lastInsertId());
-        }catch (\Exception $e){
-            return array("result"=>false,"message"=>$e->getMessage());
+            return array("result" => true, "message" => $bdd->lastInsertId());
+        } catch (\Exception $e) {
+            return array("result" => false, "message" => $e->getMessage());
         }
 
     }
 
-    public function SqlGetAll(\PDO $bdd){
-            $requete = $bdd->prepare('SELECT * FROM articles');
-            $requete->execute();
-            $arrayArticle = $requete->fetchAll();
+    public function SqlGetAll(\PDO $bdd)
+    {
+        $requete = $bdd->prepare('SELECT * FROM articles');
+        $requete->execute();
+        $arrayArticle = $requete->fetchAll();
 
-            $listArticle = [];
-            foreach ($arrayArticle as $articleSQL){
-                $article = new Article();
-                $article->setId($articleSQL['Id']);
-                $article->setTitre($articleSQL['Titre']);
-                $article->setAuteur($articleSQL['Auteur']);
-                $article->setDescription($articleSQL['Description']);
-                $article->setDateAjout($articleSQL['DateAjout']);
-                $article->setImageRepository($articleSQL['ImageRepository']);
-                $article->setImageFileName($articleSQL['ImageFileName']);
+        $listArticle = [];
+        foreach ($arrayArticle as $articleSQL) {
+            $article = new Article();
+            $article->setId($articleSQL['Id']);
+            $article->setTitre($articleSQL['Titre']);
+            $article->setAuteur($articleSQL['Auteur']);
+            $article->setDescription($articleSQL['Description']);
+            $article->setDateAjout($articleSQL['DateAjout']);
+            $article->setImageRepository($articleSQL['ImageRepository']);
+            $article->setImageFileName($articleSQL['ImageFileName']);
 
-                $listArticle[] = $article;
-            }
-            return $listArticle;
+            $listArticle[] = $article;
+        }
+        return $listArticle;
     }
-    public function SqlGet(\PDO $bdd,$idArticle){
+
+    public function SqlGet(\PDO $bdd, $idArticle)
+    {
         $requete = $bdd->prepare('SELECT * FROM articles where Id = :idArticle');
         $requete->execute([
             'idArticle' => $idArticle
         ]);
 
-        $datas =  $requete->fetch();
+        $datas = $requete->fetch();
 
         $article = new Article();
         $article->setId($datas['Id']);
@@ -101,42 +109,45 @@ class Article extends Contenu implements \JsonSerializable {
         return $article;
     }
 
-    public function SqlUpdate(\PDO $bdd){
-        try{
+    public function SqlUpdate(\PDO $bdd)
+    {
+        try {
             $requete = $bdd->prepare('UPDATE articles set Titre=:Titre, Description=:Description, DateAjout=:DateAjout, Auteur=:Auteur, ImageRepository=:ImageRepository, ImageFileName=:ImageFileName WHERE id=:IDARTICLE');
             $requete->execute([
                 'Titre' => $this->getTitre()
-                ,'Description' => $this->getDescription()
-                ,'DateAjout' => $this->getDateAjout()
-                ,'Auteur' => $this->getAuteur()
-                ,'ImageRepository' => $this->getImageRepository()
-                ,'ImageFileName' => $this->getImageFileName()
-                ,'IDARTICLE' => $this->getId()
+                , 'Description' => $this->getDescription()
+                , 'DateAjout' => $this->getDateAjout()
+                , 'Auteur' => $this->getAuteur()
+                , 'ImageRepository' => $this->getImageRepository()
+                , 'ImageFileName' => $this->getImageFileName()
+                , 'IDARTICLE' => $this->getId()
             ]);
             return array("0", "[OK] Update");
-        }catch (\Exception $e){
-            return array("1", "[ERREUR] ".$e->getMessage());
+        } catch (\Exception $e) {
+            return array("1", "[ERREUR] " . $e->getMessage());
         }
     }
 
-    public function SqlDelete (\PDO $bdd,$idArticle){
-        try{
+    public function SqlDelete(\PDO $bdd, $idArticle)
+    {
+        try {
             $requete = $bdd->prepare('DELETE FROM articles where Id = :idArticle');
             $requete->execute([
                 'idArticle' => $idArticle
             ]);
             return true;
-        }catch (\Exception $e){
+        } catch (\Exception $e) {
             return false;
         }
     }
 
-    public function SqlTruncate (\PDO $bdd){
-        try{
+    public function SqlTruncate(\PDO $bdd)
+    {
+        try {
             $requete = $bdd->prepare('TRUNCATE TABLE articles');
             $requete->execute();
             return true;
-        }catch (\Exception $e){
+        } catch (\Exception $e) {
             return false;
         }
     }
@@ -145,12 +156,12 @@ class Article extends Contenu implements \JsonSerializable {
     {
         return [
             'Id' => $this->getId()
-            ,'Titre' => $this->getTitre()
-            ,'Description' => $this->getDescription()
-            ,'DateAjout' => $this->getDateAjout()
-            ,'ImageRepository' => $this->getImageRepository()
-            ,'ImageFileName' => $this->getImageFileName()
-            ,'Auteur' => $this->getAuteur()
+            , 'Titre' => $this->getTitre()
+            , 'Description' => $this->getDescription()
+            , 'DateAjout' => $this->getDateAjout()
+            , 'ImageRepository' => $this->getImageRepository()
+            , 'ImageFileName' => $this->getImageFileName()
+            , 'Auteur' => $this->getAuteur()
         ];
     }
 

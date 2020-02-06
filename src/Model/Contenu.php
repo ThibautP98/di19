@@ -104,4 +104,30 @@ class Contenu
         $this->password = $Password;
         return $this;
     }
+
+    /**
+     * @param mixed $Role
+     * @return Contenu
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    public function setRole($Role)
+    {
+        $this->role = $Role;
+        return $this;
+    }
+
+    public function getToken()
+    {
+        return $this->token;
+    }
+
+    public function setToken($Token)
+    {
+        $this->token = $Token;
+        return $this;
+    }
 }

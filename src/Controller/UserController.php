@@ -1,5 +1,6 @@
 <?php
-
+//todo -> Utiliser le token au log et $_session
+//todo -> Afficher tous les utilisateurs (admin only)
 namespace src\Controller;
 
 use src\Model\User;
@@ -9,12 +10,30 @@ class UserController extends AbstractController
 {
     public function affUser($idUser)
     {
-        $userSQL = new User();
-        $user = $userSQL->SqlGet(BDD::getInstance(), $idUser);
+//        if () {
+//            header('Location:/Login/');
+//        } else {
+            //todo -> bloquer page mon espace tant qu'on est pas log
+            $userSQL = new User();
+            $user = $userSQL->SqlGet(BDD::getInstance(), $idUser);
+
+            //Lancer la vue TWIG
+            return $this->twig->render('User/list.html.twig', [
+                'user' => $user]);
+//        }
+    }
+
+    public function affAllUser()
+    {
+        $user = new User();
+        $listUser = $user->SqlGetAll(BDD::getInstance());
 
         //Lancer la vue TWIG
-        return $this->twig->render('User/list.html.twig', [
-            'user' => $user]);
+        return $this->twig->render(
+            'User/listAll.html.twig', [
+                'userList' => $listUser
+            ]
+        );
     }
 
     public function loginForm()
@@ -41,50 +60,28 @@ class UserController extends AbstractController
                     header('Location:/Register');
                     return;
                 }
-                $username = $_POST['username'];
-                $mail = $_POST['email'];
+
+                $token = bin2hex(random_bytes(25));
+                $username = htmlentities(strip_tags($_POST['username']));
+                $mail = htmlentities(strip_tags($_POST['email']));
                 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+                $role = json_encode(array($_POST['roleAdmin'], $_POST['roleRedac']));
 
                 $utilisateur = new User();
-                $utilisateur->setUsername($username)
+                $utilisateur->setToken($token)
+                    ->setUsername($username)
                     ->setMail($mail)
-                    ->setPassword($password);
+                    ->setPassword($password)
+                    ->setRole($role);
                 $utilisateur->SqlAdd(BDD::getInstance());
                 header('Location:/Login/');
+            } else {
+                $_SESSION['errorlogin'] = "Les mots de passe saisis doivent être identiques.";
+                header('Location:/Register');
+                return;
             }
         }
     }
-
-    /*public function loginCheck()
-    {
-        $_POST['username'] = "toto";
-        if (!filter_var(
-            $_POST['password'],
-            FILTER_VALIDATE_REGEXP,
-            array("options" => array("regexp" => "/[a-zA-Z]{3,}/")))) {
-            $_SESSION['errorlogin'] = "Mpd mini 3 caractères";
-            header('Location:/Login');
-            return;
-        }
-        if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-            $_SESSION['errorlogin'] = "Mail invalide";
-            header('Location:/Login');
-            return;
-        }
-        if ($_POST["email"] == "admin@admin.com"
-            AND $_POST["password"] == "password"
-        ) {
-            $_SESSION['login'] = array(
-                'Nom' => 'Administrateur'
-            , 'Prénom' => 'Sylvain'
-            , 'roles' => array('admin', 'redacteur')
-            );
-            header('Location:/RecapUser');
-        } else {
-            $_SESSION['errorlogin'] = "Erreur Authent.";
-            header('Location:/Login');
-        }
-    }*/
 
     public function loginCheck()
     {
@@ -96,14 +93,15 @@ class UserController extends AbstractController
             $userInfo = $user->SqlGetMail(Bdd::GetInstance(), $mail);
 
             if (password_verify($password, $userInfo['password'])) {
+
                 $_SESSION['login'] = array(
                     'username' => $userInfo['username']
                 , 'mail' => $userInfo['mail']
                 , 'role' => json_decode($userInfo['role'])
                 );
-                header('Location:/RecapUser/' . $userInfo['id']);
+                header('Location:/MonEspace/' . $userInfo['id']);
             } else {
-                $_SESSION['errorlogin'] = "Erreur Authent.";
+                $_SESSION['errorlogin'] = "Adresse mail ou mot de passe saisi incorrect.";
                 header('Location:/Login');
             }
 
