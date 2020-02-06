@@ -94,26 +94,26 @@ class __TwigTemplate_2291c6b35467dcf025b199d3028473cf426300c855d277583fa7248bdb8
                     <select name=\"Categorie\" class=\"form-control\">
                         ";
         // line 41
-        $context["Statuts"] = [0 => "Médical", 1 => "Logique", 2 => "Divertissement"];
+        $context["listCategorie"] = [0 => "Médical", 1 => "Logique", 2 => "Divertissement"];
         // line 42
         echo "                        ";
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(($context["Statuts"] ?? null));
-        foreach ($context['_seq'] as $context["_key"] => $context["Statut"]) {
+        $context['_seq'] = twig_ensure_traversable(($context["listCategorie"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["Categorie"]) {
             // line 43
             echo "                            <option value=\"";
-            echo twig_escape_filter($this->env, ($context["Statue"] ?? null), "html", null, true);
+            echo twig_escape_filter($this->env, $context["Categorie"], "html", null, true);
             echo "\" ";
-            if (0 === twig_compare($context["Statut"], twig_get_attribute($this->env, $this->source, ($context["article"] ?? null), "Statut", [], "any", false, false, false, 43))) {
+            if (0 === twig_compare($context["Categorie"], twig_get_attribute($this->env, $this->source, ($context["article"] ?? null), "id_categorie", [], "any", false, false, false, 43))) {
                 echo "selected";
             }
             echo ">";
-            echo twig_escape_filter($this->env, $context["Statut"], "html", null, true);
+            echo twig_escape_filter($this->env, $context["Categorie"], "html", null, true);
             echo "</option>
                         ";
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['Statut'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['Categorie'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 45
         echo "                    </select>
@@ -130,23 +130,24 @@ class __TwigTemplate_2291c6b35467dcf025b199d3028473cf426300c855d277583fa7248bdb8
                     </div>
                 </div>
             </div>
+
             <div class=\"form-group row\">
                 <label for=\"Statut\" class=\"col-sm-2 col-form-label\">Statut</label>
                 <div class=\"col-sm-10\">
                     <select name=\"Statut\" class=\"form-control\">
                         ";
-        // line 63
-        $context["Statuts"] = [0 => "à Mettre à jour", 1 => "à Vérifié", 2 => "Vérifié"];
         // line 64
+        $context["Statuts"] = [0 => "à Mettre à jour", 1 => "à Vérifié", 2 => "Vérifié"];
+        // line 65
         echo "                        ";
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["Statuts"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["Statut"]) {
-            // line 65
+            // line 66
             echo "                            <option value=\"";
-            echo twig_escape_filter($this->env, ($context["Statue"] ?? null), "html", null, true);
+            echo twig_escape_filter($this->env, $context["Statut"], "html", null, true);
             echo "\" ";
-            if (0 === twig_compare($context["Statut"], twig_get_attribute($this->env, $this->source, ($context["article"] ?? null), "Statut", [], "any", false, false, false, 65))) {
+            if (0 === twig_compare($context["Statut"], twig_get_attribute($this->env, $this->source, ($context["article"] ?? null), "Statut", [], "any", false, false, false, 66))) {
                 echo "selected";
             }
             echo ">";
@@ -157,12 +158,12 @@ class __TwigTemplate_2291c6b35467dcf025b199d3028473cf426300c855d277583fa7248bdb8
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['Statut'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 67
+        // line 68
         echo "                    </select>
                 </div>
             </div>
             <input type=\"hidden\" name=\"token\" value=\"";
-        // line 70
+        // line 71
         echo twig_escape_filter($this->env, ($context["token"] ?? null), "html", null, true);
         echo "\">
             <input type=\"submit\" class=\"btn btn-primary my-1\">
@@ -184,7 +185,7 @@ class __TwigTemplate_2291c6b35467dcf025b199d3028473cf426300c855d277583fa7248bdb8
 
     public function getDebugInfo()
     {
-        return array (  166 => 70,  161 => 67,  146 => 65,  141 => 64,  139 => 63,  119 => 45,  104 => 43,  99 => 42,  97 => 41,  59 => 5,  55 => 4,  47 => 2,  36 => 1,);
+        return array (  167 => 71,  162 => 68,  147 => 66,  142 => 65,  140 => 64,  119 => 45,  104 => 43,  99 => 42,  97 => 41,  59 => 5,  55 => 4,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -229,9 +230,9 @@ class __TwigTemplate_2291c6b35467dcf025b199d3028473cf426300c855d277583fa7248bdb8
                 <label for=\"Categorie\" class=\"col-sm-2 col-form-label\">Catégorie</label>
                 <div class=\"col-sm-10\">
                     <select name=\"Categorie\" class=\"form-control\">
-                        {% set Statuts = ['Médical','Logique','Divertissement'] %}
-                        {% for Statut in Statuts %}
-                            <option value=\"{{ Statue }}\" {% if Statut == article.Statut %}selected{% endif %}>{{ Statut }}</option>
+                        {% set listCategorie = ['Médical','Logique','Divertissement'] %}
+                        {% for Categorie in listCategorie %}
+                            <option value=\"{{ Categorie }}\" {% if Categorie == article.id_categorie %}selected{% endif %}>{{ Categorie }}</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -247,13 +248,14 @@ class __TwigTemplate_2291c6b35467dcf025b199d3028473cf426300c855d277583fa7248bdb8
                     </div>
                 </div>
             </div>
+
             <div class=\"form-group row\">
                 <label for=\"Statut\" class=\"col-sm-2 col-form-label\">Statut</label>
                 <div class=\"col-sm-10\">
                     <select name=\"Statut\" class=\"form-control\">
                         {% set Statuts = ['à Mettre à jour','à Vérifié','Vérifié'] %}
                         {% for Statut in Statuts %}
-                            <option value=\"{{ Statue }}\" {% if Statut == article.Statut %}selected{% endif %}>{{ Statut }}</option>
+                            <option value=\"{{ Statut }}\" {% if Statut == article.Statut %}selected{% endif %}>{{ Statut }}</option>
                         {% endfor %}
                     </select>
                 </div>

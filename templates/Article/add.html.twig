@@ -38,9 +38,9 @@
                 <label for="Categorie" class="col-sm-2 col-form-label">Catégorie</label>
                 <div class="col-sm-10">
                     <select name="Categorie" class="form-control">
-                        {% set Categorie = ['Médical','Logique','Divertissement'] %}
-                        {% for Categorie in Statuts %}
-                            <option value="{{ Statue }}" {% if Statut == article.id_categorie %}selected{% endif %}>{{ Statut }}</option>
+                        {% set listCategorie = ['Médical','Logique','Divertissement'] %}
+                        {% for Categorie in listCategorie %}
+                            <option value="{{ Categorie }}" {% if Categorie == article.id_categorie %}selected{% endif %}>{{ Categorie }}</option>
                         {% endfor %}
                     </select>
                 </div>
