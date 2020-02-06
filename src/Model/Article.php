@@ -8,6 +8,8 @@ class Article extends Contenu implements \JsonSerializable
     private $DateAjout;
     private $ImageRepository;
     private $ImageFileName;
+    private $idCategorie;
+    private $Statut;
 
     public function firstXwords($nb)
     {
@@ -58,6 +60,8 @@ class Article extends Contenu implements \JsonSerializable
                 "Auteur" => $this->getAuteur(),
                 "ImageRepository" => $this->getImageRepository(),
                 "ImageFileName" => $this->getImageFileName(),
+                "idCategorie" => $this->getIdCategorie(),
+                "Statut" => $this->getStatut(),
             ]);
             return array("result" => true, "message" => $bdd->lastInsertId());
         } catch (\Exception $e) {
@@ -82,6 +86,8 @@ class Article extends Contenu implements \JsonSerializable
             $article->setDateAjout($articleSQL['DateAjout']);
             $article->setImageRepository($articleSQL['ImageRepository']);
             $article->setImageFileName($articleSQL['ImageFileName']);
+            $article->setIdCategorie($articleSQL['id_categorie']);
+            $article->setStatut($articleSQL['statut']);
 
             $listArticle[] = $article;
         }
@@ -105,6 +111,8 @@ class Article extends Contenu implements \JsonSerializable
         $article->setDateAjout($datas['DateAjout']);
         $article->setImageRepository($datas['ImageRepository']);
         $article->setImageFileName($datas['ImageFileName']);
+        $article->setidCategorie($datas['id_categorie']);
+        $article->setStatut($datas['statut']);
 
         return $article;
     }
@@ -120,7 +128,9 @@ class Article extends Contenu implements \JsonSerializable
                 , 'Auteur' => $this->getAuteur()
                 , 'ImageRepository' => $this->getImageRepository()
                 , 'ImageFileName' => $this->getImageFileName()
-                , 'IDARTICLE' => $this->getId()
+                , 'idArticle' => $this->getId()
+                , 'idCategorie' => $this->getIdCategorie()
+                , 'Statut' => $this->getStatut()
             ]);
             return array("0", "[OK] Update");
         } catch (\Exception $e) {
@@ -162,6 +172,8 @@ class Article extends Contenu implements \JsonSerializable
             , 'ImageRepository' => $this->getImageRepository()
             , 'ImageFileName' => $this->getImageFileName()
             , 'Auteur' => $this->getAuteur()
+            , 'idCategorie' => $this->getIdCategorie()
+            , 'Statut' => $this->getStatut()
         ];
     }
 
@@ -236,5 +248,37 @@ class Article extends Contenu implements \JsonSerializable
     {
         $this->ImageFileName = $ImageFileName;
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdCategorie()
+    {
+        return $this->idCategorie;
+    }
+
+    /**
+     * @param mixed $idCategorie
+     */
+    public function setIdCategorie($idCategorie)
+    {
+        $this->idCategorie = $idCategorie;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStatut()
+    {
+        return $this->Statut;
+    }
+
+    /**
+     * @param mixed $Statut
+     */
+    public function setStatut($Statut)
+    {
+        $this->Statut = $Statut;
     }
 }

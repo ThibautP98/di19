@@ -8,6 +8,16 @@ use function Couchbase\defaultDecoder;
 
 class ArticleController extends AbstractController {
 
+    public function affArticle($idArticle)
+    {
+        $articleSQL = new Article();
+        $article = $articleSQL->SqlGet(BDD::getInstance(), $idArticle);
+
+        //Lancer la vue TWIG
+        return $this->twig->render('Article/Show.html.twig', [
+            'article' => $article]);
+    }
+
     public function Index(){
         return $this->ListAll();
     }

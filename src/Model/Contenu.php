@@ -7,6 +7,40 @@ class Contenu
     private $Id;
     private $Titre;
     private $Description;
+    private $Statut;
+    private $idCategorie;
+
+    /**
+     * @return mixed
+     */
+    public function getIdCategorie()
+    {
+        return $this->idCategorie;
+    }
+
+    /**
+     * @param mixed $idCategorie
+     */
+    public function setIdCategorie($idCategorie)
+    {
+        $this->idCategorie = $idCategorie;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStatut()
+    {
+        return $this->Statut;
+    }
+
+    /**
+     * @param mixed $Statut
+     */
+    public function setStatut($Statut)
+    {
+        $this->Statut = $Statut;
+    }
 
 
     /**

@@ -42,7 +42,7 @@ $router->get('/Register', 'User#registerForm');
 $router->post('/Register', 'User#registerCheck');
 $router->get('/MonEspace/:id', "User#affUser#id");
 $router->get('/User/ListAll',"User#affAllUser");
-
+$router->get('/Article/Show/:id', "Article#AffArticle#id");
 
 echo $router->run();
 
