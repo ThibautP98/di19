@@ -69,10 +69,14 @@ class __TwigTemplate_e8572ea1553aa785fcf8fa7c83bc31b3202e44d261938f1456439343321
         }
         // line 9
         echo "        <form method=\"post\" action=\"/Register\">
+            <input type=\"hidden\" name=\"token\">
             <p>Nom d'utilisateur :</p>
             <input type=\"text\" name=\"username\">
             <p>Adresse e-mail :</p>
             <input type=\"email\" name=\"email\">
+            <p>Rôle :</p>
+            <input type=\"checkbox\" name=\"roleAdmin\" value=\"admin\">Administrateur<br>
+            <input type=\"checkbox\" name=\"roleRedac\" value=\"redac\">Rédacteur
             <p>Mot de passe :</p>
             <input type=\"password\" name=\"password\">
             <p>Répéter le mot de passe :</p>
@@ -111,10 +115,14 @@ class __TwigTemplate_e8572ea1553aa785fcf8fa7c83bc31b3202e44d261938f1456439343321
             <div class=\"alert alert-danger\">{{ session.errorlogin }}</div>
         {% endif %}
         <form method=\"post\" action=\"/Register\">
+            <input type=\"hidden\" name=\"token\">
             <p>Nom d'utilisateur :</p>
             <input type=\"text\" name=\"username\">
             <p>Adresse e-mail :</p>
             <input type=\"email\" name=\"email\">
+            <p>Rôle :</p>
+            <input type=\"checkbox\" name=\"roleAdmin\" value=\"admin\">Administrateur<br>
+            <input type=\"checkbox\" name=\"roleRedac\" value=\"redac\">Rédacteur
             <p>Mot de passe :</p>
             <input type=\"password\" name=\"password\">
             <p>Répéter le mot de passe :</p>

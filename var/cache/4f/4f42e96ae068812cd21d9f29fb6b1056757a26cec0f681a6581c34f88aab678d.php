@@ -76,6 +76,12 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
                 <a class=\"nav-link\" href=\"/Article/Add\">Ajout d'un article</a>
             </li>
             <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"/MonEspace\">Mon espace</a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"/User/listAll\">Liste des utilisateurs</a>
+            </li>
+            <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Register\">Inscription</a>
             </li>
             <li class=\"nav-item\">
@@ -86,13 +92,10 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
             </li>
         </ul>
 
-
-        <form class=\"form-inline\" method=\"post\" action=\"/Article/Show/";
-        // line 44
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "search", [], "any", false, false, false, 44), "html", null, true);
-        echo "\">
+        <form class=\"form-inline\" method=\"get\" action=\"/Article/Search/\">
             <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Rechercher un article\" name=\"search\">
-            <input type=\"submit\" class=\"btn btn-outline-success my-2 my-sm-0\" value=\"Rechercher\" name=\"searchSubmit\">
+            <input type=\"submit\" onclick=\"Search()\" class=\"btn btn-outline-success my-2 my-sm-0\" value=\"Rechercher\"
+                   name=\"searchSubmit\">
         </form>
     </div>
 
@@ -122,9 +125,9 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
 
 
 ";
-        // line 75
+        // line 81
         $this->displayBlock('body', $context, $blocks);
-        // line 76
+        // line 82
         echo "
 
 <script src=\"https://code.jquery.com/jquery-3.4.0.min.js\"></script>
@@ -134,9 +137,9 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
 <script src=\"https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/i18n/jquery-ui-i18n.min.js\"></script>
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js\"></script>
 ";
-        // line 84
+        // line 90
         $this->displayBlock('javascript', $context, $blocks);
-        // line 85
+        // line 91
         echo "</body>
 </html>
 ";
@@ -155,13 +158,13 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
         $macros = $this->macros;
     }
 
-    // line 75
+    // line 81
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 84
+    // line 90
     public function block_javascript($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -172,14 +175,9 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
         return "index.html.twig";
     }
 
-    public function isTraitable()
-    {
-        return false;
-    }
-
     public function getDebugInfo()
     {
-        return array (  165 => 84,  159 => 75,  153 => 11,  146 => 5,  140 => 85,  138 => 84,  128 => 76,  126 => 75,  92 => 44,  58 => 12,  56 => 11,  47 => 5,  41 => 1,);
+        return array (  168 => 90,  162 => 81,  156 => 11,  149 => 5,  143 => 91,  141 => 90,  131 => 82,  129 => 81,  58 => 12,  56 => 11,  47 => 5,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -216,6 +214,12 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
                 <a class=\"nav-link\" href=\"/Article/Add\">Ajout d'un article</a>
             </li>
             <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"/MonEspace\">Mon espace</a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"/User/listAll\">Liste des utilisateurs</a>
+            </li>
+            <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Register\">Inscription</a>
             </li>
             <li class=\"nav-item\">
@@ -226,10 +230,10 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
             </li>
         </ul>
 
-
-        <form class=\"form-inline\" method=\"post\" action=\"/Article/Show/{{ post.search }}\">
+        <form class=\"form-inline\" method=\"get\" action=\"/Article/Search/\">
             <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Rechercher un article\" name=\"search\">
-            <input type=\"submit\" class=\"btn btn-outline-success my-2 my-sm-0\" value=\"Rechercher\" name=\"searchSubmit\">
+            <input type=\"submit\" onclick=\"Search()\" class=\"btn btn-outline-success my-2 my-sm-0\" value=\"Rechercher\"
+                   name=\"searchSubmit\">
         </form>
     </div>
 
