@@ -21,7 +21,7 @@ class Article extends Contenu implements \JsonSerializable
     {
         try {
             $searchA = $_GET['search'];
-            $requete = $bdd->prepare('SELECT * FROM articles WHERE Titre OR Auteur LIKE :search');
+            $requete = $bdd->prepare('SELECT * FROM articles WHERE Titre  LIKE :search OR Auteur LIKE :search');
             $requete->execute([
                 'search' => '%'.$searchA.'%'
             ]);
