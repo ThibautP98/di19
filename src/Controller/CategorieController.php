@@ -14,7 +14,7 @@ class CategorieController extends AbstractController {
 
     public function AllCat(){
         $Categorie = new Categorie();
-        $listCategorie = $Categorie->SqlGetAll(Bdd::GetInstance());
+        $listCategorie = $Categorie->SqlGetAllCat(Bdd::GetInstance());
 
         //Lancer la vue TWIG
         return $this->twig->render(
@@ -73,7 +73,7 @@ class CategorieController extends AbstractController {
         ]);
     }
 
-    public function DeleteCat($CategorieID){
+    public function deleteCat($CategorieID){
         $CategorieSQL = new Categorie();
         $Categorie = $CategorieSQL->SqlGetcat(BDD::getInstance(),$CategorieID);
         $Categorie->SqlDeleteCat(BDD::getInstance(),$CategorieID);
