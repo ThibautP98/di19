@@ -35,8 +35,8 @@ class Categorie extends Contenu implements \JsonSerializable {
         try{
             $requete = $bdd->prepare('INSERT INTO categorie (libelle, description) VALUES(:libelle, :description)');
             $requete->execute([
-                "Libelle" => $this->getlibelle(),
-                "Description" => $this->getDescription(),
+                "libelle" => $this->getlibelle(),
+                "description" => $this->getDescription(),
 
             ]);
             return array("result"=>true,"message"=>$bdd->lastInsertId());
@@ -83,11 +83,11 @@ class Categorie extends Contenu implements \JsonSerializable {
 
     public function SqlUpdateCat(\PDO $bdd){
         try{
-            $requete = $bdd->prepare('UPDATE categorie set libelle=:libelle, description=:description WHERE id=:IDCATEGORIE');
+            $requete = $bdd->prepare('UPDATE categorie set libelle=:libelle, description=:description WHERE id=:IDcategorie');
             $requete->execute([
-                'Libelle' => $this->getlibelle()
-                ,'Description' => $this->getDescription()
-                , 'IDCATEGORIE' => $this->getId()
+                'libelle' => $this->getLibelle()
+                ,'description' => $this->getDescription()
+                , 'IDcategorie' => $this->getId()
             ]);
             return array("0", "[OK] Update");
         }catch (\Exception $e){
@@ -95,9 +95,9 @@ class Categorie extends Contenu implements \JsonSerializable {
         }
     }
 
-    public function SqlDeleteCat (\PDO $bdd,$idCategorie){
+    public function SqlDeleteCat (\PDO $bdd, $idCategorie){
         try{
-            $requete = $bdd->prepare('DELETE FROM categorie where Id = :idCategorie');
+            $requete = $bdd->prepare('DELETE FROM categorie where Id=:idCategorie');
             $requete->execute([
                 'idCategorie' => $idCategorie
             ]);
@@ -122,9 +122,8 @@ class Categorie extends Contenu implements \JsonSerializable {
     {
         return [
             'Id' => $this->getId()
-            ,'Libelle' => $this->getLibelle()
-            ,'Description' => $this->getDescription()
-
+            ,'libelle' => $this->getLibelle()
+            ,'description' => $this->getDescription()
         ];
     }
 

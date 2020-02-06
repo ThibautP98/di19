@@ -59,7 +59,6 @@ class CategorieController extends AbstractController {
         $CategorieSQL = new Categorie();
         $Categorie = $CategorieSQL->SqlGetcat(BDD::getInstance(),$CategorieID);
         if($_POST) {
-            $sqlRepository = null;
             $Categorie->setLibelle($_POST['libelle'])
                     ->setDescription($_POST['description'])
             ;
