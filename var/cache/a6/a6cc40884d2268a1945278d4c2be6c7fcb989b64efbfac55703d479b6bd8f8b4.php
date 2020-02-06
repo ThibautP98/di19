@@ -70,11 +70,17 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
         <!--<div class=\"row\">-->
 
         <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">
+            <li class=\"nav-item dropdown\">
+                <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                     Liste des articles
+                </a>
+                <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+                    <a class=\"dropdown-item\" href=\"/Api/Article/Last\">Les 5 dernieres articles</a>
+                    <div class=\"dropdown-divider\"></div>
+                </div>
+            </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Article/ListAll\">Liste des articles</a>
-                <ul>
-                    <li><a href=\"/Api/Article/Last\">Les 5 dernieres articles</a></li>
-                </ul>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Article/Add\">Ajout d'un article</a>
@@ -115,33 +121,12 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
     </div>
 
 </nav>
-<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
-    <a class=\"navbar-brand\" href=\"#\">Menu</a>
-    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-        <span class=\"navbar-toggler-icon\"></span>
-    </button>
-
-    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
-        <ul class=\"navbar-nav mr-auto\">
-            <li class=\"nav-item dropdown\">
-                <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                    Admin
-                </a>
-                <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
-                    <a class=\"dropdown-item\" href=\"/?controller=Article&action=ListAll\">Liste</a>
-                    <a class=\"dropdown-item\" href=\"/?controller=Article&action=Add\">Ajout</a>
-                    <div class=\"dropdown-divider\"></div>
-                </div>
-            </li>
-        </ul>
-    </div>
-</nav>
 
 
 ";
-        // line 95
+        // line 80
         $this->displayBlock('body', $context, $blocks);
-        // line 96
+        // line 81
         echo "
 
 <script src=\"https://code.jquery.com/jquery-3.4.0.min.js\"></script>
@@ -151,9 +136,9 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
 <script src=\"https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/i18n/jquery-ui-i18n.min.js\"></script>
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js\"></script>
 ";
-        // line 104
+        // line 89
         $this->displayBlock('javascript', $context, $blocks);
-        // line 105
+        // line 90
         echo "</body>
 </html>
 ";
@@ -172,13 +157,13 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
         $macros = $this->macros;
     }
 
-    // line 95
+    // line 80
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 104
+    // line 89
     public function block_javascript($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -191,7 +176,7 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
 
     public function getDebugInfo()
     {
-        return array (  182 => 104,  176 => 95,  170 => 12,  163 => 5,  157 => 105,  155 => 104,  145 => 96,  143 => 95,  59 => 13,  57 => 12,  47 => 5,  41 => 1,);
+        return array (  167 => 89,  161 => 80,  155 => 12,  148 => 5,  142 => 90,  140 => 89,  130 => 81,  128 => 80,  59 => 13,  57 => 12,  47 => 5,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -222,11 +207,17 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
         <!--<div class=\"row\">-->
 
         <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">
+            <li class=\"nav-item dropdown\">
+                <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                     Liste des articles
+                </a>
+                <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+                    <a class=\"dropdown-item\" href=\"/Api/Article/Last\">Les 5 dernieres articles</a>
+                    <div class=\"dropdown-divider\"></div>
+                </div>
+            </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Article/ListAll\">Liste des articles</a>
-                <ul>
-                    <li><a href=\"/Api/Article/Last\">Les 5 dernieres articles</a></li>
-                </ul>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Article/Add\">Ajout d'un article</a>
@@ -266,27 +257,6 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
         </form>
     </div>
 
-</nav>
-<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
-    <a class=\"navbar-brand\" href=\"#\">Menu</a>
-    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-        <span class=\"navbar-toggler-icon\"></span>
-    </button>
-
-    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
-        <ul class=\"navbar-nav mr-auto\">
-            <li class=\"nav-item dropdown\">
-                <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                    Admin
-                </a>
-                <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
-                    <a class=\"dropdown-item\" href=\"/?controller=Article&action=ListAll\">Liste</a>
-                    <a class=\"dropdown-item\" href=\"/?controller=Article&action=Add\">Ajout</a>
-                    <div class=\"dropdown-divider\"></div>
-                </div>
-            </li>
-        </ul>
-    </div>
 </nav>
 
 
