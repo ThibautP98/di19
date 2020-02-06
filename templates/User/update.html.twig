@@ -6,7 +6,7 @@
         {% if session.errorlogin is defined %}
             <div class="alert alert-danger">{{ session.errorlogin }}</div>
         {% endif %}
-        {{ dump(session.login) }}
+{#        {{ dump(session.login) }}#}
         <form method="post" action="/User/Update/{{ user.id }}">
             <p>Nom d'utilisateur :</p>
             <input type="text" name="username" value="{{ user.username }}">

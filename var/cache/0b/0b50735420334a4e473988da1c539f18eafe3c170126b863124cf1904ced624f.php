@@ -88,7 +88,38 @@ class __TwigTemplate_01c8cf56326ceb1c2381c888977af0126aaac23060e3f7a408d5dcab579
                     <input type=\"text\" name=\"Auteur\" class=\"form-control\">
                 </div>
             </div>
+            <div class=\"form-group row\">
+                <label for=\"Categorie_libelle\" class=\"col-sm-2 col-form-label\">Catégorie</label>
+                <div class=\"col-sm-10\">
+                    <select name=\"Catégorie\" class=\"form-control\">
+                        ";
+        // line 41
+        $context["Libelles"] = [0 => "Science", 1 => "Histoire", 2 => "Divertissement"];
+        // line 42
+        echo "                        ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["Libelles"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["Libelle"]) {
+            // line 43
+            echo "                            <option value=\"";
+            echo twig_escape_filter($this->env, $context["Libelle"], "html", null, true);
+            echo "\" ";
+            if (0 === twig_compare($context["Libelle"], twig_get_attribute($this->env, $this->source, ($context["Categorie"] ?? null), "Libelle", [], "any", false, false, false, 43))) {
+                echo "selected";
+            }
+            echo ">";
+            echo twig_escape_filter($this->env, $context["Libelle"], "html", null, true);
+            echo "</option>
+                        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['Libelle'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 45
+        echo "                    </select>
 
+                </div>
+            </div>
 
             <div class=\"form-group row\">
                 <label for=\"image\" class=\"col-sm-2 col-form-label\">Image de l'article</label>
@@ -101,7 +132,7 @@ class __TwigTemplate_01c8cf56326ceb1c2381c888977af0126aaac23060e3f7a408d5dcab579
                 </div>
             </div>
             <input type=\"hidden\" name=\"token\" value=\"";
-        // line 49
+        // line 60
         echo twig_escape_filter($this->env, ($context["token"] ?? null), "html", null, true);
         echo "\">
             <input type=\"submit\" class=\"btn btn-primary my-1\">
@@ -123,7 +154,7 @@ class __TwigTemplate_01c8cf56326ceb1c2381c888977af0126aaac23060e3f7a408d5dcab579
 
     public function getDebugInfo()
     {
-        return array (  105 => 49,  59 => 5,  55 => 4,  47 => 2,  36 => 1,);
+        return array (  136 => 60,  119 => 45,  104 => 43,  99 => 42,  97 => 41,  59 => 5,  55 => 4,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -164,7 +195,18 @@ class __TwigTemplate_01c8cf56326ceb1c2381c888977af0126aaac23060e3f7a408d5dcab579
                     <input type=\"text\" name=\"Auteur\" class=\"form-control\">
                 </div>
             </div>
+            <div class=\"form-group row\">
+                <label for=\"Categorie_libelle\" class=\"col-sm-2 col-form-label\">Catégorie</label>
+                <div class=\"col-sm-10\">
+                    <select name=\"Catégorie\" class=\"form-control\">
+                        {% set Libelles = ['Science','Histoire','Divertissement'] %}
+                        {% for Libelle in Libelles %}
+                            <option value=\"{{ Libelle }}\" {% if Libelle == Categorie.Libelle %}selected{% endif %}>{{ Libelle }}</option>
+                        {% endfor %}
+                    </select>
 
+                </div>
+            </div>
 
             <div class=\"form-group row\">
                 <label for=\"image\" class=\"col-sm-2 col-form-label\">Image de l'article</label>

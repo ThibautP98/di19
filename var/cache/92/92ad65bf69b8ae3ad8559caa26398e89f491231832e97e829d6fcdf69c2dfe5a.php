@@ -67,12 +67,8 @@ class __TwigTemplate_4679b3bb6cdd7ff0636e03df10c8e4846f0da85f286b4af8d27ce5d8a34
             echo "</div>
         ";
         }
-        // line 9
-        echo "        ";
-        echo twig_var_dump($this->env, $context, ...[0 => twig_get_attribute($this->env, $this->source, ($context["session"] ?? null), "login", [], "any", false, false, false, 9)]);
-        echo "
-        <form method=\"post\" action=\"/User/Update/";
         // line 10
+        echo "        <form method=\"post\" action=\"/User/Update/";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "id", [], "any", false, false, false, 10), "html", null, true);
         echo "\">
             <p>Nom d'utilisateur :</p>
@@ -130,7 +126,7 @@ class __TwigTemplate_4679b3bb6cdd7ff0636e03df10c8e4846f0da85f286b4af8d27ce5d8a34
 
     public function getDebugInfo()
     {
-        return array (  113 => 27,  109 => 25,  105 => 23,  102 => 22,  98 => 20,  94 => 18,  92 => 17,  86 => 14,  81 => 12,  76 => 10,  71 => 9,  65 => 7,  63 => 6,  59 => 4,  55 => 3,  47 => 2,  36 => 1,);
+        return array (  109 => 27,  105 => 25,  101 => 23,  98 => 22,  94 => 20,  90 => 18,  88 => 17,  82 => 14,  77 => 12,  71 => 10,  65 => 7,  63 => 6,  59 => 4,  55 => 3,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -143,7 +139,7 @@ class __TwigTemplate_4679b3bb6cdd7ff0636e03df10c8e4846f0da85f286b4af8d27ce5d8a34
         {% if session.errorlogin is defined %}
             <div class=\"alert alert-danger\">{{ session.errorlogin }}</div>
         {% endif %}
-        {{ dump(session.login) }}
+{#        {{ dump(session.login) }}#}
         <form method=\"post\" action=\"/User/Update/{{ user.id }}\">
             <p>Nom d'utilisateur :</p>
             <input type=\"text\" name=\"username\" value=\"{{ user.username }}\">
