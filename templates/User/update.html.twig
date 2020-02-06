@@ -1,0 +1,32 @@
+{% extends "index.html.twig" %}
+{% block title %}{{ parent() }} - Inscrivez vous {% endblock %}
+{% block body %}
+
+    <div class="container-fluid mt-2">
+        {% if session.errorlogin is defined %}
+            <div class="alert alert-danger">{{ session.errorlogin }}</div>
+        {% endif %}
+        {{ dump(session.login) }}
+        <form method="post" action="/User/Update/{{ user.id }}">
+            <p>Nom d'utilisateur :</p>
+            <input type="text" name="username" value="{{ user.username }}">
+            <p>Adresse e-mail :</p>
+            <input type="email" name="email" value="{{ user.mail }}">
+            <p>Rôle :</p>
+
+            {% if 'admin' in session.login.role %}
+                <input type="checkbox" name="roleAdmin" value="admin" checked disabled>Administrateur<br>
+            {% else %}
+                <input type="checkbox" name="roleAdmin" value="admin" disabled>Administrateur<br>
+            {% endif %}
+            {% if 'redacteur' in session.login.role %}
+                <input type="checkbox" name="roleRedac" value="redac" checked disabled>Rédacteur
+            {% else %}
+                <input type="checkbox" name="roleRedac" value="redac" disabled>Rédacteur
+            {% endif %}
+            <br>
+            <input type="submit">
+        </form>
+    </div>
+
+{% endblock %}

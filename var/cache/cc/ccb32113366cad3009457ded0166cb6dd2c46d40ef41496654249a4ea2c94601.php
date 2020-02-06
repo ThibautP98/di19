@@ -125,7 +125,7 @@ class __TwigTemplate_75800704cd1261bb7ea74d6bf433340f9c12aa278990a26cea4858e8f2f
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["article"] ?? null), "titre", [], "any", false, false, false, 42), "html", null, true);
         echo "\">
             <p>Description :</p>
-            <textarea name=\"description\"></textarea>
+            <textarea name=\"content\"></textarea>
             <br>
             <input type=\"submit\">
         </form>
@@ -193,7 +193,7 @@ class __TwigTemplate_75800704cd1261bb7ea74d6bf433340f9c12aa278990a26cea4858e8f2f
             <p>Sujet :</p>
             <input type=\"text\" name=\"sujet\" value=\"{{ article.titre }}\">
             <p>Description :</p>
-            <textarea name=\"description\"></textarea>
+            <textarea name=\"content\"></textarea>
             <br>
             <input type=\"submit\">
         </form>

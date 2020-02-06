@@ -13,7 +13,7 @@ class User extends Contenu implements \JsonSerializable
 
     public function SqlGet(\PDO $bdd, $idUser)
     {
-        $requete = $bdd->prepare('SELECT * FROM utilisateurs where Id = :id');
+        $requete = $bdd->prepare('SELECT * FROM utilisateurs where id = :id');
         $requete->execute([
             'id' => $idUser
         ]);
@@ -39,8 +39,7 @@ class User extends Contenu implements \JsonSerializable
             $user = new User();
             $user->setId($userSQL['id']);
             $user->setUsername($userSQL['username']);
-            $user->setMail($userSQL['mail']);
-            $user->setRole($userSQL['role']);
+            $user->setMail($userSQL['email']);
 
             $listUser[] = $user;
         }
@@ -57,6 +56,21 @@ class User extends Contenu implements \JsonSerializable
         $datas = $requete->fetch();
 
         return $datas;
+    }
+
+    public function SqlUpdate(\PDO $bdd)
+    {
+        try {
+            $requete = $bdd->prepare('UPDATE utilisateurs set username=:username, mail=:mail WHERE id=:id');
+            $requete->execute([
+                'username' => $this->getUsername()
+                , 'mail' => $this->getMail()
+                , 'role' => $this->getRole()
+            ]);
+            return array("0", "[OK] Update");
+        } catch (\Exception $e) {
+            return array("1", "[ERREUR] " . $e->getMessage());
+        }
     }
 
     public function SqlAdd(\PDO $bdd)
