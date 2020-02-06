@@ -94,7 +94,7 @@ class Categorie extends Contenu implements \JsonSerializable {
             $requete->execute([
                 'Libelle' => $this->getlibelle()
                 ,'Description' => $this->getDescription()
-
+                , 'IDCATEGORIE' => $this->getId()
             ]);
             return array("0", "[OK] Update");
         }catch (\Exception $e){

@@ -30,6 +30,7 @@ $router->get('/Article/WriteOne/:id', "Article#Read#id");
 $router->get('/Api/Article', "Api#ArticleGet");
 $router->post('/Api/Article', "Api#ArticlePost");
 $router->put('/Api/Article/:id/:json', "Api#ArticlePut#id#json");
+$router->get('/Api/Article/Last','Api#ArticleGetLast');
 $router->get('/Article/ListAll','Article#listAll');
 $router->get('/coucou/di/:param1/:param2','Article#test#param1#param2');
 $router->get('/Contact', 'Contact#showForm');

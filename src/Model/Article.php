@@ -109,6 +109,27 @@ class Article extends Contenu implements \JsonSerializable
         return $article;
     }
 
+    public function SqlGetLast(\PDO $bdd){
+        $requete = $bdd->prepare('SELECT * FROM articles ORDER BY DateAjout DESC LIMIT 5');
+        $requete->execute();
+        $arrayArticle = $requete->fetchAll();
+
+        $listArticle = [];
+        foreach ($arrayArticle as $articleSQL){
+            $article = new Article();
+            $article->setId($articleSQL['Id']);
+            $article->setTitre($articleSQL['Titre']);
+            $article->setAuteur($articleSQL['Auteur']);
+            $article->setDescription($articleSQL['Description']);
+            $article->setDateAjout($articleSQL['DateAjout']);
+            $article->setImageRepository($articleSQL['ImageRepository']);
+            $article->setImageFileName($articleSQL['ImageFileName']);
+
+            $listArticle[] = $article;
+        }
+        return $listArticle;
+    }
+
     public function SqlUpdate(\PDO $bdd)
     {
         try {
