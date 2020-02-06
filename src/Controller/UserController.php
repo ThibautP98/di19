@@ -103,7 +103,8 @@ class UserController extends AbstractController
             if (password_verify($password, $userInfo['password'])) {
 
                 $_SESSION['login'] = array(
-                    'username' => $userInfo['username']
+                    'id' => $userInfo['id']
+                , 'username' => $userInfo['username']
                 , 'mail' => $userInfo['mail']
                 , 'role' => json_decode($userInfo['role'])
                 );
@@ -117,6 +118,24 @@ class UserController extends AbstractController
             $_SESSION['errorlogin'] = "Veuillez renseigner tous les champs.";
             header('Location:/User/Login');
         }
+    }
+
+
+    public function update($userID)
+    {
+        $userSQL = new User();
+        $user = $userSQL->SqlGet(BDD::getInstance(), $userID);
+        if ($_POST) {
+            $user->setUsername($_POST['username'])
+                ->setMail($_POST['email'])
+                ->setRole($_POST['roleAdmin']['roleRedac']);
+
+            $user->SqlUpdate(BDD::getInstance());
+        }
+
+        return $this->twig->render('/User/update.html.twig', [
+            'user' => $user
+        ]);
     }
 
     public static function roleNeed($roleATester)
@@ -134,9 +153,10 @@ class UserController extends AbstractController
 
     public function logout()
     {
+        $_SESSION = array();
         unset($_SESSION['login']);
         unset($_SESSION['errorlogin']);
-
+        session_destroy();
         header('Location:/User/Login');
     }
 

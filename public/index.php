@@ -43,6 +43,8 @@ $router->get('/User/Register', 'User#registerForm');
 $router->post('/User/Register', 'User#registerCheck');
 $router->get('/User/MonEspace/:id', "User#affUser#id");
 $router->get('/User/ListAll',"User#affAllUser");
+$router->get('/User/Update/:id', "User#Update#id");
+$router->post('/User/Update/:id', "User#Update#id");
 
 $router->get('/User/Admin/Panel', 'User#affPanelAdmin');
 

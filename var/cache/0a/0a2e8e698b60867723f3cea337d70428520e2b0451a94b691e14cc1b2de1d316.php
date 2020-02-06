@@ -84,6 +84,11 @@ class __TwigTemplate_bc48e3cda9b66d8c03fa7441ff88239e3755b3c254814488adc5e548c50
         </tbody>
     </table>
 
+    <a href=\"/User/Update/";
+        // line 24
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "id", [], "any", false, false, false, 24), "html", null, true);
+        echo "\">Modifier le profil</a>
+
 ";
     }
 
@@ -99,7 +104,7 @@ class __TwigTemplate_bc48e3cda9b66d8c03fa7441ff88239e3755b3c254814488adc5e548c50
 
     public function getDebugInfo()
     {
-        return array (  81 => 19,  77 => 18,  73 => 17,  59 => 5,  55 => 4,  47 => 2,  36 => 1,);
+        return array (  89 => 24,  81 => 19,  77 => 18,  73 => 17,  59 => 5,  55 => 4,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -126,6 +131,8 @@ class __TwigTemplate_bc48e3cda9b66d8c03fa7441ff88239e3755b3c254814488adc5e548c50
         </tr>
         </tbody>
     </table>
+
+    <a href=\"/User/Update/{{ user.id }}\">Modifier le profil</a>
 
 {% endblock %}", "User/list.html.twig", "D:\\CESI\\PHP\\tp\\templates\\User\\list.html.twig");
     }
