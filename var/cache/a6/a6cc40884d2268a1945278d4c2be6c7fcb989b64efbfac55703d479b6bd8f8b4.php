@@ -51,10 +51,11 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
           href=\"https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/pepper-grinder/jquery-ui.css\">
     <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.1/css/all.css\">
     <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css\">
+
     ";
-        // line 11
-        $this->displayBlock('css', $context, $blocks);
         // line 12
+        $this->displayBlock('css', $context, $blocks);
+        // line 13
         echo "
 <body>
 
@@ -93,6 +94,15 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Logout\">Déconnexion</a>
             </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"/Article/ListAll\">Catégorie</a>
+                <ul>
+                    <li><a href=\"#\">lien sous menu 1</a></li>
+                    <li><a href=\"#\">lien sous menu 1</a></li>
+                    <li><a href=\"#\">lien sous menu 1</a></li>
+                    <li><a href=\"#\">lien sous menu 1</a></li>
+                </ul>
+            </li>
         </ul>
 
         <form class=\"form-inline\" method=\"get\" action=\"/Article/Search/\">
@@ -129,9 +139,9 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
 
 
 ";
-        // line 85
+        // line 95
         $this->displayBlock('body', $context, $blocks);
-        // line 86
+        // line 96
         echo "
 
 <script src=\"https://code.jquery.com/jquery-3.4.0.min.js\"></script>
@@ -141,9 +151,9 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
 <script src=\"https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/i18n/jquery-ui-i18n.min.js\"></script>
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js\"></script>
 ";
-        // line 94
+        // line 104
         $this->displayBlock('javascript', $context, $blocks);
-        // line 95
+        // line 105
         echo "</body>
 </html>
 ";
@@ -156,19 +166,19 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
         echo "CESI BLOG";
     }
 
-    // line 11
+    // line 12
     public function block_css($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 85
+    // line 95
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 94
+    // line 104
     public function block_javascript($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -181,7 +191,7 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
 
     public function getDebugInfo()
     {
-        return array (  172 => 94,  166 => 85,  160 => 11,  153 => 5,  147 => 95,  145 => 94,  135 => 86,  133 => 85,  58 => 12,  56 => 11,  47 => 5,  41 => 1,);
+        return array (  182 => 104,  176 => 95,  170 => 12,  163 => 5,  157 => 105,  155 => 104,  145 => 96,  143 => 95,  59 => 13,  57 => 12,  47 => 5,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -196,6 +206,7 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
           href=\"https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/pepper-grinder/jquery-ui.css\">
     <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.1/css/all.css\">
     <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css\">
+
     {% block css %}{% endblock %}
 
 <body>
@@ -234,6 +245,15 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Logout\">Déconnexion</a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"/Article/ListAll\">Catégorie</a>
+                <ul>
+                    <li><a href=\"#\">lien sous menu 1</a></li>
+                    <li><a href=\"#\">lien sous menu 1</a></li>
+                    <li><a href=\"#\">lien sous menu 1</a></li>
+                    <li><a href=\"#\">lien sous menu 1</a></li>
+                </ul>
             </li>
         </ul>
 

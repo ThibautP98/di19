@@ -9,7 +9,7 @@ class Categorie extends Contenu implements \JsonSerializable {
     public function SqlSearchCat(\PDO $bdd) {
         try{
             $searchA = $_GET['search'];
-            $requete = $bdd->prepare('SELECT * FROM Categorie WHERE Libelle LIKE :search');
+            $requete = $bdd->prepare('SELECT * FROM categorie WHERE libelle LIKE :search');
             $requete->execute([
                 'search' => '%'.$searchA.'%'
             ]);
@@ -33,7 +33,7 @@ class Categorie extends Contenu implements \JsonSerializable {
 
     public function SqlAddCat(\PDO $bdd) {
         try{
-            $requete = $bdd->prepare('INSERT INTO Categorie (Libelle, Description) VALUES(:Libelle, :Description)');
+            $requete = $bdd->prepare('INSERT INTO categorie (libelle, description) VALUES(:libelle, :description)');
             $requete->execute([
                 "Libelle" => $this->getlibelle(),
                 "Description" => $this->getDescription(),
@@ -47,7 +47,7 @@ class Categorie extends Contenu implements \JsonSerializable {
     }
 
     public function SqlGetAllCat(\PDO $bdd){
-        $requete = $bdd->prepare('SELECT * FROM Categorie');
+        $requete = $bdd->prepare('SELECT * FROM categorie');
         $requete->execute();
         $arrayCategorie = $requete->fetchAll();
 
@@ -65,7 +65,7 @@ class Categorie extends Contenu implements \JsonSerializable {
         return $listCategorie;
     }
     public function SqlGetcat(\PDO $bdd,$idCategorie){
-        $requete = $bdd->prepare('SELECT * FROM Categorie where Id = :idCategorie');
+        $requete = $bdd->prepare('SELECT * FROM categorie where Id = :idCategorie');
         $requete->execute([
             'idCategorie' => $idCategorie
         ]);
@@ -83,7 +83,7 @@ class Categorie extends Contenu implements \JsonSerializable {
 
     public function SqlUpdateCat(\PDO $bdd){
         try{
-            $requete = $bdd->prepare('UPDATE Categorie set libelle=:libelle, Description=:Description WHERE id=:IDCATEGORIE');
+            $requete = $bdd->prepare('UPDATE categorie set libelle=:libelle, description=:description WHERE id=:IDCATEGORIE');
             $requete->execute([
                 'Libelle' => $this->getlibelle()
                 ,'Description' => $this->getDescription()
@@ -97,7 +97,7 @@ class Categorie extends Contenu implements \JsonSerializable {
 
     public function SqlDeleteCat (\PDO $bdd,$idCategorie){
         try{
-            $requete = $bdd->prepare('DELETE FROM Categorie where Id = :idCategorie');
+            $requete = $bdd->prepare('DELETE FROM categorie where Id = :idCategorie');
             $requete->execute([
                 'idCategorie' => $idCategorie
             ]);

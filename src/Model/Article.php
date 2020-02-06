@@ -21,7 +21,7 @@ class Article extends Contenu implements \JsonSerializable
     {
         try {
             $searchA = $_GET['search'];
-            $requete = $bdd->prepare('SELECT * FROM articles WHERE Titre  LIKE :search OR Auteur LIKE :search');
+            $requete = $bdd->prepare('SELECT * FROM articles WHERE Titre  LIKE :search OR Auteur LIKE :search ');
             $requete->execute([
                 'search' => '%'.$searchA.'%'
             ]);
@@ -50,7 +50,9 @@ class Article extends Contenu implements \JsonSerializable
     public function SqlAdd(\PDO $bdd)
     {
         try {
-            $requete = $bdd->prepare('INSERT INTO articles (Titre, Description, DateAjout, Auteur, ImageRepository, ImageFileName) VALUES(:Titre, :Description, :DateAjout, :Auteur, :ImageRepository, :ImageFileName)');
+            $requete = $bdd->prepare('INSERT INTO articles (Titre, Description, DateAjout, Auteur, ImageRepository, ImageFileName) 
+            INNER JOIN categorie on categorie.ID=ID_categorie
+            VALUES(:Titre, :Description, :DateAjout, :Auteur, :ImageRepository, :ImageFileName)');
             $requete->execute([
                 "Titre" => $this->getTitre(),
                 "Description" => $this->getDescription(),
