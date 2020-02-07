@@ -61,7 +61,7 @@
                 <label for="Auteur" class="col-sm-2 col-form-label">Catégorie</label>
                 <div class="col-sm-10">
                     <select name="id_categorie" class="form-control">
-                        {% set listCategorie = ['Médical','Logique','Divertissement'] %}
+                        {% set listCategorie = ['Histoire','Médical','Informatique','Sciences'] %}
                         {% for Categorie in listCategorie %}
                             <option value="{{ Categorie }}" {% if Categorie == article.categorie_id %}selected{% endif %}>{{ Categorie }}</option>
                         {% endfor %}
