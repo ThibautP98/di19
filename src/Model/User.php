@@ -19,7 +19,6 @@ class User extends Contenu implements \JsonSerializable
         ]);
 
         $datas = $requete->fetch();
-
         $user = new User();
         $user->setId($datas['id']);
         $user->setUsername($datas['username']);
@@ -65,9 +64,9 @@ class User extends Contenu implements \JsonSerializable
         try {
             $requete = $bdd->prepare('UPDATE utilisateurs set username=:username, mail=:mail WHERE id=:id');
             $requete->execute([
-                'username' => $this->getUsername()
+                'id' => $this->getId()
+                ,'username' => $this->getUsername()
                 , 'mail' => $this->getMail()
-                , 'role' => $this->getRole()
             ]);
             return array("0", "[OK] Update");
         } catch (\Exception $e) {
@@ -91,9 +90,8 @@ class User extends Contenu implements \JsonSerializable
     public function SqlAdd(\PDO $bdd)
     {
         try {
-            $requete = $bdd->prepare('INSERT INTO utilisateurs (token, username, mail, password, role) VALUES(:token, :username, :mail, :password, :role)');
+            $requete = $bdd->prepare('INSERT INTO utilisateurs (username, mail, password, role) VALUES(:username, :mail, :password, :role)');
             $requete->execute([
-                "token" => $this->getToken(),
                 "username" => $this->getUsername(),
                 "mail" => $this->getMail(),
                 "password" => $this->getPassword(),
@@ -109,7 +107,6 @@ class User extends Contenu implements \JsonSerializable
     {
         return [
             'Id' => $this->getId()
-            , 'token' => $this->getToken()
             , 'username' => $this->getUsername()
             , 'mail' => $this->getMail()
             , 'password' => $this->getPassword()
@@ -131,7 +128,7 @@ class User extends Contenu implements \JsonSerializable
      */
     public function setId($Id)
     {
-        $this->id = $Id;
+        $this->Id = $Id;
         return $this;
     }
 

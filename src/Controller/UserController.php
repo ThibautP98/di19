@@ -82,14 +82,12 @@ class UserController extends AbstractController
                     header('Location:/User/Register');
                     return;
                 }
-                $token = bin2hex(random_bytes(25));
                 $username = htmlentities(strip_tags($_POST['username']));
                 $mail = htmlentities(strip_tags($_POST['mail']));
                 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
                 $role = json_encode(array($_POST['roleAdmin'], $_POST['roleRedac']));
                 $utilisateur = new User();
-                $utilisateur->setToken($token)
-                    ->setUsername($username)
+                $utilisateur->setUsername($username)
                     ->setMail($mail)
                     ->setPassword($password)
                     ->setRole($role);
@@ -106,7 +104,6 @@ class UserController extends AbstractController
     public
     function loginCheck()
     {
-        $_SESSION = array();
         if ($_POST['mail'] && $_POST['password']) {
             $mail = $_POST['mail'];
             $password = $_POST['password'];
@@ -137,9 +134,7 @@ class UserController extends AbstractController
 
     public
     function update($userID)
-        //todo -> Corriger l'erreur de
     {
-        $_SESSION['errorlogin'] = array();
         $userSQL = new User();
         $user = $userSQL->SqlGet(BDD::getInstance(), $userID);
         if ($_POST) {
@@ -159,9 +154,9 @@ class UserController extends AbstractController
     function Delete($userID)
     {
         $userSQL = new User();
-        $user = $userSQL->SqlGet(BDD::getInstance(), $userID);
+        $user = $userSQL->SqlGet(BDD::getInstance(), $userID);var_dump($user);
         $user->SqlDelete(BDD::getInstance(), $userID);
-        header('Location:/User/Logout');
+        header('Location:/User/Compte');
     }
 
     public
