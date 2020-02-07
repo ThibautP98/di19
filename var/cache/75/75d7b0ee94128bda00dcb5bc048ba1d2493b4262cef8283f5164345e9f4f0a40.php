@@ -63,6 +63,25 @@ class __TwigTemplate_5ada77e67cdacc4672a9f98bfb15634e0ccac89cb5717a54e2679d71700
         // line 8
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["article"] ?? null), "id", [], "any", false, false, false, 8), "html", null, true);
         echo "\"><i class=\"far fa-edit\"></i>Créer un article</a>
+        <a class=\"nav-link dropdown-toggle\" href=\"/Categorie\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+            Catégorie
+        </a>
+        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+            <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">toutes les catégorie</a>
+            <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">";
+        // line 14
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["article"] ?? null), "idCategorie", [], "any", false, false, false, 14), "html", null, true);
+        echo "</a>
+            <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">";
+        // line 15
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["article"] ?? null), "idCategorie", [], "any", false, false, false, 15), "html", null, true);
+        echo "</a>
+            <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">";
+        // line 16
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["article"] ?? null), "idCategorie", [], "any", false, false, false, 16), "html", null, true);
+        echo "</a>
+            <div class=\"dropdown-divider\"></div>
+        </div>
     </div>
     <div class=\"container\">
     <table class=\"table table-striped\">
@@ -79,58 +98,56 @@ class __TwigTemplate_5ada77e67cdacc4672a9f98bfb15634e0ccac89cb5717a54e2679d71700
         </thead>
         <tbody>
         ";
-        // line 24
+        // line 34
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["articleList"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
-            // line 25
+            // line 35
             echo "            <tr>
                 <th scope=\"row\"><a href=\"/Article/Show/";
-            // line 26
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 26), "html", null, true);
+            // line 36
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 36), "html", null, true);
             echo "\">#";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 26), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 36), "html", null, true);
             echo "</a></th>
                 <td>";
-            // line 27
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "Titre", [], "any", false, false, false, 27), "html", null, true);
+            // line 37
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "Titre", [], "any", false, false, false, 37), "html", null, true);
             echo "</td>
-                <td><select name=\"Categorie\" id=\"pet-select\">
-                        <option value=\"\">Choisir</option>
-                        <option value=\"Médical\">Médical</option>
-                        <option value=\"Logique\">Logique</option>
-                        <option value=\"Logique\">Divertissemment</option>
-                    </select></td>
+                <td> ";
+            // line 38
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "idCategorie", [], "any", false, false, false, 38), "html", null, true);
+            echo " </td>
                 <td>";
-            // line 34
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "Auteur", [], "any", false, false, false, 34), "html", null, true);
+            // line 39
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "Auteur", [], "any", false, false, false, 39), "html", null, true);
             echo "</td>
                 <td>";
-            // line 35
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "DateAjout", [], "any", false, false, false, 35), "d/m/Y"), "html", null, true);
+            // line 40
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "DateAjout", [], "any", false, false, false, 40), "d/m/Y"), "html", null, true);
             echo "</td>
                 <td>";
-            // line 36
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "Statut", [], "any", false, false, false, 36), "html", null, true);
+            // line 41
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "Statut", [], "any", false, false, false, 41), "html", null, true);
             echo "</td>
                 <td>
                     <div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">
                         <a class=\"btn btn-success\" href=\"/Article/Show/";
-            // line 39
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 39), "html", null, true);
+            // line 44
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 44), "html", null, true);
             echo "\"><i class=\"far fa-eye\"></i></a>
                         <a class=\"btn btn-warning\" href=\"/Article/Update/";
-            // line 40
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 40), "html", null, true);
+            // line 45
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 45), "html", null, true);
             echo "\"><i class=\"fas fa-edit\"></i></a>
                         <a class=\"btn btn-danger\" href=\"/Article/Delete/";
-            // line 41
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 41), "html", null, true);
+            // line 46
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 46), "html", null, true);
             echo "\"><i class=\"far fa-trash-alt\"></i></a>
                     </div>
                     <a class=\"btn btn-secondary\" href=\"/Article/WriteOne/";
-            // line 43
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 43), "html", null, true);
+            // line 48
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 48), "html", null, true);
             echo "\"><i class=\"fas fa-file-download\"></i></a>
                 </td>
             </tr>
@@ -139,7 +156,7 @@ class __TwigTemplate_5ada77e67cdacc4672a9f98bfb15634e0ccac89cb5717a54e2679d71700
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 47
+        // line 52
         echo "
         </tbody>
     </table>
@@ -161,7 +178,7 @@ class __TwigTemplate_5ada77e67cdacc4672a9f98bfb15634e0ccac89cb5717a54e2679d71700
 
     public function getDebugInfo()
     {
-        return array (  143 => 47,  133 => 43,  128 => 41,  124 => 40,  120 => 39,  114 => 36,  110 => 35,  106 => 34,  96 => 27,  90 => 26,  87 => 25,  83 => 24,  64 => 8,  59 => 5,  55 => 4,  47 => 2,  36 => 1,);
+        return array (  160 => 52,  150 => 48,  145 => 46,  141 => 45,  137 => 44,  131 => 41,  127 => 40,  123 => 39,  119 => 38,  115 => 37,  109 => 36,  106 => 35,  102 => 34,  81 => 16,  77 => 15,  73 => 14,  64 => 8,  59 => 5,  55 => 4,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -174,6 +191,16 @@ class __TwigTemplate_5ada77e67cdacc4672a9f98bfb15634e0ccac89cb5717a54e2679d71700
     <div class=\"jumbotron\">
         <h1 class=\"display-4\">Liste des articles</h1>
         <a class=\"btn btn-success\" href=\"/Article/Add/{{ article.id }}\"><i class=\"far fa-edit\"></i>Créer un article</a>
+        <a class=\"nav-link dropdown-toggle\" href=\"/Categorie\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+            Catégorie
+        </a>
+        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+            <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">toutes les catégorie</a>
+            <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">{{ article.idCategorie }}</a>
+            <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">{{ article.idCategorie }}</a>
+            <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">{{ article.idCategorie }}</a>
+            <div class=\"dropdown-divider\"></div>
+        </div>
     </div>
     <div class=\"container\">
     <table class=\"table table-striped\">
@@ -193,12 +220,7 @@ class __TwigTemplate_5ada77e67cdacc4672a9f98bfb15634e0ccac89cb5717a54e2679d71700
             <tr>
                 <th scope=\"row\"><a href=\"/Article/Show/{{ article.id }}\">#{{ article.id }}</a></th>
                 <td>{{ article.Titre }}</td>
-                <td><select name=\"Categorie\" id=\"pet-select\">
-                        <option value=\"\">Choisir</option>
-                        <option value=\"Médical\">Médical</option>
-                        <option value=\"Logique\">Logique</option>
-                        <option value=\"Logique\">Divertissemment</option>
-                    </select></td>
+                <td> {{ article.idCategorie }} </td>
                 <td>{{ article.Auteur }}</td>
                 <td>{{ article.DateAjout | date(\"d/m/Y\") }}</td>
                 <td>{{ article.Statut }}</td>
