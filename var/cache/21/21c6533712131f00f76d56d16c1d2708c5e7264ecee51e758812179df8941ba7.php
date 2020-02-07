@@ -111,11 +111,11 @@ class __TwigTemplate_9101573dea76392c5ef183f02f127102505a75a70433ba2cce38f21c1c6
                     <div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">
                         <a class=\"btn btn-warning\" href=\"/User/Update/";
             // line 35
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["article"] ?? null), "id", [], "any", false, false, false, 35), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 35), "html", null, true);
             echo "\"><i class=\"fas fa-edit\"></i></a>
                         <a class=\"btn btn-danger\" href=\"/User/Delete/";
             // line 36
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["article"] ?? null), "id", [], "any", false, false, false, 36), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 36), "html", null, true);
             echo "\"><i class=\"fas fa-trash\"></i></a>
                     </div>
                 </td>
@@ -188,8 +188,8 @@ class __TwigTemplate_9101573dea76392c5ef183f02f127102505a75a70433ba2cce38f21c1c6
                 <td>{{ user.role }}</td>
                 <td>
                     <div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">
-                        <a class=\"btn btn-warning\" href=\"/User/Update/{{ article.id }}\"><i class=\"fas fa-edit\"></i></a>
-                        <a class=\"btn btn-danger\" href=\"/User/Delete/{{ article.id }}\"><i class=\"fas fa-trash\"></i></a>
+                        <a class=\"btn btn-warning\" href=\"/User/Update/{{ user.id }}\"><i class=\"fas fa-edit\"></i></a>
+                        <a class=\"btn btn-danger\" href=\"/User/Delete/{{ user.id }}\"><i class=\"fas fa-trash\"></i></a>
                     </div>
                 </td>
             </tr>

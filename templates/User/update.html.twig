@@ -1,30 +1,45 @@
 {% extends "index.html.twig" %}
 {% block title %}{{ parent() }} - Inscrivez vous {% endblock %}
+{% block css %}
+    <style>
+        form#login {
+            margin-right: 30%;
+            margin-left: 30%;
+            margin-top: 3%;
+        }
+
+        input#login, button#exit {
+            width: 150px;
+        }
+    </style>
+{% endblock %}
+
 {% block body %}
 
     <div class="container-fluid mt-2">
-        {% if session.errorlogin is defined %}
-            <div class="alert alert-danger">{{ session.errorlogin }}</div>
-        {% endif %}
-{#        {{ dump(session.login) }}#}
-        <form method="post" action="/User/Update/{{ user.id }}">
+        <form id="login" method="post" action="/User/Update/{{ user.id }}">
             <p>Nom d'utilisateur :</p>
-            <input type="text" name="username" value="{{ user.username }}">
-            <p>Adresse e-mail :</p>
-            <input type="email" name="email" value="{{ user.mail }}">
+            <input type="text" name="username" value="{{ user.username }}" class="form-control"
+                   placeholder="Entrer un nom pseudo">
+            <p>Adresse mail :</p>
+            <input type="email" name="mail" class="form-control" value="{{ user.mail }}"
+                   placeholder="Ex : exemple@mail.com">
             <p>Rôle :</p>
             {% if 'admin' in session.login.role %}
-                <input type="checkbox" name="roleAdmin" value="admin" checked disabled>Administrateur<br>
+                <input type="checkbox" name="roleAdmin" value="admin" checked readonly>Administrateur<br>
             {% else %}
-                <input type="checkbox" name="roleAdmin" value="admin" disabled>Administrateur<br>
+                <input type="checkbox" name="roleAdmin" value="admin">Administrateur<br>
             {% endif %}
             {% if 'redacteur' in session.login.role %}
-                <input type="checkbox" name="roleRedac" value="redac" checked disabled>Rédacteur
+                <input type="checkbox" name="roleRedac" value="redac" checked readonly>Rédacteur
             {% else %}
-                <input type="checkbox" name="roleRedac" value="redac" disabled>Rédacteur
+                <input type="checkbox" name="roleRedac" value="redac">Rédacteur
             {% endif %}
             <br>
-            <input type="submit">
+            <input id="login" type="submit" class="btn btn-secondary">
+            <a href="/User/MonEspace/{{ user.id }}">
+                <button id="exit" type="button" class="btn btn-secondary">Quitter</button>
+            </a>
         </form>
     </div>
 

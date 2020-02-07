@@ -89,9 +89,6 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/User/Compte\">Compte</a>
             </li>
-            <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"/User/Logout\">Déconnexion</a>
-            </li>
             <li class=\"nav-item dropdown\">
                 <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\"
                    aria-haspopup=\"true\" aria-expanded=\"false\">
@@ -116,9 +113,9 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
 </nav>
 
 ";
-        // line 72
+        // line 69
         $this->displayBlock('body', $context, $blocks);
-        // line 73
+        // line 70
         echo "
 <script src=\"https://code.jquery.com/jquery-3.4.0.min.js\"></script>
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"></script>
@@ -128,9 +125,9 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js\"></script>
 
 ";
-        // line 81
+        // line 78
         $this->displayBlock('javascript', $context, $blocks);
-        // line 82
+        // line 79
         echo "
 </body>
 </html>
@@ -150,13 +147,13 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
         $macros = $this->macros;
     }
 
-    // line 72
+    // line 69
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 81
+    // line 78
     public function block_javascript($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -169,7 +166,7 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
 
     public function getDebugInfo()
     {
-        return array (  160 => 81,  154 => 72,  148 => 12,  141 => 5,  134 => 82,  132 => 81,  122 => 73,  120 => 72,  59 => 13,  57 => 12,  47 => 5,  41 => 1,);
+        return array (  157 => 78,  151 => 69,  145 => 12,  138 => 5,  131 => 79,  129 => 78,  119 => 70,  117 => 69,  59 => 13,  57 => 12,  47 => 5,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -218,9 +215,6 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/User/Compte\">Compte</a>
-            </li>
-            <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"/User/Logout\">Déconnexion</a>
             </li>
             <li class=\"nav-item dropdown\">
                 <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\"
