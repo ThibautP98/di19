@@ -8,7 +8,7 @@ class Bdd {
         $hostname="localhost";
         $username="root";
         $password="";
-        $dbname="cesi_blog";
+        $dbname="cesiblog";
 
         try
         {

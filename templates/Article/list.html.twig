@@ -5,53 +5,52 @@
 
     <div class="jumbotron">
         <h1 class="display-4">Liste des articles</h1>
-        <a class="btn btn-success" href="/Article/Add/{{ article.id }}"><i class="far fa-edit"></i>Créer un article</a>
-        <a class="nav-link dropdown-toggle" href="/Categorie" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Catégorie
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/?controller=Article&action=Search">toutes les catégorie</a>
-            <a class="dropdown-item" href="/?controller=Article&action=Search">Médical</a>
-            <a class="dropdown-item" href="/?controller=Article&action=Search">Logique</a>
-            <a class="dropdown-item" href="/?controller=Article&action=Search">Divertissement</a>
-            <div class="dropdown-divider"></div>
-        </div>
+        <a class="btn btn-success" href="/Article/Add/{{ article.id }}"><i class="far fa-edit"></i>Créer un article</a><br>
+        <select>
+            <option selected>--Toutes les catégories</option>
+            {% for Categorie in CategorieList %}
+                <option value="{{ Categorie.Id }}" onselect="Search()">{{ Categorie.Libelle }}</option>
+            {% endfor %}
+        </select>
     </div>
     <div class="container">
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Titre</th>
-            <th scope="col">Catégorie</th>
-            <th scope="col">Auteur</th>
-            <th scope="col">Date</th>
-            <th scope="col">Statut</th>
-            <th scope="col">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-        {% for article in articleList %}
+        <table class="table table-striped">
+            <thead>
             <tr>
-                <th scope="row"><a href="/Article/Show/{{ article.id }}">#{{ article.id }}</a></th>
-                <td>{{ article.Titre }}</td>
-                <td> {{ article.idCategorie }} </td>
-                <td>{{ article.Auteur }}</td>
-                <td>{{ article.DateAjout | date("d/m/Y") }}</td>
-                <td>{{ article.Statut }}</td>
-                <td>
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <a class="btn btn-success" href="/Article/Show/{{ article.id }}"><i class="far fa-eye"></i></a>
-                        <a class="btn btn-warning" href="/Article/Update/{{ article.id }}"><i class="fas fa-edit"></i></a>
-                        <a class="btn btn-danger" href="/Article/Delete/{{ article.id }}"><i class="fas fa-trash"></i></a>
-                    </div>
-                    <a class="btn btn-secondary" href="/Article/WriteOne/{{ article.id }}"><i class="fas fa-file-download"></i></a>
-                </td>
+                <th scope="col">#</th>
+                <th scope="col">Titre</th>
+                <th scope="col">Catégorie</th>
+                <th scope="col">Auteur</th>
+                <th scope="col">Date</th>
+                <th scope="col">Statut</th>
+                <th scope="col">Actions</th>
             </tr>
-        {% endfor %}
+            </thead>
+            <tbody>
+            {% for article in articleList %}
+                <tr>
+                    <th scope="row"><a href="/Article/Show/{{ article.id }}">#{{ article.id }}</a></th>
+                    <td>{{ article.Titre }}</td>
+                    <td> {{ article.idCategorie }} </td>
+                    <td>{{ article.Auteur }}</td>
+                    <td>{{ article.DateAjout | date("d/m/Y") }}</td>
+                    <td>{{ article.Statut }}</td>
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <a class="btn btn-success" href="/Article/Show/{{ article.id }}"><i class="far fa-eye"></i></a>
+                            <a class="btn btn-warning" href="/Article/Update/{{ article.id }}"><i
+                                        class="fas fa-edit"></i></a>
+                            <a class="btn btn-danger" href="/Article/Delete/{{ article.id }}"><i
+                                        class="fas fa-trash"></i></a>
+                        </div>
+                        <a class="btn btn-secondary" href="/Article/WriteOne/{{ article.id }}"><i
+                                    class="fas fa-file-download"></i></a>
+                    </td>
+                </tr>
+            {% endfor %}
 
-        </tbody>
-    </table>
+            </tbody>
+        </table>
     </div>
 
 

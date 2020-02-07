@@ -67,38 +67,20 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
         <span class=\"navbar-toggler-icon\"></span>
     </button>
     <div class=\"collapse navbar-collapse\" id=\"navbarTogglerDemo02\">
-        <!--<div class=\"row\">-->
 
         <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">
-            <li class=\"nav-item dropdown\">
-                <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\"
-                   aria-haspopup=\"true\" aria-expanded=\"false\">
-                    Liste des articles
-                </a>
-                <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
-                    <a class=\"dropdown-item\" href=\"/Api/Article/Last\">Les 5 dernieres articles</a>
-                    <div class=\"dropdown-divider\"></div>
-                </div>
+
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"/Api/Article/Last\">Les 5 derniers articles</a>
             </li>
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"/Article/Add\">Ajout d'un article</a>
+                <a class=\"nav-link\" href=\"/Article/ListAll\">Liste des articles</a>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/User/listAll\">Liste des utilisateurs</a>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/User/Compte\">Compte</a>
-            </li>
-            <li class=\"nav-item dropdown\">
-                <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\"
-                   aria-haspopup=\"true\" aria-expanded=\"false\">
-                    Catégorie
-                </a>
-                <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
-                    <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">Science</a>
-                    <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">Histoire</a>
-                    <div class=\"dropdown-divider\"></div>
-                </div>
             </li>
         </ul>
 
@@ -113,9 +95,9 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
 </nav>
 
 ";
-        // line 69
+        // line 51
         $this->displayBlock('body', $context, $blocks);
-        // line 70
+        // line 52
         echo "
 <script src=\"https://code.jquery.com/jquery-3.4.0.min.js\"></script>
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"></script>
@@ -125,9 +107,9 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js\"></script>
 
 ";
-        // line 78
+        // line 60
         $this->displayBlock('javascript', $context, $blocks);
-        // line 79
+        // line 61
         echo "
 </body>
 </html>
@@ -147,13 +129,13 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
         $macros = $this->macros;
     }
 
-    // line 69
+    // line 51
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 78
+    // line 60
     public function block_javascript($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -166,7 +148,7 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
 
     public function getDebugInfo()
     {
-        return array (  157 => 78,  151 => 69,  145 => 12,  138 => 5,  131 => 79,  129 => 78,  119 => 70,  117 => 69,  59 => 13,  57 => 12,  47 => 5,  41 => 1,);
+        return array (  139 => 60,  133 => 51,  127 => 12,  120 => 5,  113 => 61,  111 => 60,  101 => 52,  99 => 51,  59 => 13,  57 => 12,  47 => 5,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -194,38 +176,20 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
         <span class=\"navbar-toggler-icon\"></span>
     </button>
     <div class=\"collapse navbar-collapse\" id=\"navbarTogglerDemo02\">
-        <!--<div class=\"row\">-->
 
         <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">
-            <li class=\"nav-item dropdown\">
-                <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\"
-                   aria-haspopup=\"true\" aria-expanded=\"false\">
-                    Liste des articles
-                </a>
-                <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
-                    <a class=\"dropdown-item\" href=\"/Api/Article/Last\">Les 5 dernieres articles</a>
-                    <div class=\"dropdown-divider\"></div>
-                </div>
+
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"/Api/Article/Last\">Les 5 derniers articles</a>
             </li>
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"/Article/Add\">Ajout d'un article</a>
+                <a class=\"nav-link\" href=\"/Article/ListAll\">Liste des articles</a>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/User/listAll\">Liste des utilisateurs</a>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/User/Compte\">Compte</a>
-            </li>
-            <li class=\"nav-item dropdown\">
-                <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\"
-                   aria-haspopup=\"true\" aria-expanded=\"false\">
-                    Catégorie
-                </a>
-                <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
-                    <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">Science</a>
-                    <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">Histoire</a>
-                    <div class=\"dropdown-divider\"></div>
-                </div>
             </li>
         </ul>
 

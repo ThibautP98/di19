@@ -6,30 +6,30 @@ class Categorie extends Contenu implements \JsonSerializable {
     private $Description;
 
 
-    public function SqlSearchCat(\PDO $bdd) {
-        try{
-            $searchA = $_GET['search'];
-            $requete = $bdd->prepare('SELECT * FROM categorie WHERE libelle LIKE :search');
-            $requete->execute([
-                'search' => '%'.$searchA.'%'
-            ]);
-            $arrayCategorie = $requete->fetchAll();
-
-            $listCategorie = [];
-            foreach ($arrayCategorie as $CategorieSQL){
-                $Categorie = new Categorie();
-                $Categorie->setId($CategorieSQL['id']);
-                $Categorie->setLibelle($CategorieSQL['libelle']);
-                $Categorie->setDescription($CategorieSQL['description']);
-
-                $listCategorie[] = $Categorie;
-            }
-            return $listCategorie;
-
-        }catch (\Exception $e){
-            return array("result"=>false,"message"=>$e->getMessage());
-        }
-    }
+//    public function SqlSearchCat(\PDO $bdd) {
+//        try{
+//            $searchA = $_GET['search'];
+//            $requete = $bdd->prepare('SELECT * FROM categorie WHERE libelle LIKE :search');
+//            $requete->execute([
+//                'search' => '%'.$searchA.'%'
+//            ]);
+//            $arrayCategorie = $requete->fetchAll();
+//
+//            $listCategorie = [];
+//            foreach ($arrayCategorie as $CategorieSQL){
+//                $Categorie = new Categorie();
+//                $Categorie->setId($CategorieSQL['id']);
+//                $Categorie->setLibelle($CategorieSQL['libelle']);
+//                $Categorie->setDescription($CategorieSQL['description']);
+//
+//                $listCategorie[] = $Categorie;
+//            }
+//            return $listCategorie;
+//
+//        }catch (\Exception $e){
+//            return array("result"=>false,"message"=>$e->getMessage());
+//        }
+//    }
 
     public function SqlAddCat(\PDO $bdd) {
         try{
