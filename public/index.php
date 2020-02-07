@@ -44,6 +44,7 @@ $router->get('/Categorie/AddCat', "Categorie#addCat");
 $router->post('/Categorie/AddCat', "Categorie#addCat");
 $router->get('/Categorie/DeleteCat/:id', "Categorie#deleteCat#id");
 
+$router->get('/User/', "User#affCompte");
 $router->get('/User/Login', 'User#loginForm');
 $router->post('/User/Login', 'User#loginCheck');
 $router->get('/User/Logout', 'User#logout');
@@ -56,7 +57,7 @@ $router->post('/User/Update/:id', "User#Update#id");
 $router->get('/User/Delete/:id', "User#delete#id");
 $router->get('/User/Compte', "User#affCompte");
 
-$router->get('/User/Admin/Panel', 'User#generateToken');
+$router->get('/User/MonEspace/Admin/:id', 'User#affPanelAdmin#id');
 
 $router->post('/Contact/sendMail/:id', 'Contact#sendMail#id');
 
