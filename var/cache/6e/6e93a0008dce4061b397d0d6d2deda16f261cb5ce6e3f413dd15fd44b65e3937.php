@@ -12,8 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* User/login.html.twig */
-class __TwigTemplate_3a24004736ce4059371f7e75a483b557b9dbe99295325f116bd14e09b4597848 extends Template
+/* User/register.html.twig */
+class __TwigTemplate_74f46ff2658d01ec35a4036270e4e3ac88c174bfca25db846baaba96197967c2 extends Template
 {
     private $source;
     private $macros = [];
@@ -39,7 +39,7 @@ class __TwigTemplate_3a24004736ce4059371f7e75a483b557b9dbe99295325f116bd14e09b45
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $this->parent = $this->loadTemplate("index.html.twig", "User/login.html.twig", 1);
+        $this->parent = $this->loadTemplate("index.html.twig", "User/register.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
@@ -48,7 +48,7 @@ class __TwigTemplate_3a24004736ce4059371f7e75a483b557b9dbe99295325f116bd14e09b45
     {
         $macros = $this->macros;
         $this->displayParentBlock("title", $context, $blocks);
-        echo " - Connectez vous ";
+        echo " - Inscrivez vous ";
     }
 
     // line 3
@@ -68,9 +68,20 @@ class __TwigTemplate_3a24004736ce4059371f7e75a483b557b9dbe99295325f116bd14e09b45
         ";
         }
         // line 9
-        echo "        <form method=\"post\" action=\"/User/Login\">
+        echo "        <form method=\"post\" action=\"/User/Register\">
+            <input type=\"hidden\" name=\"token\">
+            <p>Nom d'utilisateur :</p>
+            <input type=\"text\" name=\"username\">
+            <p>Adresse e-mail :</p>
             <input type=\"email\" name=\"email\">
+            <p>Rôle :</p>
+            <input type=\"checkbox\" name=\"roleAdmin\" value=\"admin\">Administrateur<br>
+            <input type=\"checkbox\" name=\"roleRedac\" value=\"redac\">Rédacteur
+            <p>Mot de passe :</p>
             <input type=\"password\" name=\"password\">
+            <p>Répéter le mot de passe :</p>
+            <input type=\"password\" name=\"checkPwd\">
+            <br><br>
             <input type=\"submit\">
         </form>
     </div>
@@ -80,7 +91,7 @@ class __TwigTemplate_3a24004736ce4059371f7e75a483b557b9dbe99295325f116bd14e09b45
 
     public function getTemplateName()
     {
-        return "User/login.html.twig";
+        return "User/register.html.twig";
     }
 
     public function isTraitable()
@@ -96,20 +107,31 @@ class __TwigTemplate_3a24004736ce4059371f7e75a483b557b9dbe99295325f116bd14e09b45
     public function getSourceContext()
     {
         return new Source("{% extends \"index.html.twig\" %}
-{% block title %}{{ parent() }} - Connectez vous {% endblock %}
+{% block title %}{{ parent() }} - Inscrivez vous {% endblock %}
 {% block body %}
 
     <div class=\"container-fluid mt-2\">
         {% if session.errorlogin is defined %}
             <div class=\"alert alert-danger\">{{ session.errorlogin }}</div>
         {% endif %}
-        <form method=\"post\" action=\"/User/Login\">
+        <form method=\"post\" action=\"/User/Register\">
+            <input type=\"hidden\" name=\"token\">
+            <p>Nom d'utilisateur :</p>
+            <input type=\"text\" name=\"username\">
+            <p>Adresse e-mail :</p>
             <input type=\"email\" name=\"email\">
+            <p>Rôle :</p>
+            <input type=\"checkbox\" name=\"roleAdmin\" value=\"admin\">Administrateur<br>
+            <input type=\"checkbox\" name=\"roleRedac\" value=\"redac\">Rédacteur
+            <p>Mot de passe :</p>
             <input type=\"password\" name=\"password\">
+            <p>Répéter le mot de passe :</p>
+            <input type=\"password\" name=\"checkPwd\">
+            <br><br>
             <input type=\"submit\">
         </form>
     </div>
 
-{% endblock %}", "User/login.html.twig", "C:\\Dev\\tp2\\di19\\templates\\User\\login.html.twig");
+{% endblock %}", "User/register.html.twig", "C:\\Dev\\tp2\\di19\\templates\\User\\register.html.twig");
     }
 }

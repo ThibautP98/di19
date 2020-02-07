@@ -59,6 +59,10 @@ class __TwigTemplate_ce05a70e6a350a51e491532eb3dc6d94373c22ee090758a73d611527b20
         echo "
     <div class=\"jumbotron\">
         <h1 class=\"display-4\">Liste des Catégorie</h1>
+        <a class=\"btn btn-success\" href=\"/Categorie/AddCat/";
+        // line 8
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["article"] ?? null), "id", [], "any", false, false, false, 8), "html", null, true);
+        echo "\"><i class=\"far fa-edit\"></i>Créer une Catégorie</a>
     </div>
     <div class=\"container\">
     <table class=\"table table-striped\">
@@ -68,7 +72,6 @@ class __TwigTemplate_ce05a70e6a350a51e491532eb3dc6d94373c22ee090758a73d611527b20
             <th scope=\"col\">Titre</th>
             <th scope=\"col\">Description</th>
             <th scope=\"col\">Action</th>
-
         </tr>
         </thead>
         <tbody>
@@ -87,11 +90,11 @@ class __TwigTemplate_ce05a70e6a350a51e491532eb3dc6d94373c22ee090758a73d611527b20
             echo "</a></th>
                 <td>";
             // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["Categorie"], "libelle", [], "any", false, false, false, 24), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["Categorie"], "Libelle", [], "any", false, false, false, 24), "html", null, true);
             echo "</td>
                 <td>";
             // line 25
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["Categorie"], "description", [], "any", false, false, false, 25), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["Categorie"], "Description", [], "any", false, false, false, 25), "html", null, true);
             echo "</td>
                 <td>
                     <div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">
@@ -133,7 +136,7 @@ class __TwigTemplate_ce05a70e6a350a51e491532eb3dc6d94373c22ee090758a73d611527b20
 
     public function getDebugInfo()
     {
-        return array (  115 => 34,  104 => 29,  100 => 28,  94 => 25,  90 => 24,  84 => 23,  81 => 22,  77 => 21,  59 => 5,  55 => 4,  47 => 2,  36 => 1,);
+        return array (  118 => 34,  107 => 29,  103 => 28,  97 => 25,  93 => 24,  87 => 23,  84 => 22,  80 => 21,  64 => 8,  59 => 5,  55 => 4,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -145,6 +148,7 @@ class __TwigTemplate_ce05a70e6a350a51e491532eb3dc6d94373c22ee090758a73d611527b20
 
     <div class=\"jumbotron\">
         <h1 class=\"display-4\">Liste des Catégorie</h1>
+        <a class=\"btn btn-success\" href=\"/Categorie/AddCat/{{ article.id }}\"><i class=\"far fa-edit\"></i>Créer une Catégorie</a>
     </div>
     <div class=\"container\">
     <table class=\"table table-striped\">
@@ -154,15 +158,14 @@ class __TwigTemplate_ce05a70e6a350a51e491532eb3dc6d94373c22ee090758a73d611527b20
             <th scope=\"col\">Titre</th>
             <th scope=\"col\">Description</th>
             <th scope=\"col\">Action</th>
-
         </tr>
         </thead>
         <tbody>
         {% for Categorie in CategorieList %}
             <tr>
                 <th scope=\"row\"><a href=\"/Categorie/Show/{{ Categorie.id }}\">#{{ Categorie.id }}</a></th>
-                <td>{{ Categorie.libelle }}</td>
-                <td>{{ Categorie.description }}</td>
+                <td>{{ Categorie.Libelle }}</td>
+                <td>{{ Categorie.Description }}</td>
                 <td>
                     <div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">
                         <a class=\"btn btn-warning\" href=\"/Categorie/UpdateCat/{{ Categorie.id }}\"><i class=\"fas fa-edit\"></i></a>

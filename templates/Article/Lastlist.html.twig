@@ -1,10 +1,11 @@
 {% extends "index.html.twig" %}
-{% block title %} 5 Dernieres articles - {{ parent() }}{% endblock %}
+{% block title %} Les 5 derniers articles - {{ parent() }}{% endblock %}
 
 {% block body %}
 
     <div class="jumbotron">
-        <h1 class="display-4"> 5 Dernieres articles</h1>
+        <h1 class="display-4"> Les 5 derniers articles</h1>
+        <a class="btn btn-success" href="/Article/Add/{{ article.id }}"><i class="far fa-edit"></i>Créer un article</a>
     </div>
     <div class="container">
         <table class="table table-striped">
@@ -12,10 +13,11 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Titre</th>
+                <th scope="col">Catégorie</th>
                 <th scope="col">Auteur</th>
-                <th scope="col">Description</th>
                 <th scope="col">Date</th>
-
+                <th scope="col">Statut</th>
+                <th scope="col">Actions</th>
             </tr>
             </thead>
             <tbody>
@@ -23,13 +25,16 @@
                 <tr>
                     <th scope="row"><a href="/Article/Show/{{ article.id }}">#{{ article.id }}</a></th>
                     <td>{{ article.Titre }}</td>
+                    <td>{{ article.id_categorie }}</td>
                     <td>{{ article.Auteur }}</td>
-                    <td>{{ article.Description}}</td>
                     <td>{{ article.DateAjout | date("d/m/Y") }}</td>
+                    <td>{{ article.Statut }}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic example">
                             <a class="btn btn-success" href="/Article/Show/{{ article.id }}"><i class="far fa-eye"></i></a>
-                            </div>
+                            <a class="btn btn-warning" href="/Article/Update/{{ article.id }}"><i class="fas fa-edit"></i></a>
+                            <a class="btn btn-danger" href="/Article/Delete/{{ article.id }}"><i class="far fa-trash-alt"></i></a>
+                        </div>
                         <a class="btn btn-secondary" href="/Article/WriteOne/{{ article.id }}"><i class="fas fa-file-download"></i></a>
 
                     </td>

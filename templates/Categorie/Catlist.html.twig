@@ -5,6 +5,7 @@
 
     <div class="jumbotron">
         <h1 class="display-4">Liste des Catégorie</h1>
+        <a class="btn btn-success" href="/Categorie/AddCat/{{ article.id }}"><i class="far fa-edit"></i>Créer une Catégorie</a>
     </div>
     <div class="container">
     <table class="table table-striped">
@@ -14,15 +15,14 @@
             <th scope="col">Titre</th>
             <th scope="col">Description</th>
             <th scope="col">Action</th>
-
         </tr>
         </thead>
         <tbody>
         {% for Categorie in CategorieList %}
             <tr>
                 <th scope="row"><a href="/Categorie/Show/{{ Categorie.id }}">#{{ Categorie.id }}</a></th>
-                <td>{{ Categorie.libelle }}</td>
-                <td>{{ Categorie.description }}</td>
+                <td>{{ Categorie.Libelle }}</td>
+                <td>{{ Categorie.Description }}</td>
                 <td>
                     <div class="btn-group" role="group" aria-label="Basic example">
                         <a class="btn btn-warning" href="/Categorie/UpdateCat/{{ Categorie.id }}"><i class="fas fa-edit"></i></a>

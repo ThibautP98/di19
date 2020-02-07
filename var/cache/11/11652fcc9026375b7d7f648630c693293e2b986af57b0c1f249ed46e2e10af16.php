@@ -61,7 +61,7 @@ class __TwigTemplate_450f2b1da393fefd838775914d444cd157b7c1ca39ce3216f2c508e6b91
 
         <h2 class=\"display-3\">Ajout d'une Catégorie</h2>
         <hr class=\"my-4\">
-        <form name=\"addCatégorie\" method=\"post\" enctype=\"multipart/form-data\">
+        <form name=\"addCategorie\" method=\"post\" enctype=\"multipart/form-data\">
             <div class=\"form-group row\">
                 <label for=\"Titre\" class=\"col-sm-2 col-form-label\">Nom</label>
                 <div class=\"col-sm-10\">
@@ -113,7 +113,7 @@ class __TwigTemplate_450f2b1da393fefd838775914d444cd157b7c1ca39ce3216f2c508e6b91
 
         <h2 class=\"display-3\">Ajout d'une Catégorie</h2>
         <hr class=\"my-4\">
-        <form name=\"addCatégorie\" method=\"post\" enctype=\"multipart/form-data\">
+        <form name=\"addCategorie\" method=\"post\" enctype=\"multipart/form-data\">
             <div class=\"form-group row\">
                 <label for=\"Titre\" class=\"col-sm-2 col-form-label\">Nom</label>
                 <div class=\"col-sm-10\">

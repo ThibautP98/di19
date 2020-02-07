@@ -21,38 +21,20 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <!--<div class="row">-->
 
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    Liste des articles
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/Api/Article/Last">Les 5 dernieres articles</a>
-                    <div class="dropdown-divider"></div>
-                </div>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/Api/Article/Last">Les 5 derniers articles</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/Article/Add">Ajout d'un article</a>
+                <a class="nav-link" href="/Article/ListAll">Liste des articles</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/User/listAll">Liste des utilisateurs</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/User/Compte">Compte</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    Catégorie
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/?controller=Article&action=Search">Science</a>
-                    <a class="dropdown-item" href="/?controller=Article&action=Search">Histoire</a>
-                    <div class="dropdown-divider"></div>
-                </div>
             </li>
         </ul>
 

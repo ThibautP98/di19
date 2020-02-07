@@ -113,13 +113,15 @@ class ArticleController extends AbstractController {
                     }
                 }
             }
-
             $article->setTitre($_POST['Titre'])
+                ->setId($articleID)
                 ->setDescription($_POST['Description'])
                 ->setAuteur($_POST['Auteur'])
                 ->setDateAjout($_POST['DateAjout'])
                 ->setImageRepository($sqlRepository)
                 ->setImageFileName($nomImage)
+                ->setidCategorie($_POST['id_categorie'])
+                ->setStatut($_POST['Statut'])
             ;
 
             $article->SqlUpdate(BDD::getInstance());
@@ -145,7 +147,7 @@ class ArticleController extends AbstractController {
         $arrayAuteur = array('Fabien', 'Brice', 'Bruno', 'Jean-Pierre', 'Benoit', 'Emmanuel', 'Sylvie', 'Marion');
         $arrayTitre = array('PHP en force', 'React JS une valeur montante', 'C# toujours au top', 'Java en légère baisse'
         , 'Les entreprises qui recrutent', 'Les formations à ne pas rater', 'Les langages populaires en 2020', 'L\'année du Javascript');
-        $dateajout = new DateTime();
+                $dateajout = new DateTime();
         $article = new Article();
         $article->SqlTruncate(BDD::getInstance());
         for($i = 1;$i <=200; $i++){
