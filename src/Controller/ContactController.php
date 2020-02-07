@@ -24,7 +24,7 @@ class ContactController extends AbstractController
     {
         $articleSQL = new Article();
         $article = $articleSQL->SqlGet(BDD::getInstance(), $idArticle);
-        $mail = (new \Swift_Message($article))
+        $mail = (new \Swift_Message('Contact depuis le formulaire.'))
             ->setFrom([$_POST["email"] => $_POST["username"]])
             ->setTo('contact@monsite.fr')
             ->setBody(
@@ -33,13 +33,11 @@ class ContactController extends AbstractController
                         'article' => $article,
                         'username' => $_POST["username"],
                         'email' => $_POST["email"],
-                        'description' => $_POST["description"]
+                        'description' => $_POST["content"]
                     ])
                 , 'text/html'
             );
-
         $result = $this->mailer->send($mail);
-
         return $result;
     }
 

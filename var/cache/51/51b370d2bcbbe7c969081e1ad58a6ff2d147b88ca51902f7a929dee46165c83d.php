@@ -27,6 +27,7 @@ class __TwigTemplate_e8572ea1553aa785fcf8fa7c83bc31b3202e44d261938f1456439343321
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
+            'css' => [$this, 'block_css'],
         ];
     }
 
@@ -48,7 +49,7 @@ class __TwigTemplate_e8572ea1553aa785fcf8fa7c83bc31b3202e44d261938f1456439343321
     {
         $macros = $this->macros;
         $this->displayParentBlock("title", $context, $blocks);
-        echo " - Inscrivez vous ";
+        echo " - Inscription ";
     }
 
     // line 3
@@ -57,36 +58,63 @@ class __TwigTemplate_e8572ea1553aa785fcf8fa7c83bc31b3202e44d261938f1456439343321
         $macros = $this->macros;
         // line 4
         echo "
-    <div class=\"container-fluid mt-2\">
+    ";
+        // line 5
+        $this->displayBlock('css', $context, $blocks);
+        // line 18
+        echo "    <div class=\"container-fluid mt-2\">
         ";
-        // line 6
-        if (twig_get_attribute($this->env, $this->source, ($context["session"] ?? null), "errorlogin", [], "any", true, true, false, 6)) {
-            // line 7
+        // line 19
+        if (twig_get_attribute($this->env, $this->source, ($context["session"] ?? null), "errorlogin", [], "any", true, true, false, 19)) {
+            // line 20
             echo "            <div class=\"alert alert-danger\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["session"] ?? null), "errorlogin", [], "any", false, false, false, 7), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["session"] ?? null), "errorlogin", [], "any", false, false, false, 20), "html", null, true);
             echo "</div>
         ";
         }
-        // line 9
-        echo "        <form method=\"post\" action=\"/User/Register\">
-            <input type=\"hidden\" name=\"token\">
+        // line 22
+        echo "        <form method=\"post\" action=\"/User/Register\" id=\"login\">
+            <h1>Inscription :</h1>
             <p>Nom d'utilisateur :</p>
-            <input type=\"text\" name=\"username\">
-            <p>Adresse e-mail :</p>
-            <input type=\"email\" name=\"email\">
-            <p>Rôle :</p>
-            <input type=\"checkbox\" name=\"roleAdmin\" value=\"admin\">Administrateur<br>
-            <input type=\"checkbox\" name=\"roleRedac\" value=\"redac\">Rédacteur
+            <input type=\"text\" name=\"username\" class=\"form-control\" placeholder=\"Entrer un nom pseudo\">
+            <p>Adresse mail :</p>
+            <input type=\"email\" name=\"mail\" class=\"form-control\" placeholder=\"Ex : exemple@mail.com\">
+            <p>Rôle :&nbsp;&nbsp;&nbsp;
+                <input type=\"checkbox\" name=\"roleAdmin\" value=\"admin\"/>Administrateur
+                &nbsp;&nbsp;&nbsp;
+                <input type=\"checkbox\" name=\"roleRedac\" value=\"redac\"/>Rédacteur
+            </p>
             <p>Mot de passe :</p>
-            <input type=\"password\" name=\"password\">
-            <p>Répéter le mot de passe :</p>
-            <input type=\"password\" name=\"checkPwd\">
-            <br><br>
-            <input type=\"submit\">
+            <input type=\"password\" name=\"password\" class=\"form-control\" placeholder=\"Saisir un mot de passe\">
+            <p>Confirmer le mot de passe :</p>
+            <input type=\"password\" name=\"checkPwd\" class=\"form-control\" placeholder=\"Répéter votre mot de passe\"><br>
+            <input id=\"login\" type=\"submit\" class=\"btn btn-secondary\">
+            <input id=\"login\" type=\"reset\" class=\"btn btn-secondary\">
+            <a href=\"/User/Compte\">
+                <button id=\"exit\" type=\"button\" class=\"btn btn-secondary\">Quitter</button>
+            </a>
         </form>
     </div>
-
 ";
+    }
+
+    // line 5
+    public function block_css($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        // line 6
+        echo "        <style>
+            form#login {
+                margin-right: 30%;
+                margin-left: 30%;
+                margin-top: 3%;
+            }
+
+            input#login, button#exit {
+                width: 150px;
+            }
+        </style>
+    ";
     }
 
     public function getTemplateName()
@@ -101,37 +129,55 @@ class __TwigTemplate_e8572ea1553aa785fcf8fa7c83bc31b3202e44d261938f1456439343321
 
     public function getDebugInfo()
     {
-        return array (  71 => 9,  65 => 7,  63 => 6,  59 => 4,  55 => 3,  47 => 2,  36 => 1,);
+        return array (  106 => 6,  102 => 5,  76 => 22,  70 => 20,  68 => 19,  65 => 18,  63 => 5,  60 => 4,  56 => 3,  48 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends \"index.html.twig\" %}
-{% block title %}{{ parent() }} - Inscrivez vous {% endblock %}
+{% block title %}{{ parent() }} - Inscription {% endblock %}
 {% block body %}
 
+    {% block css %}
+        <style>
+            form#login {
+                margin-right: 30%;
+                margin-left: 30%;
+                margin-top: 3%;
+            }
+
+            input#login, button#exit {
+                width: 150px;
+            }
+        </style>
+    {% endblock %}
     <div class=\"container-fluid mt-2\">
         {% if session.errorlogin is defined %}
             <div class=\"alert alert-danger\">{{ session.errorlogin }}</div>
         {% endif %}
-        <form method=\"post\" action=\"/User/Register\">
-            <input type=\"hidden\" name=\"token\">
+        <form method=\"post\" action=\"/User/Register\" id=\"login\">
+            <h1>Inscription :</h1>
             <p>Nom d'utilisateur :</p>
-            <input type=\"text\" name=\"username\">
-            <p>Adresse e-mail :</p>
-            <input type=\"email\" name=\"email\">
-            <p>Rôle :</p>
-            <input type=\"checkbox\" name=\"roleAdmin\" value=\"admin\">Administrateur<br>
-            <input type=\"checkbox\" name=\"roleRedac\" value=\"redac\">Rédacteur
+            <input type=\"text\" name=\"username\" class=\"form-control\" placeholder=\"Entrer un nom pseudo\">
+            <p>Adresse mail :</p>
+            <input type=\"email\" name=\"mail\" class=\"form-control\" placeholder=\"Ex : exemple@mail.com\">
+            <p>Rôle :&nbsp;&nbsp;&nbsp;
+                <input type=\"checkbox\" name=\"roleAdmin\" value=\"admin\"/>Administrateur
+                &nbsp;&nbsp;&nbsp;
+                <input type=\"checkbox\" name=\"roleRedac\" value=\"redac\"/>Rédacteur
+            </p>
             <p>Mot de passe :</p>
-            <input type=\"password\" name=\"password\">
-            <p>Répéter le mot de passe :</p>
-            <input type=\"password\" name=\"checkPwd\">
-            <br><br>
-            <input type=\"submit\">
+            <input type=\"password\" name=\"password\" class=\"form-control\" placeholder=\"Saisir un mot de passe\">
+            <p>Confirmer le mot de passe :</p>
+            <input type=\"password\" name=\"checkPwd\" class=\"form-control\" placeholder=\"Répéter votre mot de passe\"><br>
+            <input id=\"login\" type=\"submit\" class=\"btn btn-secondary\">
+            <input id=\"login\" type=\"reset\" class=\"btn btn-secondary\">
+            <a href=\"/User/Compte\">
+                <button id=\"exit\" type=\"button\" class=\"btn btn-secondary\">Quitter</button>
+            </a>
         </form>
     </div>
-
-{% endblock %}", "User/register.html.twig", "D:\\CESI\\PHP\\tp\\templates\\User\\register.html.twig");
+{% endblock %}
+", "User/register.html.twig", "D:\\CESI\\PHP\\tp\\templates\\User\\register.html.twig");
     }
 }

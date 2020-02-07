@@ -26,6 +26,7 @@ class __TwigTemplate_bc48e3cda9b66d8c03fa7441ff88239e3755b3c254814488adc5e548c50
 
         $this->blocks = [
             'title' => [$this, 'block_title'],
+            'css' => [$this, 'block_css'],
             'body' => [$this, 'block_body'],
         ];
     }
@@ -52,38 +53,71 @@ class __TwigTemplate_bc48e3cda9b66d8c03fa7441ff88239e3755b3c254814488adc5e548c50
     }
 
     // line 4
-    public function block_body($context, array $blocks = [])
+    public function block_css($context, array $blocks = [])
     {
         $macros = $this->macros;
         // line 5
+        echo "    <style>
+        div {
+            margin-left: 2.5%;
+        }
+    </style>
+";
+    }
+
+    // line 12
+    public function block_body($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        // line 13
         echo "
     <h1>Mon espace :</h1>
-    <table>
+    <div><a href=\"/User/Logout\">
+            <button type=\"button\" class=\"btn btn-secondary\"><i class=\"fas fa-sign-out-alt\"></i>&nbsp;&nbsp;Se déconnecter
+            </button>
+        </a></div><br>
+    <table class=\"table\">
         <thead>
         <tr>
-            <th>Username</th>
-            <th>E-mail</th>
-            <th>Rôle</th>
+            <th scope=\"col\">Nom d'utilisateur</th>
+            <th scope=\"col\">Adresse mail</th>
+            <th scope=\"col\">Rôle</th>
         </tr>
         </thead>
         <tbody>
         <tr>
             <td>";
-        // line 17
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "username", [], "any", false, false, false, 17), "html", null, true);
+        // line 29
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "username", [], "any", false, false, false, 29), "html", null, true);
         echo "</td>
             <td>";
-        // line 18
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "mail", [], "any", false, false, false, 18), "html", null, true);
+        // line 30
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "mail", [], "any", false, false, false, 30), "html", null, true);
         echo "</td>
             <td>";
-        // line 19
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "role", [], "any", false, false, false, 19), "html", null, true);
+        // line 31
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "role", [], "any", false, false, false, 31), "html", null, true);
         echo "</td>
         </tr>
         </tbody>
     </table>
 
+    <div>
+        <a href=\"/User/Update/";
+        // line 37
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "id", [], "any", false, false, false, 37), "html", null, true);
+        echo "\">
+            <button type=\"button\" class=\"btn btn-warning\"><i class=\"fas fa-edit\"></i>&nbsp;&nbsp;Modifier mon compte
+            </button>
+        </a>
+        <a href=\"/User/Delete/";
+        // line 41
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "id", [], "any", false, false, false, 41), "html", null, true);
+        echo "\">
+            <button type=\"button\" class=\"btn btn-danger\"><i class=\"fas fa-trash\"></i>&nbsp;&nbsp;Supprimer mon compte
+            </button>
+        </a>
+    </div>
 ";
     }
 
@@ -99,7 +133,7 @@ class __TwigTemplate_bc48e3cda9b66d8c03fa7441ff88239e3755b3c254814488adc5e548c50
 
     public function getDebugInfo()
     {
-        return array (  81 => 19,  77 => 18,  73 => 17,  59 => 5,  55 => 4,  47 => 2,  36 => 1,);
+        return array (  115 => 41,  108 => 37,  99 => 31,  95 => 30,  91 => 29,  73 => 13,  69 => 12,  60 => 5,  56 => 4,  48 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -107,15 +141,27 @@ class __TwigTemplate_bc48e3cda9b66d8c03fa7441ff88239e3755b3c254814488adc5e548c50
         return new Source("{% extends \"index.html.twig\" %}
 {% block title %} Mon espace - {{ parent() }}{% endblock %}
 
+{% block css %}
+    <style>
+        div {
+            margin-left: 2.5%;
+        }
+    </style>
+{% endblock %}
+
 {% block body %}
 
     <h1>Mon espace :</h1>
-    <table>
+    <div><a href=\"/User/Logout\">
+            <button type=\"button\" class=\"btn btn-secondary\"><i class=\"fas fa-sign-out-alt\"></i>&nbsp;&nbsp;Se déconnecter
+            </button>
+        </a></div><br>
+    <table class=\"table\">
         <thead>
         <tr>
-            <th>Username</th>
-            <th>E-mail</th>
-            <th>Rôle</th>
+            <th scope=\"col\">Nom d'utilisateur</th>
+            <th scope=\"col\">Adresse mail</th>
+            <th scope=\"col\">Rôle</th>
         </tr>
         </thead>
         <tbody>
@@ -127,6 +173,16 @@ class __TwigTemplate_bc48e3cda9b66d8c03fa7441ff88239e3755b3c254814488adc5e548c50
         </tbody>
     </table>
 
+    <div>
+        <a href=\"/User/Update/{{ user.id }}\">
+            <button type=\"button\" class=\"btn btn-warning\"><i class=\"fas fa-edit\"></i>&nbsp;&nbsp;Modifier mon compte
+            </button>
+        </a>
+        <a href=\"/User/Delete/{{ user.id }}\">
+            <button type=\"button\" class=\"btn btn-danger\"><i class=\"fas fa-trash\"></i>&nbsp;&nbsp;Supprimer mon compte
+            </button>
+        </a>
+    </div>
 {% endblock %}", "User/list.html.twig", "D:\\CESI\\PHP\\tp\\templates\\User\\list.html.twig");
     }
 }

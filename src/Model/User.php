@@ -13,13 +13,12 @@ class User extends Contenu implements \JsonSerializable
 
     public function SqlGet(\PDO $bdd, $idUser)
     {
-        $requete = $bdd->prepare('SELECT * FROM utilisateurs where Id = :id');
+        $requete = $bdd->prepare('SELECT * FROM utilisateurs where id = :id');
         $requete->execute([
             'id' => $idUser
         ]);
 
         $datas = $requete->fetch();
-
         $user = new User();
         $user->setId($datas['id']);
         $user->setUsername($datas['username']);
@@ -42,6 +41,7 @@ class User extends Contenu implements \JsonSerializable
             $user->setMail($userSQL['mail']);
             $user->setRole($userSQL['role']);
 
+
             $listUser[] = $user;
         }
         return $listUser;
@@ -59,12 +59,39 @@ class User extends Contenu implements \JsonSerializable
         return $datas;
     }
 
+    public function SqlUpdate(\PDO $bdd)
+    {
+        try {
+            $requete = $bdd->prepare('UPDATE utilisateurs set username=:username, mail=:mail WHERE id=:id');
+            $requete->execute([
+                'id' => $this->getId()
+                ,'username' => $this->getUsername()
+                , 'mail' => $this->getMail()
+            ]);
+            return array("0", "[OK] Update");
+        } catch (\Exception $e) {
+            return array("1", "[ERREUR] " . $e->getMessage());
+        }
+    }
+
+    public function SqlDelete(\PDO $bdd, $idUser)
+    {
+        try {
+            $requete = $bdd->prepare('DELETE FROM utilisateurs where id = :id');
+            $requete->execute([
+                'idUser' => $idUser
+            ]);
+            return true;
+        } catch (\Exception $e) {
+            return false;
+        }
+    }
+
     public function SqlAdd(\PDO $bdd)
     {
         try {
-            $requete = $bdd->prepare('INSERT INTO utilisateurs (token, username, mail, password, role) VALUES(:token, :username, :mail, :password, :role)');
+            $requete = $bdd->prepare('INSERT INTO utilisateurs (username, mail, password, role) VALUES(:username, :mail, :password, :role)');
             $requete->execute([
-                "token" => $this->getToken(),
                 "username" => $this->getUsername(),
                 "mail" => $this->getMail(),
                 "password" => $this->getPassword(),
@@ -80,7 +107,6 @@ class User extends Contenu implements \JsonSerializable
     {
         return [
             'Id' => $this->getId()
-            , 'token' => $this->getToken()
             , 'username' => $this->getUsername()
             , 'mail' => $this->getMail()
             , 'password' => $this->getPassword()
@@ -102,7 +128,7 @@ class User extends Contenu implements \JsonSerializable
      */
     public function setId($Id)
     {
-        $this->id = $Id;
+        $this->Id = $Id;
         return $this;
     }
 
