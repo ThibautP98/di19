@@ -13,7 +13,6 @@
             <p>Adresse e-mail :</p>
             <input type="email" name="email" value="{{ user.mail }}">
             <p>Rôle :</p>
-
             {% if 'admin' in session.login.role %}
                 <input type="checkbox" name="roleAdmin" value="admin" checked disabled>Administrateur<br>
             {% else %}

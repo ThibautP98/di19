@@ -82,30 +82,29 @@ class __TwigTemplate_4679b3bb6cdd7ff0636e03df10c8e4846f0da85f286b4af8d27ce5d8a34
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "mail", [], "any", false, false, false, 14), "html", null, true);
         echo "\">
             <p>Rôle :</p>
-
             ";
-        // line 17
-        if (twig_in_filter("admin", twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["session"] ?? null), "login", [], "any", false, false, false, 17), "role", [], "any", false, false, false, 17))) {
-            // line 18
+        // line 16
+        if (twig_in_filter("admin", twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["session"] ?? null), "login", [], "any", false, false, false, 16), "role", [], "any", false, false, false, 16))) {
+            // line 17
             echo "                <input type=\"checkbox\" name=\"roleAdmin\" value=\"admin\" checked disabled>Administrateur<br>
             ";
         } else {
-            // line 20
+            // line 19
             echo "                <input type=\"checkbox\" name=\"roleAdmin\" value=\"admin\" disabled>Administrateur<br>
             ";
         }
-        // line 22
+        // line 21
         echo "            ";
-        if (twig_in_filter("redacteur", twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["session"] ?? null), "login", [], "any", false, false, false, 22), "role", [], "any", false, false, false, 22))) {
-            // line 23
+        if (twig_in_filter("redacteur", twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["session"] ?? null), "login", [], "any", false, false, false, 21), "role", [], "any", false, false, false, 21))) {
+            // line 22
             echo "                <input type=\"checkbox\" name=\"roleRedac\" value=\"redac\" checked disabled>Rédacteur
             ";
         } else {
-            // line 25
+            // line 24
             echo "                <input type=\"checkbox\" name=\"roleRedac\" value=\"redac\" disabled>Rédacteur
             ";
         }
-        // line 27
+        // line 26
         echo "            <br>
             <input type=\"submit\">
         </form>
@@ -126,7 +125,7 @@ class __TwigTemplate_4679b3bb6cdd7ff0636e03df10c8e4846f0da85f286b4af8d27ce5d8a34
 
     public function getDebugInfo()
     {
-        return array (  109 => 27,  105 => 25,  101 => 23,  98 => 22,  94 => 20,  90 => 18,  88 => 17,  82 => 14,  77 => 12,  71 => 10,  65 => 7,  63 => 6,  59 => 4,  55 => 3,  47 => 2,  36 => 1,);
+        return array (  108 => 26,  104 => 24,  100 => 22,  97 => 21,  93 => 19,  89 => 17,  87 => 16,  82 => 14,  77 => 12,  71 => 10,  65 => 7,  63 => 6,  59 => 4,  55 => 3,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -146,7 +145,6 @@ class __TwigTemplate_4679b3bb6cdd7ff0636e03df10c8e4846f0da85f286b4af8d27ce5d8a34
             <p>Adresse e-mail :</p>
             <input type=\"email\" name=\"email\" value=\"{{ user.mail }}\">
             <p>Rôle :</p>
-
             {% if 'admin' in session.login.role %}
                 <input type=\"checkbox\" name=\"roleAdmin\" value=\"admin\" checked disabled>Administrateur<br>
             {% else %}

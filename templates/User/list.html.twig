@@ -1,15 +1,23 @@
 {% extends "index.html.twig" %}
 {% block title %} Mon espace - {{ parent() }}{% endblock %}
 
+{% block css %}
+    <style>
+        div {
+            margin-left: 2.5%;
+        }
+    </style>
+{% endblock %}
+
 {% block body %}
 
     <h1>Mon espace :</h1>
-    <table>
+    <table class="table">
         <thead>
         <tr>
-            <th>Username</th>
-            <th>E-mail</th>
-            <th>Rôle</th>
+            <th scope="col">Nom d'utilisateur</th>
+            <th scope="col">Adresse mail</th>
+            <th scope="col">Rôle</th>
         </tr>
         </thead>
         <tbody>
@@ -21,6 +29,14 @@
         </tbody>
     </table>
 
-    <a href="/User/Update/{{ user.id }}">Modifier le profil</a>
-
+    <div>
+        <a href="/User/Update/{{ user.id }}">
+            <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i>&nbsp;&nbsp;Modifier mon compte
+            </button>
+        </a>
+        <a href="/User/Delete/{{ user.id }}">
+            <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i>&nbsp;&nbsp;Supprimer mon compte
+            </button>
+        </a>
+    </div>
 {% endblock %}

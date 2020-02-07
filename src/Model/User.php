@@ -39,7 +39,9 @@ class User extends Contenu implements \JsonSerializable
             $user = new User();
             $user->setId($userSQL['id']);
             $user->setUsername($userSQL['username']);
-            $user->setMail($userSQL['email']);
+            $user->setMail($userSQL['mail']);
+            $user->setRole($userSQL['role']);
+
 
             $listUser[] = $user;
         }
@@ -70,6 +72,19 @@ class User extends Contenu implements \JsonSerializable
             return array("0", "[OK] Update");
         } catch (\Exception $e) {
             return array("1", "[ERREUR] " . $e->getMessage());
+        }
+    }
+
+    public function SqlDelete(\PDO $bdd, $idUser)
+    {
+        try {
+            $requete = $bdd->prepare('DELETE FROM utilisateurs where id = :id');
+            $requete->execute([
+                'idUser' => $idUser
+            ]);
+            return true;
+        } catch (\Exception $e) {
+            return false;
         }
     }
 
