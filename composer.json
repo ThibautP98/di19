@@ -3,6 +3,7 @@
         "twig/twig": "^3.0",
         "swiftmailer/swiftmailer": "^6.2",
       "ext-pdo": "*",
-      "ext-json": "*"
+      "ext-json": "*",
+      "ext-couchbase": "*"
     }
 }
