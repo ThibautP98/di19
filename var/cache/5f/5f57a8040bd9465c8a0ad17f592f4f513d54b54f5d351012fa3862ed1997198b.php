@@ -115,7 +115,7 @@ class __TwigTemplate_51ac23452c118ce563b0d5ff6330516be71e3cc276afbb642d82beee90c
                         <a class=\"btn btn-danger\" href=\"/Article/Delete/";
             // line 33
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 33), "html", null, true);
-            echo "\"><i class=\"far fa-trash-alt\"></i></a>
+            echo "\"><i class=\"fas fa-trash\"></i></a>
                     </div>
                     <a class=\"btn btn-secondary\" href=\"/Article/WriteOne/";
             // line 35
@@ -188,7 +188,7 @@ class __TwigTemplate_51ac23452c118ce563b0d5ff6330516be71e3cc276afbb642d82beee90c
                     <div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">
                         <a class=\"btn btn-success\" href=\"/Article/Show/{{ article.id }}\"><i class=\"far fa-eye\"></i></a>
                         <a class=\"btn btn-warning\" href=\"/Article/Update/{{ article.id }}\"><i class=\"fas fa-edit\"></i></a>
-                        <a class=\"btn btn-danger\" href=\"/Article/Delete/{{ article.id }}\"><i class=\"far fa-trash-alt\"></i></a>
+                        <a class=\"btn btn-danger\" href=\"/Article/Delete/{{ article.id }}\"><i class=\"fas fa-trash\"></i></a>
                     </div>
                     <a class=\"btn btn-secondary\" href=\"/Article/WriteOne/{{ article.id }}\"><i class=\"fas fa-file-download\"></i></a>
 

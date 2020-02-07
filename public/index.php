@@ -53,6 +53,8 @@ $router->get('/User/MonEspace/:id', "User#affUser#id");
 $router->get('/User/ListAll',"User#affAllUser");
 $router->get('/User/Update/:id', "User#Update#id");
 $router->post('/User/Update/:id', "User#Update#id");
+$router->get('/User/Delete/:id', "User#delete#id");
+$router->get('/User/Compte', "User#affCompte");
 
 $router->get('/User/Admin/Panel', 'User#affPanelAdmin');
 

@@ -75,6 +75,19 @@ class User extends Contenu implements \JsonSerializable
         }
     }
 
+    public function SqlDelete(\PDO $bdd, $idUser)
+    {
+        try {
+            $requete = $bdd->prepare('DELETE FROM utilisateurs where id = :id');
+            $requete->execute([
+                'idUser' => $idUser
+            ]);
+            return true;
+        } catch (\Exception $e) {
+            return false;
+        }
+    }
+
     public function SqlAdd(\PDO $bdd)
     {
         try {

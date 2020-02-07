@@ -58,8 +58,8 @@ class __TwigTemplate_9101573dea76392c5ef183f02f127102505a75a70433ba2cce38f21c1c6
         $macros = $this->macros;
         // line 5
         echo "    <style>
-        h1, table {
-            margin-left: 35%;
+        h1 {
+            text-align: center;
         }
     </style>
 ";
@@ -72,49 +72,68 @@ class __TwigTemplate_9101573dea76392c5ef183f02f127102505a75a70433ba2cce38f21c1c6
         // line 13
         echo "
     <h1>Utilisateurs</h1>
-    <table>
+
+    <table class=\"table\">
         <thead>
         <tr>
-            <th>ID</th>
-            <th>Username</th>
-            <th>E-mail</th>
-            <th>Rôle</th>
+            <th scope=\"col\">ID</th>
+            <th scope=\"col\">Nom d'utilisateur</th>
+            <th scope=\"col\">Adresse mail</th>
+            <th scope=\"col\">Rôle</th>
+            <th scope=\"col\">Actions</th>
         </tr>
         </thead>
         <tbody>
         ";
-        // line 25
+        // line 27
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["userList"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-            // line 26
+            // line 28
             echo "            <tr>
                 <td>";
-            // line 27
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 27), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 28
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "username", [], "any", false, false, false, 28), "html", null, true);
-            echo "</td>
-                <td>";
             // line 29
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "mail", [], "any", false, false, false, 29), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 29), "html", null, true);
             echo "</td>
                 <td>";
             // line 30
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "role", [], "any", false, false, false, 30), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "username", [], "any", false, false, false, 30), "html", null, true);
             echo "</td>
+                <td>";
+            // line 31
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "mail", [], "any", false, false, false, 31), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 32
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "role", [], "any", false, false, false, 32), "html", null, true);
+            echo "</td>
+                <td>
+                    <div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">
+                        <a class=\"btn btn-warning\" href=\"/User/Update/";
+            // line 35
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["article"] ?? null), "id", [], "any", false, false, false, 35), "html", null, true);
+            echo "\"><i class=\"fas fa-edit\"></i></a>
+                        <a class=\"btn btn-danger\" href=\"/User/Delete/";
+            // line 36
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["article"] ?? null), "id", [], "any", false, false, false, 36), "html", null, true);
+            echo "\"><i class=\"fas fa-trash\"></i></a>
+                    </div>
+                </td>
             </tr>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 33
-        echo "        </tbody>
+        // line 41
+        echo "
+        </tbody>
     </table>
 
+
+";
+        // line 66
+        echo "
 ";
     }
 
@@ -130,7 +149,7 @@ class __TwigTemplate_9101573dea76392c5ef183f02f127102505a75a70433ba2cce38f21c1c6
 
     public function getDebugInfo()
     {
-        return array (  115 => 33,  106 => 30,  102 => 29,  98 => 28,  94 => 27,  91 => 26,  87 => 25,  73 => 13,  69 => 12,  60 => 5,  56 => 4,  48 => 2,  37 => 1,);
+        return array (  136 => 66,  129 => 41,  118 => 36,  114 => 35,  108 => 32,  104 => 31,  100 => 30,  96 => 29,  93 => 28,  89 => 27,  73 => 13,  69 => 12,  60 => 5,  56 => 4,  48 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -140,8 +159,8 @@ class __TwigTemplate_9101573dea76392c5ef183f02f127102505a75a70433ba2cce38f21c1c6
 
 {% block css %}
     <style>
-        h1, table {
-            margin-left: 35%;
+        h1 {
+            text-align: center;
         }
     </style>
 {% endblock %}
@@ -149,13 +168,15 @@ class __TwigTemplate_9101573dea76392c5ef183f02f127102505a75a70433ba2cce38f21c1c6
 {% block body %}
 
     <h1>Utilisateurs</h1>
-    <table>
+
+    <table class=\"table\">
         <thead>
         <tr>
-            <th>ID</th>
-            <th>Username</th>
-            <th>E-mail</th>
-            <th>Rôle</th>
+            <th scope=\"col\">ID</th>
+            <th scope=\"col\">Nom d'utilisateur</th>
+            <th scope=\"col\">Adresse mail</th>
+            <th scope=\"col\">Rôle</th>
+            <th scope=\"col\">Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -165,10 +186,39 @@ class __TwigTemplate_9101573dea76392c5ef183f02f127102505a75a70433ba2cce38f21c1c6
                 <td>{{ user.username }}</td>
                 <td>{{ user.mail }}</td>
                 <td>{{ user.role }}</td>
+                <td>
+                    <div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">
+                        <a class=\"btn btn-warning\" href=\"/User/Update/{{ article.id }}\"><i class=\"fas fa-edit\"></i></a>
+                        <a class=\"btn btn-danger\" href=\"/User/Delete/{{ article.id }}\"><i class=\"fas fa-trash\"></i></a>
+                    </div>
+                </td>
             </tr>
         {% endfor %}
+
         </tbody>
     </table>
+
+
+{#    <table>#}
+{#        <thead>#}
+{#        <tr>#}
+{#            <th>ID</th>#}
+{#            <th>Username</th>#}
+{#            <th>E-mail</th>#}
+{#            <th>Rôle</th>#}
+{#        </tr>#}
+{#        </thead>#}
+{#        <tbody>#}
+{#        {% for user in userList %}#}
+{#            <tr>#}
+{#                <td>{{ user.id }}</td>#}
+{#                <td>{{ user.username }}</td>#}
+{#                <td>{{ user.mail }}</td>#}
+{#                <td>{{ user.role }}</td>#}
+{#            </tr>#}
+{#        {% endfor %}#}
+{#        </tbody>#}
+{#    </table>#}
 
 {% endblock %}", "User/listAll.html.twig", "D:\\CESI\\PHP\\tp\\templates\\User\\listAll.html.twig");
     }

@@ -1,5 +1,5 @@
 <?php
-//todo -> Utiliser le token au log et $_session
+
 namespace src\Controller;
 
 use src\Model\User;
@@ -51,6 +51,7 @@ class UserController extends AbstractController
     public
     function loginForm()
     {
+        $_SESSION = array();
         return $this->twig->render('User/login.html.twig');
     }
 
@@ -60,10 +61,15 @@ class UserController extends AbstractController
         return $this->twig->render('User/register.html.twig');
     }
 
+
+    function affCompte()
+    {
+        return $this->twig->render('User/compte.html.twig');
+    }
+
     public
     function registerCheck()
     {
-        $_SESSION['errorlogin'] = array();
         if ($_POST['username'] && $_POST['mail'] && $_POST['password'] && $_POST['checkPwd']) {
             if ($_POST['password'] == $_POST['checkPwd']) {
                 if (!filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
@@ -76,13 +82,11 @@ class UserController extends AbstractController
                     header('Location:/User/Register');
                     return;
                 }
-
                 $token = bin2hex(random_bytes(25));
                 $username = htmlentities(strip_tags($_POST['username']));
                 $mail = htmlentities(strip_tags($_POST['mail']));
                 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
                 $role = json_encode(array($_POST['roleAdmin'], $_POST['roleRedac']));
-
                 $utilisateur = new User();
                 $utilisateur->setToken($token)
                     ->setUsername($username)
@@ -90,7 +94,7 @@ class UserController extends AbstractController
                     ->setPassword($password)
                     ->setRole($role);
                 $utilisateur->SqlAdd(BDD::getInstance());
-                header('Location:/User/Login/');
+                header('Location:/User/Compte');
             } else {
                 $_SESSION['errorlogin'] = "Les mots de passe saisis doivent être identiques.";
                 header('Location:/User/Register');
@@ -102,7 +106,7 @@ class UserController extends AbstractController
     public
     function loginCheck()
     {
-        $_SESSION['errorlogin'] = array();
+        $_SESSION = array();
         if ($_POST['mail'] && $_POST['password']) {
             $mail = $_POST['mail'];
             $password = $_POST['password'];
@@ -152,6 +156,15 @@ class UserController extends AbstractController
     }
 
     public
+    function Delete($userID)
+    {
+        $userSQL = new User();
+        $user = $userSQL->SqlGet(BDD::getInstance(), $userID);
+        $user->SqlDelete(BDD::getInstance(), $userID);
+        header('Location:/User/Logout');
+    }
+
+    public
     static function roleNeed($roleATester)
     {
         $_SESSION['errorlogin'] = array();
@@ -173,7 +186,7 @@ class UserController extends AbstractController
         unset($_SESSION['login']);
         unset($_SESSION['errorlogin']);
         session_destroy();
-        header('Location:/User/Login');
+        header('Location:/User/Compte');
     }
 
 }

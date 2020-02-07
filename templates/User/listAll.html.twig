@@ -3,8 +3,8 @@
 
 {% block css %}
     <style>
-        h1, table {
-            margin-left: 35%;
+        h1 {
+            text-align: center;
         }
     </style>
 {% endblock %}
@@ -12,13 +12,15 @@
 {% block body %}
 
     <h1>Utilisateurs</h1>
-    <table>
+
+    <table class="table">
         <thead>
         <tr>
-            <th>ID</th>
-            <th>Username</th>
-            <th>E-mail</th>
-            <th>Rôle</th>
+            <th scope="col">ID</th>
+            <th scope="col">Nom d'utilisateur</th>
+            <th scope="col">Adresse mail</th>
+            <th scope="col">Rôle</th>
+            <th scope="col">Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -28,9 +30,38 @@
                 <td>{{ user.username }}</td>
                 <td>{{ user.mail }}</td>
                 <td>{{ user.role }}</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <a class="btn btn-warning" href="/User/Update/{{ article.id }}"><i class="fas fa-edit"></i></a>
+                        <a class="btn btn-danger" href="/User/Delete/{{ article.id }}"><i class="fas fa-trash"></i></a>
+                    </div>
+                </td>
             </tr>
         {% endfor %}
+
         </tbody>
     </table>
+
+
+{#    <table>#}
+{#        <thead>#}
+{#        <tr>#}
+{#            <th>ID</th>#}
+{#            <th>Username</th>#}
+{#            <th>E-mail</th>#}
+{#            <th>Rôle</th>#}
+{#        </tr>#}
+{#        </thead>#}
+{#        <tbody>#}
+{#        {% for user in userList %}#}
+{#            <tr>#}
+{#                <td>{{ user.id }}</td>#}
+{#                <td>{{ user.username }}</td>#}
+{#                <td>{{ user.mail }}</td>#}
+{#                <td>{{ user.role }}</td>#}
+{#            </tr>#}
+{#        {% endfor %}#}
+{#        </tbody>#}
+{#    </table>#}
 
 {% endblock %}

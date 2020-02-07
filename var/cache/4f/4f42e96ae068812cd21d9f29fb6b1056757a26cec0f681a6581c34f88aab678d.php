@@ -87,10 +87,7 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
                 <a class=\"nav-link\" href=\"/User/listAll\">Liste des utilisateurs</a>
             </li>
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"/User/Register\">Inscription</a>
-            </li>
-            <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"/User/Login\">Connexion</a>
+                <a class=\"nav-link\" href=\"/User/Compte\">Compte</a>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/User/Logout\">Déconnexion</a>
@@ -119,9 +116,9 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
 </nav>
 
 ";
-        // line 75
+        // line 72
         $this->displayBlock('body', $context, $blocks);
-        // line 76
+        // line 73
         echo "
 <script src=\"https://code.jquery.com/jquery-3.4.0.min.js\"></script>
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"></script>
@@ -131,9 +128,9 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js\"></script>
 
 ";
-        // line 84
+        // line 81
         $this->displayBlock('javascript', $context, $blocks);
-        // line 85
+        // line 82
         echo "
 </body>
 </html>
@@ -153,13 +150,13 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
         $macros = $this->macros;
     }
 
-    // line 75
+    // line 72
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 84
+    // line 81
     public function block_javascript($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -172,7 +169,7 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
 
     public function getDebugInfo()
     {
-        return array (  163 => 84,  157 => 75,  151 => 12,  144 => 5,  137 => 85,  135 => 84,  125 => 76,  123 => 75,  59 => 13,  57 => 12,  47 => 5,  41 => 1,);
+        return array (  160 => 81,  154 => 72,  148 => 12,  141 => 5,  134 => 82,  132 => 81,  122 => 73,  120 => 72,  59 => 13,  57 => 12,  47 => 5,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -220,10 +217,7 @@ class __TwigTemplate_1cdde113507f695b6e2c3d63c77bb3b8a4777458c5fe62a36993ca34d23
                 <a class=\"nav-link\" href=\"/User/listAll\">Liste des utilisateurs</a>
             </li>
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"/User/Register\">Inscription</a>
-            </li>
-            <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"/User/Login\">Connexion</a>
+                <a class=\"nav-link\" href=\"/User/Compte\">Compte</a>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/User/Logout\">Déconnexion</a>
