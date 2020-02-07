@@ -63,7 +63,7 @@
                     <select name="Catégorie" class="form-control">
                         {% set listCategorie = ['Médical','Logique','Divertissement'] %}
                         {% for Categorie in listCategorie %}
-                            <option value="{{ Categorie }}" {% if Categorie == article.id_categorie %}selected{% endif %}>{{ Categorie }}</option>
+                            <option value="{{ Categorie }}" {% if Categorie == article.libelle %}selected{% endif %}>{{ Categorie }}</option>
                         {% endfor %}
                     </select>
                 </div>

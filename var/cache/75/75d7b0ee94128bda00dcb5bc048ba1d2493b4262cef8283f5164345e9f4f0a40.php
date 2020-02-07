@@ -68,18 +68,9 @@ class __TwigTemplate_5ada77e67cdacc4672a9f98bfb15634e0ccac89cb5717a54e2679d71700
         </a>
         <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
             <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">toutes les catégorie</a>
-            <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">";
-        // line 14
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["article"] ?? null), "idCategorie", [], "any", false, false, false, 14), "html", null, true);
-        echo "</a>
-            <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">";
-        // line 15
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["article"] ?? null), "idCategorie", [], "any", false, false, false, 15), "html", null, true);
-        echo "</a>
-            <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">";
-        // line 16
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["article"] ?? null), "idCategorie", [], "any", false, false, false, 16), "html", null, true);
-        echo "</a>
+            <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">Médical</a>
+            <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">Logique</a>
+            <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">Divertissement</a>
             <div class=\"dropdown-divider\"></div>
         </div>
     </div>
@@ -178,7 +169,7 @@ class __TwigTemplate_5ada77e67cdacc4672a9f98bfb15634e0ccac89cb5717a54e2679d71700
 
     public function getDebugInfo()
     {
-        return array (  160 => 52,  150 => 48,  145 => 46,  141 => 45,  137 => 44,  131 => 41,  127 => 40,  123 => 39,  119 => 38,  115 => 37,  109 => 36,  106 => 35,  102 => 34,  81 => 16,  77 => 15,  73 => 14,  64 => 8,  59 => 5,  55 => 4,  47 => 2,  36 => 1,);
+        return array (  151 => 52,  141 => 48,  136 => 46,  132 => 45,  128 => 44,  122 => 41,  118 => 40,  114 => 39,  110 => 38,  106 => 37,  100 => 36,  97 => 35,  93 => 34,  64 => 8,  59 => 5,  55 => 4,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -196,9 +187,9 @@ class __TwigTemplate_5ada77e67cdacc4672a9f98bfb15634e0ccac89cb5717a54e2679d71700
         </a>
         <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
             <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">toutes les catégorie</a>
-            <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">{{ article.idCategorie }}</a>
-            <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">{{ article.idCategorie }}</a>
-            <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">{{ article.idCategorie }}</a>
+            <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">Médical</a>
+            <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">Logique</a>
+            <a class=\"dropdown-item\" href=\"/?controller=Article&action=Search\">Divertissement</a>
             <div class=\"dropdown-divider\"></div>
         </div>
     </div>

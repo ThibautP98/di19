@@ -172,7 +172,7 @@ class __TwigTemplate_95d58abf47419e5b2b0e88b7a951acb523e7f1b1b3cda2c1043624a5365
             echo "                            <option value=\"";
             echo twig_escape_filter($this->env, $context["Categorie"], "html", null, true);
             echo "\" ";
-            if (0 === twig_compare($context["Categorie"], twig_get_attribute($this->env, $this->source, ($context["article"] ?? null), "id_categorie", [], "any", false, false, false, 66))) {
+            if (0 === twig_compare($context["Categorie"], twig_get_attribute($this->env, $this->source, ($context["article"] ?? null), "libelle", [], "any", false, false, false, 66))) {
                 echo "selected";
             }
             echo ">";
@@ -333,7 +333,7 @@ class __TwigTemplate_95d58abf47419e5b2b0e88b7a951acb523e7f1b1b3cda2c1043624a5365
                     <select name=\"Catégorie\" class=\"form-control\">
                         {% set listCategorie = ['Médical','Logique','Divertissement'] %}
                         {% for Categorie in listCategorie %}
-                            <option value=\"{{ Categorie }}\" {% if Categorie == article.id_categorie %}selected{% endif %}>{{ Categorie }}</option>
+                            <option value=\"{{ Categorie }}\" {% if Categorie == article.libelle %}selected{% endif %}>{{ Categorie }}</option>
                         {% endfor %}
                     </select>
                 </div>

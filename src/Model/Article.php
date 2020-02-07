@@ -73,7 +73,7 @@ class Article extends Contenu implements \JsonSerializable
 
     public function SqlGetAll(\PDO $bdd)
     {
-        $requete = $bdd->prepare('SELECT * FROM articles');
+        $requete = $bdd->prepare('SELECT articles.Id AS Id, articles.Titre AS Titre, articles.Description AS Description, articles.DateAjout AS DateAjout, articles.Auteur AS Auteur, articles.ImageRepository AS ImageRepository,articles.ImageFileName AS ImageFileName, articles.id_categorie AS id_categorie, articles.statut AS statut ,categorie.libelle FROM articles INNER JOIN categorie ON categorie.id = articles.id_categorie');
         $requete->execute();
         $arrayArticle = $requete->fetchAll();
 
