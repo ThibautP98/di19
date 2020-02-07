@@ -33,7 +33,7 @@ class ArticleController extends AbstractController {
             ]
         );
     }
-
+//cherche selon le titre ou l'auteur
     public function Search(){
         $Search = new Article();
         $listSearch = $Search->SqlSearch(Bdd::GetInstance());
@@ -45,13 +45,12 @@ class ArticleController extends AbstractController {
     }
 
     public function add(){
-        //UserController::roleNeed('redacteur');
         if($_POST AND $_SESSION['token'] == $_POST['token']){
             $sqlRepository = null;
             $nomImage = null;
             if(!empty($_FILES['image']['name']) )
             {
-                $tabExt = array('jpg','gif','png','jpeg');    // Extensions autorisees
+                $tabExt = array('jpg','gif','png','jpeg');
                 $extension  = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
                 if(in_array(strtolower($extension),$tabExt))
                 {

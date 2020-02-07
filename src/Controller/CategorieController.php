@@ -8,6 +8,7 @@ use function Couchbase\defaultDecoder;
 
 class CategorieController extends AbstractController {
 
+//CRUD des catégorie
     public function IndexCat(){
         return $this->AllCat();
     }
@@ -23,7 +24,7 @@ class CategorieController extends AbstractController {
             ]
         );
     }
-
+// avoir pour recherché par catégorie
     public function SearchCat(){
         $Search = new Categorie();
         $listSearch = $Search->SqlSearchCat(Bdd::GetInstance());
@@ -33,7 +34,7 @@ class CategorieController extends AbstractController {
             ]
         );
     }
-
+//fonctionnel
     public function addCat(){
         //UserController::roleNeed('redacteur');
         if($_POST AND $_SESSION['token'] == $_POST['token']){
@@ -54,7 +55,7 @@ class CategorieController extends AbstractController {
                 ]);
         }
     }
-
+//fonctionnelle
     public function updateCat($CategorieID){
         $CategorieSQL = new Categorie();
         $Categorie = $CategorieSQL->SqlGetcat(BDD::getInstance(),$CategorieID);
@@ -70,7 +71,7 @@ class CategorieController extends AbstractController {
 
         ]);
     }
-
+//fonctionnelle
     public function deleteCat($CategorieID){
         $CategorieSQL = new Categorie();
         $Categorie = $CategorieSQL->SqlGetcat(BDD::getInstance(),$CategorieID);
