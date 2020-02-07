@@ -69,6 +69,7 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
     <div class=\"collapse navbar-collapse\" id=\"navbarTogglerDemo02\">
 
         <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">
+
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Api/Article/Last\">Les 5 derniers articles</a>
             </li>
@@ -76,19 +77,10 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
                 <a class=\"nav-link\" href=\"/Article/ListAll\">Liste des articles</a>
             </li>
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"/User/MonEspace\">Mon espace</a>
-            </li>
-            <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/User/listAll\">Liste des utilisateurs</a>
             </li>
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"/User/Register\">Inscription</a>
-            </li>
-            <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"/User/Login\">Connexion</a>
-            </li>
-            <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"/User/Logout\">Déconnexion</a>
+                <a class=\"nav-link\" href=\"/User/Compte\">Compte</a>
             </li>
         </ul>
 
@@ -103,9 +95,9 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
 </nav>
 
 ";
-        // line 59
+        // line 51
         $this->displayBlock('body', $context, $blocks);
-        // line 60
+        // line 52
         echo "
 <script src=\"https://code.jquery.com/jquery-3.4.0.min.js\"></script>
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"></script>
@@ -115,9 +107,9 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js\"></script>
 
 ";
-        // line 68
+        // line 60
         $this->displayBlock('javascript', $context, $blocks);
-        // line 69
+        // line 61
         echo "
 </body>
 </html>
@@ -137,13 +129,13 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
         $macros = $this->macros;
     }
 
-    // line 59
+    // line 51
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 68
+    // line 60
     public function block_javascript($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -156,7 +148,7 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
 
     public function getDebugInfo()
     {
-        return array (  147 => 68,  141 => 59,  135 => 12,  128 => 5,  121 => 69,  119 => 68,  109 => 60,  107 => 59,  59 => 13,  57 => 12,  47 => 5,  41 => 1,);
+        return array (  139 => 60,  133 => 51,  127 => 12,  120 => 5,  113 => 61,  111 => 60,  101 => 52,  99 => 51,  59 => 13,  57 => 12,  47 => 5,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -186,6 +178,7 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
     <div class=\"collapse navbar-collapse\" id=\"navbarTogglerDemo02\">
 
         <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">
+
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/Api/Article/Last\">Les 5 derniers articles</a>
             </li>
@@ -193,19 +186,10 @@ class __TwigTemplate_2452f057ae1a9e2e13633a85a8c96b295c3a33d55ecaa611d69f6f406b0
                 <a class=\"nav-link\" href=\"/Article/ListAll\">Liste des articles</a>
             </li>
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"/User/MonEspace\">Mon espace</a>
-            </li>
-            <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/User/listAll\">Liste des utilisateurs</a>
             </li>
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"/User/Register\">Inscription</a>
-            </li>
-            <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"/User/Login\">Connexion</a>
-            </li>
-            <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"/User/Logout\">Déconnexion</a>
+                <a class=\"nav-link\" href=\"/User/Compte\">Compte</a>
             </li>
         </ul>
 

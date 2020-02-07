@@ -9,13 +9,15 @@
         <a class="nav-link dropdown-toggle" href="/Categorie" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Catégorie
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/?controller=Article&action=Search">toutes les catégorie</a>
-            <a class="dropdown-item" href="/?controller=Article&action=Search">Médical</a>
-            <a class="dropdown-item" href="/?controller=Article&action=Search">Logique</a>
-            <a class="dropdown-item" href="/?controller=Article&action=Search">Divertissement</a>
-            <div class="dropdown-divider"></div>
+        <div class="col-sm-10">
+            <select name="id_categorie" class="form-control">
+                {% set listCategorie = ['Histoire','Médical','Informatique','Sciences'] %}
+                {% for Categorie in listCategorie %}
+                    <option value="{{ Categorie }}" {% if Categorie == article.categorie_id %}selected{% endif %}>{{ Categorie }}</option>
+                {% endfor %}
+            </select>
         </div>
+    </div>
     </div>
     <div class="container">
     <table class="table table-striped">
