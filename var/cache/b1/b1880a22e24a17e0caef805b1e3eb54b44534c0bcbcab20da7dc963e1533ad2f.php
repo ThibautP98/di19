@@ -159,7 +159,7 @@ class __TwigTemplate_95d58abf47419e5b2b0e88b7a951acb523e7f1b1b3cda2c1043624a5365
             <div class=\"form-group row\">
                 <label for=\"Auteur\" class=\"col-sm-2 col-form-label\">Catégorie</label>
                 <div class=\"col-sm-10\">
-                    <select name=\"Catégorie\" class=\"form-control\">
+                    <select name=\"id_categorie\" class=\"form-control\">
                         ";
         // line 64
         $context["listCategorie"] = [0 => "Médical", 1 => "Logique", 2 => "Divertissement"];
@@ -172,7 +172,7 @@ class __TwigTemplate_95d58abf47419e5b2b0e88b7a951acb523e7f1b1b3cda2c1043624a5365
             echo "                            <option value=\"";
             echo twig_escape_filter($this->env, $context["Categorie"], "html", null, true);
             echo "\" ";
-            if (0 === twig_compare($context["Categorie"], twig_get_attribute($this->env, $this->source, ($context["article"] ?? null), "libelle", [], "any", false, false, false, 66))) {
+            if (0 === twig_compare($context["Categorie"], twig_get_attribute($this->env, $this->source, ($context["article"] ?? null), "categorie_id", [], "any", false, false, false, 66))) {
                 echo "selected";
             }
             echo ">";
@@ -330,10 +330,10 @@ class __TwigTemplate_95d58abf47419e5b2b0e88b7a951acb523e7f1b1b3cda2c1043624a5365
             <div class=\"form-group row\">
                 <label for=\"Auteur\" class=\"col-sm-2 col-form-label\">Catégorie</label>
                 <div class=\"col-sm-10\">
-                    <select name=\"Catégorie\" class=\"form-control\">
+                    <select name=\"id_categorie\" class=\"form-control\">
                         {% set listCategorie = ['Médical','Logique','Divertissement'] %}
                         {% for Categorie in listCategorie %}
-                            <option value=\"{{ Categorie }}\" {% if Categorie == article.libelle %}selected{% endif %}>{{ Categorie }}</option>
+                            <option value=\"{{ Categorie }}\" {% if Categorie == article.categorie_id %}selected{% endif %}>{{ Categorie }}</option>
                         {% endfor %}
                     </select>
                 </div>
