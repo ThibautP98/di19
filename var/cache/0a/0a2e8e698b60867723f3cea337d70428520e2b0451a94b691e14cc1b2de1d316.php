@@ -73,7 +73,8 @@ class __TwigTemplate_bc48e3cda9b66d8c03fa7441ff88239e3755b3c254814488adc5e548c50
         echo "
     <h1>Mon espace :</h1>
     <div><a href=\"/User/Logout\">
-            <button type=\"button\" class=\"btn btn-secondary\"><i class=\"fas fa-sign-out-alt\"></i>&nbsp;&nbsp;Se déconnecter
+            <button type=\"button\" class=\"btn btn-secondary\"><i class=\"fas fa-sign-out-alt\"></i>&nbsp;&nbsp;Se
+                déconnecter
             </button>
         </a></div><br>
     <table class=\"table\">
@@ -87,16 +88,16 @@ class __TwigTemplate_bc48e3cda9b66d8c03fa7441ff88239e3755b3c254814488adc5e548c50
         <tbody>
         <tr>
             <td>";
-        // line 29
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "username", [], "any", false, false, false, 29), "html", null, true);
-        echo "</td>
-            <td>";
         // line 30
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "mail", [], "any", false, false, false, 30), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "username", [], "any", false, false, false, 30), "html", null, true);
         echo "</td>
             <td>";
         // line 31
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "role", [], "any", false, false, false, 31), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "mail", [], "any", false, false, false, 31), "html", null, true);
+        echo "</td>
+            <td>";
+        // line 32
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "role", [], "any", false, false, false, 32), "html", null, true);
         echo "</td>
         </tr>
         </tbody>
@@ -104,15 +105,15 @@ class __TwigTemplate_bc48e3cda9b66d8c03fa7441ff88239e3755b3c254814488adc5e548c50
 
     <div>
         <a href=\"/User/Update/";
-        // line 37
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "id", [], "any", false, false, false, 37), "html", null, true);
+        // line 38
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "id", [], "any", false, false, false, 38), "html", null, true);
         echo "\">
             <button type=\"button\" class=\"btn btn-warning\"><i class=\"fas fa-edit\"></i>&nbsp;&nbsp;Modifier mon compte
             </button>
         </a>
         <a href=\"/User/Delete/";
-        // line 41
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "id", [], "any", false, false, false, 41), "html", null, true);
+        // line 42
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "id", [], "any", false, false, false, 42), "html", null, true);
         echo "\">
             <button type=\"button\" class=\"btn btn-danger\"><i class=\"fas fa-trash\"></i>&nbsp;&nbsp;Supprimer mon compte
             </button>
@@ -133,7 +134,7 @@ class __TwigTemplate_bc48e3cda9b66d8c03fa7441ff88239e3755b3c254814488adc5e548c50
 
     public function getDebugInfo()
     {
-        return array (  115 => 41,  108 => 37,  99 => 31,  95 => 30,  91 => 29,  73 => 13,  69 => 12,  60 => 5,  56 => 4,  48 => 2,  37 => 1,);
+        return array (  116 => 42,  109 => 38,  100 => 32,  96 => 31,  92 => 30,  73 => 13,  69 => 12,  60 => 5,  56 => 4,  48 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -153,7 +154,8 @@ class __TwigTemplate_bc48e3cda9b66d8c03fa7441ff88239e3755b3c254814488adc5e548c50
 
     <h1>Mon espace :</h1>
     <div><a href=\"/User/Logout\">
-            <button type=\"button\" class=\"btn btn-secondary\"><i class=\"fas fa-sign-out-alt\"></i>&nbsp;&nbsp;Se déconnecter
+            <button type=\"button\" class=\"btn btn-secondary\"><i class=\"fas fa-sign-out-alt\"></i>&nbsp;&nbsp;Se
+                déconnecter
             </button>
         </a></div><br>
     <table class=\"table\">

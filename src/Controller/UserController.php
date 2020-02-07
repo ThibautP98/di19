@@ -18,8 +18,7 @@ class UserController extends AbstractController
                 'user' => $user]);
         } else {
             $_SESSION['errorlogin'] = "Impossible d'accéder à votre demande.";
-            $this->twig->render('User/login.html.twig');
-            return $_SESSION['errorlogin'];
+            return $this->twig->render('User/login.html.twig');;
         }
     }
 
@@ -42,7 +41,6 @@ class UserController extends AbstractController
     function affPanelAdmin()
     {
         //Lancer la vue TWIG
-        //Uniquement si role == admin
         return $this->twig->render(
             'User/panelAdmin.html.twig'
         );
@@ -104,6 +102,7 @@ class UserController extends AbstractController
     public
     function loginCheck()
     {
+        $_SESSION=array();
         if ($_POST['mail'] && $_POST['password']) {
             $mail = $_POST['mail'];
             $password = $_POST['password'];
@@ -119,7 +118,7 @@ class UserController extends AbstractController
                 , 'mail' => $userInfo['mail']
                 , 'role' => json_decode($userInfo['role'])
                 );
-                header('Location:/User/MonEspace/' . $userInfo['id']);
+                    header('Location:/User/MonEspace/' . $userInfo['id']);
             } else {
                 $_SESSION['errorlogin'] = "Adresse mail ou mot de passe saisi incorrect.";
                 header('Location:/User/Login');
@@ -154,7 +153,8 @@ class UserController extends AbstractController
     function Delete($userID)
     {
         $userSQL = new User();
-        $user = $userSQL->SqlGet(BDD::getInstance(), $userID);var_dump($user);
+        $user = $userSQL->SqlGet(BDD::getInstance(), $userID);
+        var_dump($user);
         $user->SqlDelete(BDD::getInstance(), $userID);
         header('Location:/User/Compte');
     }

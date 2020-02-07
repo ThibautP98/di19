@@ -26,8 +26,8 @@ class __TwigTemplate_e8572ea1553aa785fcf8fa7c83bc31b3202e44d261938f1456439343321
 
         $this->blocks = [
             'title' => [$this, 'block_title'],
-            'body' => [$this, 'block_body'],
             'css' => [$this, 'block_css'],
+            'body' => [$this, 'block_body'],
         ];
     }
 
@@ -53,26 +53,41 @@ class __TwigTemplate_e8572ea1553aa785fcf8fa7c83bc31b3202e44d261938f1456439343321
     }
 
     // line 3
-    public function block_body($context, array $blocks = [])
+    public function block_css($context, array $blocks = [])
     {
         $macros = $this->macros;
         // line 4
-        echo "
-    ";
-        // line 5
-        $this->displayBlock('css', $context, $blocks);
+        echo "    <style>
+        form#login {
+            margin-right: 30%;
+            margin-left: 30%;
+            margin-top: 3%;
+        }
+
+        input#login, button#exit {
+            width: 150px;
+        }
+    </style>
+";
+    }
+
+    // line 17
+    public function block_body($context, array $blocks = [])
+    {
+        $macros = $this->macros;
         // line 18
-        echo "    <div class=\"container-fluid mt-2\">
+        echo "
+    <div class=\"container-fluid mt-2\">
         ";
-        // line 19
-        if (twig_get_attribute($this->env, $this->source, ($context["session"] ?? null), "errorlogin", [], "any", true, true, false, 19)) {
-            // line 20
+        // line 20
+        if (twig_get_attribute($this->env, $this->source, ($context["session"] ?? null), "errorlogin", [], "any", true, true, false, 20)) {
+            // line 21
             echo "            <div class=\"alert alert-danger\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["session"] ?? null), "errorlogin", [], "any", false, false, false, 20), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["session"] ?? null), "errorlogin", [], "any", false, false, false, 21), "html", null, true);
             echo "</div>
         ";
         }
-        // line 22
+        // line 23
         echo "        <form method=\"post\" action=\"/User/Register\" id=\"login\">
             <h1>Inscription :</h1>
             <p>Nom d'utilisateur :</p>
@@ -98,25 +113,6 @@ class __TwigTemplate_e8572ea1553aa785fcf8fa7c83bc31b3202e44d261938f1456439343321
 ";
     }
 
-    // line 5
-    public function block_css($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        // line 6
-        echo "        <style>
-            form#login {
-                margin-right: 30%;
-                margin-left: 30%;
-                margin-top: 3%;
-            }
-
-            input#login, button#exit {
-                width: 150px;
-            }
-        </style>
-    ";
-    }
-
     public function getTemplateName()
     {
         return "User/register.html.twig";
@@ -129,28 +125,29 @@ class __TwigTemplate_e8572ea1553aa785fcf8fa7c83bc31b3202e44d261938f1456439343321
 
     public function getDebugInfo()
     {
-        return array (  106 => 6,  102 => 5,  76 => 22,  70 => 20,  68 => 19,  65 => 18,  63 => 5,  60 => 4,  56 => 3,  48 => 2,  37 => 1,);
+        return array (  91 => 23,  85 => 21,  83 => 20,  79 => 18,  75 => 17,  60 => 4,  56 => 3,  48 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends \"index.html.twig\" %}
 {% block title %}{{ parent() }} - Inscription {% endblock %}
+{% block css %}
+    <style>
+        form#login {
+            margin-right: 30%;
+            margin-left: 30%;
+            margin-top: 3%;
+        }
+
+        input#login, button#exit {
+            width: 150px;
+        }
+    </style>
+{% endblock %}
+
 {% block body %}
 
-    {% block css %}
-        <style>
-            form#login {
-                margin-right: 30%;
-                margin-left: 30%;
-                margin-top: 3%;
-            }
-
-            input#login, button#exit {
-                width: 150px;
-            }
-        </style>
-    {% endblock %}
     <div class=\"container-fluid mt-2\">
         {% if session.errorlogin is defined %}
             <div class=\"alert alert-danger\">{{ session.errorlogin }}</div>
